@@ -8,8 +8,7 @@
     "start": "node src/server/index.js",
     "server": "nodemon",
     "client": "ts-node script/start-script.ts",
-    "build-client": "cd src/client && yarn run build",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false yarn install --prefix client && yarn build-client --prefix client"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false yarn install && cd src/client && yarn build"
   },
   "devDependencies": {
     "@types/express": "^4.16.0",
