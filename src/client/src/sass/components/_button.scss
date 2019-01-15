@@ -1,0 +1,55 @@
+.btn {
+  // margin-top: 5rem;
+  &,
+  &:link,
+  &:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    border-radius: 0.3rem;
+    transition: all 0.2s;
+    position: relative;
+    font-size: 1.6rem;
+    // color: $color-grey;
+    // border: .3rem solid $color-dom;
+    outline: none;
+
+    background: $color-white;
+    opacity: 0.7;
+    color: $color-dom;
+  }
+
+  &:hover {
+    // border: .3rem solid $color-dom;
+    opacity: 1;
+    cursor: pointer;
+  }
+
+  &:hover > &--chevron {
+    color: $color-accent2;
+  }
+
+  &:active {
+    border: 0.3rem solid $color-accent1;
+  }
+
+  &--white {
+    background-color: $color-white;
+    // color: $color-grey;
+
+    &::after {
+      background-color: $color-white;
+    }
+  }
+
+  &--animated {
+    animation: moveInBottom 0.7s ease-out 1.7s;
+    animation-fill-mode: backwards;
+  }
+
+  &--chevron {
+    position: relative;
+    left: 1.5rem;
+  }
+}

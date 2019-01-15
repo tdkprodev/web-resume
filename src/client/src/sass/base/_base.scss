@@ -1,0 +1,41 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+html {
+  font-size: 62.5%;
+  @include respond(big-desktop) {
+    // width > 1800px?
+    font-size: 75%; // 1rem = 12px; 12/16 = 75%;
+  }
+  @include respond(tab-land) {
+    // width < 1200px?
+    font-size: 56.25%; // 1rem = 9px, 9/16 = 56.25%
+  }
+  @include respond(tab-port) {
+    // width < 900px?
+    font-size: 50%; //1rem = 8px; 8/16 = 50%;
+  }
+  @include respond(phone) {
+    font-size: 45%;
+  }
+}
+
+body {
+  box-sizing: border-box; /*makes it so margin and padding are no longer added to the total width/height of a box we specify.  */
+  padding: 0rem;
+
+  // background: lighten($color-bg, 15%);
+
+  @include respond(tab-port) {
+    padding: 0;
+  }
+}
+
+
+// ::selection {
+//    // change default text selection
+// }

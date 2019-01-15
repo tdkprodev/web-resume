@@ -1,0 +1,82 @@
+// MEDIA QUERY MANAGER
+/*
+0 - 600px:      Phone
+600-699px:      Tablet portrait
+900-1200px:     Tablet landscape
+1200-1800px:    Normal style
+1800px + :      Big desktop
+$breakpoint argument choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+ORDER: Base + typography > general layout + grid > page layout > components
+1em = 16px;
+*/
+
+
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone-s {
+      @media only screen and (max-width: 25em) { @content }; // 400px
+  }
+  @if $breakpoint == phone {
+      @media only screen and (max-width: 37.5em) { @content }; // 600px
+  }
+  @if $breakpoint == tab-port {
+      @media only screen and (max-width: 56.25em) { @content }; // 900px
+  }
+  @if $breakpoint == tab-land {
+      @media only screen and (max-width: 75em) { @content }; // 1200px
+  }
+  @if $breakpoint == big-desktop {
+      @media only screen and (min-width: 112.5em) { @content };    // 1800px
+  }
+}
+
+/*
+    // major breakpoints
+    $bp-s: 24em;
+    $bp-m: 46.8em;
+    $bp-l: 50em;
+    $bp-xl: 73em;
+
+    // minor breakpoint (tweakpoints)
+    $bp-s-<number>
+    $bp-m-<number>
+    $bp-l-<number>
+    $bp-Xl-<number>
+
+
+    Use relative units
+        !!avoid pixel-based media queries
+        
+        **do as little as possible
+
+        Go beyond width
+            Viewport width isn't the only thing media queries can detect.
+                - color
+                - color index
+                - aspect ratio
+                - device aspect ratio
+                - width
+                - device width
+                - height,
+                - device height
+                - orientation
+                - monochrome
+                - resolution
+                - scan
+                - pixel-density
+                ...
+        
+        Use media queries for conditional loading
+            matchMedia
+
+            Conditional Loading is one of the most powerful tools we have
+            in our toolkits. It allows us to prioritize core content and performance
+            that can handle it.
+
+
+
+*/
