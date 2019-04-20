@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { Avatar, Grid, Tooltip } from "@material-ui/core";
+import { Avatar, Grid, Link, Tooltip } from "@material-ui/core";
 import { createStyles, withStyles, WithStyles } from "@material-ui/core/styles";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
@@ -21,18 +21,24 @@ interface IProps extends WithStyles<typeof styles> {}
 
 const SocialLinks = (props: IProps) => {
   const { classes } = props;
+  const gitHubLink = "https://www.github.com/tdkprodev";
+  const linkedInLink = "https://www.linkedin.com/in/thomasdkay/";
 
   return (
     <Grid container={true} justify="flex-end" alignItems="center">
       <Tooltip title="GitHub">
-        <Avatar alt="GitHub" className={classes.github}>
-          <FaGithub size={50} />
-        </Avatar>
+        <Link href={gitHubLink} target="__blank" rel="noreferrer">
+          <Avatar alt="GitHub" className={classes.github}>
+            <FaGithub size={50} />
+          </Avatar>
+        </Link>
       </Tooltip>
       <Tooltip title="LinkedIn">
-        <Avatar alt="LinkedIn" className={classes.linkedin}>
-          <FaLinkedin size={50} />
-        </Avatar>
+        <Link href={linkedInLink} target="__blank" rel="noreferrer">
+          <Avatar alt="LinkedIn" className={classes.linkedin}>
+            <FaLinkedin size={50} />
+          </Avatar>
+        </Link>
       </Tooltip>
     </Grid>
   );

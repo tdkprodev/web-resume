@@ -1,6 +1,6 @@
+import { Link, Tooltip, Typography } from "@material-ui/core";
 import * as $ from "jquery";
 import * as React from "react";
-
 import { FaChevronUp } from "react-icons/fa";
 import SocialLinks from "./SocialLinks";
 
@@ -29,14 +29,16 @@ class Footer extends React.Component<{}> {
     return (
       <footer className="footer">
         <div className="container">
-          <a className="return-to-top animateFadeIn">
-            <FaChevronUp />
-          </a>
+          <Tooltip title="Return to top">
+            <Link className="return-to-top animateFadeIn">
+              <FaChevronUp />
+            </Link>
+          </Tooltip>
           <SocialLinks />
-          <h3 className="copyright animateFromBottom">
-            &copy; {new Date().getFullYear()} Thomas Kay.
-            <br /> All rights reserved.
-          </h3>
+          <Typography variant="h6" className="copyright animateFromBottom">
+            &copy; {new Date().getFullYear()} Thomas Kay
+            <br /> All rights reserved
+          </Typography>
         </div>
       </footer>
     );
