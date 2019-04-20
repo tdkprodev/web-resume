@@ -1,8 +1,8 @@
-import * as $ from 'jquery';
+import * as $ from "jquery";
 import * as React from "react";
 
-// import SocialLinks from "./SocialLinks";
 import { FaChevronUp } from "react-icons/fa";
+import SocialLinks from "./SocialLinks";
 
 class Footer extends React.Component<{}> {
   constructor(props: any) {
@@ -11,34 +11,19 @@ class Footer extends React.Component<{}> {
   }
 
   public componentDidMount() {
-
-
     // jQuery implementationS
     $(".return-to-top").click(() => {
       const body: JQuery<HTMLElement> = $("body") || {};
 
       if (body !== undefined) {
         $("html,body").animate(
-          { 
+          {
             scrollTop: 0
           },
-          "medium",
+          "medium"
         );
       }
     });
-
-    // // // JS implementation
-    // const returnToTop = document.querySelector(".return-to-top");
-
-    // returnToTop!.addEventListener("click", () => {
-    //   const body = document.body;
-    //   const html = document.querySelector("html");
-
-    //   setTimeout(() => {
-    //     body.scrollTop = 0;
-    //     html!.scrollTop = 0;
-    //   }, 500);
-    // });
   }
   public render() {
     return (
@@ -47,10 +32,14 @@ class Footer extends React.Component<{}> {
           <a className="return-to-top animateFadeIn">
             <FaChevronUp />
           </a>
-          <h3 className="copyright animateFromBottom">&copy; {new Date().getFullYear()} Thomas Kay.<br /> All rights reserved.</h3>
+          <SocialLinks />
+          <h3 className="copyright animateFromBottom">
+            &copy; {new Date().getFullYear()} Thomas Kay.
+            <br /> All rights reserved.
+          </h3>
         </div>
       </footer>
-    )
+    );
   }
 }
 

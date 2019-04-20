@@ -2,7 +2,9 @@
   "extends": ["tslint:recommended", "tslint-react", "tslint-config-prettier"],
   "linterOptions": {
     "rules": {
-      "no-console": false
+      "no-console": false,
+      "jsx-boolean-value": [false, "never"],
+      "no-unused-variable": false
     },
     "exclude": [
       "config/**/*.js",

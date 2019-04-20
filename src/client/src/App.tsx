@@ -1,14 +1,32 @@
+import {
+  createMuiTheme,
+  MuiThemeProvider,
+  withStyles
+} from "@material-ui/core/styles";
 import * as React from "react";
-// import './App.css';
+import Portfolio from "./components/Portfolio";
 import "./sass/main.css";
 
-import Portfolio from "./components/Portfolio";
-// import logo from './logo.svg';
+const theme = createMuiTheme({
+  overrides: {
+    MuiTooltip: {
+      tooltip: {
+        fontSize: "2rem"
+      }
+    }
+  }
+});
+
+const styles = {};
 
 class App extends React.Component {
   public render() {
-    return <Portfolio />;
+    return (
+      <MuiThemeProvider theme={theme}>
+        <Portfolio />
+      </MuiThemeProvider>
+    );
   }
 }
 
-export default App;
+export default withStyles(styles)(App);
