@@ -5,11 +5,6 @@ import { FaChevronUp } from "react-icons/fa";
 import SocialLinks from "./SocialLinks";
 
 class Footer extends React.Component<{}> {
-  constructor(props: any) {
-    super(props);
-    this.state = {};
-  }
-
   public componentDidMount() {
     // jQuery implementationS
     $(".return-to-top").click(() => {

@@ -14,6 +14,9 @@ const theme = createMuiTheme({
         fontSize: "1.5rem"
       }
     }
+  },
+  typography: {
+    useNextVariants: true
   }
 });
 
