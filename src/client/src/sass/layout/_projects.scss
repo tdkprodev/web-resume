@@ -1,4 +1,14 @@
 .projects {
+  &__filter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 60%;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+  }
+
   &__cards {
     display: grid;
 

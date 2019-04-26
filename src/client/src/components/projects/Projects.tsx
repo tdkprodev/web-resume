@@ -6,6 +6,7 @@ import thumbnailNatours from "../../images/natours.png";
 import thumbnailNexter from "../../images/nexter.png";
 import thumbnailTrillo from "../../images/trillo.png";
 import thumbnailYouTube from "../../images/yt.png";
+import MaterialTextField from "./MaterialTextField";
 import Preview from "./Preview";
 
 interface IPreview {
@@ -68,11 +69,14 @@ const previews: IPreview[] = [
   }
 ];
 
-class Projects extends React.Component {
-  constructor(props: any) {
-    super(props);
-    this.state = {};
-  }
+interface IState {
+  filterText: string;
+}
+
+class Projects extends React.Component<{}, IState> {
+  public state = {
+    filterText: ""
+  };
 
   public componentDidMount() {
     // execute func intermittently with specified interval
@@ -124,7 +128,18 @@ class Projects extends React.Component {
   }
 
   public renderPreviews = () => {
-    return previews.map((preview: IPreview) => {
+    let filteredPreviews = previews;
+    const filterText = this.state.filterText.toLowerCase().trim();
+
+    if (filterText) {
+      filteredPreviews = previews.filter((preview: IPreview) =>
+        preview.title
+          .toLowerCase()
+          .trim()
+          .includes(filterText)
+      );
+    }
+    return filteredPreviews.map((preview: IPreview) => {
       const { title, src, alt, href, description } = preview;
 
       return (
@@ -140,11 +155,28 @@ class Projects extends React.Component {
     });
   };
 
+  public handleChange = (
+    event: React.ChangeEvent<HTMLInputElement>,
+    value: string
+  ) => {
+    this.setState(() => ({
+      filterText: value
+    }));
+  };
+
   public render() {
     return (
       <section className="projects" id="projects">
         <div className="container">
           <h1 className="heading-secondary">Projects</h1>
+          <div className="projects__filter">
+            <MaterialTextField
+              label="Search"
+              placeholder="Search projects"
+              variant="outlined"
+              onChange={this.handleChange}
+            />
+          </div>
           <div className="projects__cards">{this.renderPreviews()}</div>
         </div>
       </section>

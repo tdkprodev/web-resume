@@ -17,7 +17,6 @@ class Hero extends React.Component<{}> {
   }
 
   public scrollToProjects = () => {
-    window.scrollTo(0, 0);
     const projectsSection: any = document.querySelector("#projects");
     window.scrollTo(0, projectsSection!.offsetTop - 20);
   };
