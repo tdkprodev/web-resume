@@ -1,8 +1,5 @@
 import * as React from "react";
-
-// import FaSortDesc from "react-icons/lib/fa/sort-desc";
-// import FaChevronRight from "react-icons/lib/fa/chevron-right";
-// import FaChevronDown from "react-icons/lib/fa/chevron-down";
+import ArrowTooltip from "../projects/ArrowTooltip";
 
 class Hero extends React.Component<{}> {
   constructor(props: any) {
@@ -13,19 +10,17 @@ class Hero extends React.Component<{}> {
 
   public componentDidMount() {
     const flyInText = document.querySelector(".fly-in-text");
-    const viewProjectsBtn = document.querySelector(".view-projects");
 
     setTimeout(() => {
       flyInText!.classList.remove("hidden");
     }, 500);
-
-    function scrollToProjects() {
-      const projectsSection: any = document.querySelector("#projects");
-      window.scrollTo(0, projectsSection!.offsetTop - 20);
-    }
-
-    viewProjectsBtn!.addEventListener("click", scrollToProjects);
   }
+
+  public scrollToProjects = () => {
+    window.scrollTo(0, 0);
+    const projectsSection: any = document.querySelector("#projects");
+    window.scrollTo(0, projectsSection!.offsetTop - 20);
+  };
 
   public render() {
     return (
@@ -53,10 +48,14 @@ class Hero extends React.Component<{}> {
               <p className="greeting__text--accent-text">Web Developer</p>
             </span>
           </h2>
-          <div className="btn btn--animated view-projects">
-            View my work
-            <span className="btn--chevron">{/* <FaChevronDown /> */}</span>
-          </div>
+          <ArrowTooltip title="Scroll down">
+            <div
+              className="btn btn--animated view-projects"
+              onClick={this.scrollToProjects}
+            >
+              View my work
+            </div>
+          </ArrowTooltip>
         </div>
       </header>
     );

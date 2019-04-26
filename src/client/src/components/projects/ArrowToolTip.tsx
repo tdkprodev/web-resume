@@ -130,7 +130,7 @@ interface IState {
 
 interface IProps extends WithStyles<typeof styles> {
   title: string;
-  placement:
+  placement?:
     | "bottom-end"
     | "bottom-start"
     | "bottom"
@@ -157,7 +157,7 @@ class CustomizedTooltips extends React.Component<IProps, IState> {
   };
 
   public render() {
-    const { classes, title, placement } = this.props;
+    const { classes, title, placement = "bottom" } = this.props;
 
     return (
       <Tooltip

@@ -1,6 +1,4 @@
 import * as React from "react";
-import Preview from "./Preview";
-
 import thumbnailBlogsome from "../../images/blogsome.png";
 import thumbnailChat from "../../images/chat.png";
 import thumbnailExpensify from "../../images/expensify.png";
@@ -8,6 +6,7 @@ import thumbnailNatours from "../../images/natours.png";
 import thumbnailNexter from "../../images/nexter.png";
 import thumbnailTrillo from "../../images/trillo.png";
 import thumbnailYouTube from "../../images/yt.png";
+import Preview from "./Preview";
 
 interface IPreview {
   title: string;
