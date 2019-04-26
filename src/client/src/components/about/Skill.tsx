@@ -3,6 +3,17 @@ import * as React from "react";
 import { FaCss3, FaHtml5, FaJs, FaNodeJs, FaReact } from "react-icons/fa";
 
 class SkillCard extends React.Component<{}> {
+  public handleMouseOver = (event: React.MouseEvent) => {
+    // tslint:disable-next-line:no-console
+    console.log("event", event);
+
+    const { currentTarget } = event;
+
+    currentTarget.classList.remove("bar", "bar--html");
+    currentTarget.classList.add("bar");
+    currentTarget.classList.add("bar--html");
+  };
+
   public render() {
     return (
       <div className="tech">
@@ -10,7 +21,7 @@ class SkillCard extends React.Component<{}> {
           <h3 className="heading-small heading-small--align-left heading-small--tech animateFromTop">
             Technologies
           </h3>
-          <div className="bar bar--html">
+          <div onMouseEnter={this.handleMouseOver} className="bar bar--html">
             <FaHtml5 /> HTML
           </div>
           <div className="bar bar--css">

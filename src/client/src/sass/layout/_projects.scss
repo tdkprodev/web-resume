@@ -1,6 +1,4 @@
 .projects {
-
-
   &__cards {
     display: grid;
 
@@ -10,7 +8,6 @@
     @include respond(tab-land) {
       grid-template-columns: 1fr 1fr;
     }
-
 
     @include respond(phone) {
       grid-template-columns: 1fr;
@@ -29,11 +26,11 @@
         color: white;
         z-index: 1001;
         width: 100%;
-        opacity: .8;
+        opacity: 0.8;
         text-align: center;
         overflow: hidden;
 
-        transition: transform .5s ease, visibility .5s ease, opacity .3s ease;
+        transition: transform 0.5s ease, visibility 0.5s ease, opacity 0.3s ease;
       }
 
       &__photo {
@@ -44,14 +41,15 @@
 
         // outline-offset: .5rem;
 
-        transition: all .5s;
+        transition: all 0.5s;
 
-        border: .1rem solid $color-dom;
+        border: 0.1rem solid $color-dom;
 
         &:hover {
           // transform: translateY(-0.5rem);
           // box-shadow: 0 2.5rem 4rem rgba($color-black, 0.5);
-          box-shadow: 0 8px 17px 0 rgba(0, 0, 0, .2), 0 6px 20px 0 rgba(0, 0, 0, .15);
+          box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2),
+            0 6px 20px 0 rgba(0, 0, 0, 0.15);
           // outline: 1px solid $color-dom;
           // outline-offset: 1rem;
           z-index: 1000;
@@ -60,27 +58,25 @@
         }
       }
 
-
       .overlay {
         position: absolute;
         bottom: 0;
         left: 0;
         right: 0;
-    
+
         background-color: $color-dom;
         overflow: hidden;
         width: 100%;
         height: 0;
 
         font-size: 5rem;
-        opacity: .9;
+        opacity: 0.9;
 
         display: grid;
         align-items: center;
         justify-items: center;
-    
-        transition: height .5s ease;
 
+        transition: height 0.5s ease;
 
         // a {
         //   display: none;
@@ -92,16 +88,15 @@
 
         &__description {
           font-size: 1.5rem;
-          padding: .5rem;
+          padding: 0.5rem;
           color: $color-white;
           text-align: center;
-          
         }
       }
 
       &:hover .overlay {
         height: 100%;
-        z-index: 9998;
+        z-index: 7000;
       }
 
       &:hover .composition__title {
@@ -111,41 +106,11 @@
       }
     }
 
-
     // &:hover .composition:not(:hover) {
     //   border: 1px solid $color-dom;
     //   opacity: .3;
     // }
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   // &__card {
   //   border: .3rem solid $color-accent1;

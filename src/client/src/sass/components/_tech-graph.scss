@@ -1,6 +1,5 @@
 .tech {
-
-  .bar{
+  .bar {
     height: 30px;
     max-width: 800px;
     margin: 0 auto 10px auto;
@@ -39,8 +38,8 @@
       background: $color-node;
     }
   }
-  .bar::before{
-    content: '';
+  .bar::before {
+    content: "";
     width: 100%;
     position: absolute;
     left: 0;
@@ -48,11 +47,19 @@
     top: 0;
     z-index: -2;
     background: #ecf0f1;
-
-    
   }
-  .bar::after{
-    content: '';
+  .bar:hover::before {
+    content: "";
+    width: 100%;
+    position: absolute;
+    left: 0;
+    height: 30px;
+    top: 0;
+    z-index: -2;
+    background: #ecf0f1;
+  }
+  .bar::after {
+    content: "";
     height: 30px;
     transition: 0.7s;
     display: block;
@@ -64,6 +71,19 @@
     z-index: -1;
 
     clip-path: polygon(0 0, 98% 0, 100% 100%, 0 100%);
+  }
+  .bar:hover::after {
+    content: "";
+    height: 30px;
+    transition: 0.7s;
+    display: block;
+    width: 100%;
+    animation: bar-before 1 1.8s;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
 
+    clip-path: polygon(0 0, 98% 0, 100% 100%, 0 100%);
   }
 }
