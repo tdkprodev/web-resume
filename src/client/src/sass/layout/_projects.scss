@@ -7,6 +7,10 @@
     width: 60%;
     margin: 0 auto;
     margin-bottom: 2.5rem;
+
+    @include respond(phone) {
+      width: 100%;
+    }
   }
 
   &__cards {

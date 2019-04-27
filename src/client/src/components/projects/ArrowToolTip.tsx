@@ -129,7 +129,8 @@ interface IState {
 }
 
 interface IProps extends WithStyles<typeof styles> {
-  title: string;
+  title: any;
+  interactive?: boolean;
   placement?:
     | "bottom-end"
     | "bottom-start"
@@ -157,7 +158,12 @@ class CustomizedTooltips extends React.Component<IProps, IState> {
   };
 
   public render() {
-    const { classes, title, placement = "bottom" } = this.props;
+    const {
+      classes,
+      title,
+      placement = "bottom",
+      interactive = false
+    } = this.props;
 
     return (
       <Tooltip
@@ -170,6 +176,7 @@ class CustomizedTooltips extends React.Component<IProps, IState> {
         placement={placement}
         classes={{ popper: classes.arrowPopper, tooltip: classes.lightTooltip }}
         style={{ zIndex: 9000 }}
+        interactive={interactive}
         PopperProps={{
           popperOptions: {
             modifiers: {

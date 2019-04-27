@@ -3,11 +3,13 @@ import {
   ExpansionPanelDetails,
   ExpansionPanelSummary,
   Theme,
+  // Tooltip,
   Typography
 } from "@material-ui/core";
 import { createStyles, withStyles, WithStyles } from "@material-ui/core/styles";
 import * as React from "react";
 import { FaChevronDown } from "react-icons/fa";
+import ArrowTooltip from "../projects/ArrowTooltip";
 import AvatarLabel from "./AvatarLabel";
 
 import nodeLogo from "../../images/devtools-logos/node.png";
@@ -19,6 +21,21 @@ import vscodeLogo from "../../images/devtools-logos/vscode.png";
 
 const styles = (theme: Theme) =>
   createStyles({
+    arrow: {
+      fontSize: 6,
+      height: "3em",
+      position: "absolute",
+      width: "3em",
+
+      "&::before": {
+        borderStyle: "solid",
+        content: '""',
+        display: "block",
+        height: 0,
+        margin: "auto",
+        width: 0
+      }
+    },
     border: {
       border: "solid pink 3px"
     },
@@ -67,7 +84,6 @@ interface IProps extends WithStyles<typeof styles> {}
 
 class DetailSection extends React.Component<IProps> {
   public state = {
-    // expanded: null
     expanded: "detail-panel"
   };
 
@@ -78,6 +94,90 @@ class DetailSection extends React.Component<IProps> {
     this.setState({
       expanded: expanded ? panel : false
     });
+  };
+
+  public renderVsCodeContent = () => (
+    <React.Fragment>
+      <Typography color="inherit">Tooltip with HTML</Typography>
+      <em>{"And here's"}</em> <b>{"some"}</b> <u>{"amazing content"}</u>.{" "}
+      {"It's very engaging. Right?"}
+      <a href="https://google.com">google</a>
+      <span className={this.props.classes.arrow} />
+    </React.Fragment>
+  );
+
+  public renderVimContent = () => (
+    <React.Fragment>
+      <Typography color="inherit">Tooltip with HTML</Typography>
+      <em>{"And here's"}</em> <b>{"some"}</b> <u>{"amazing content"}</u>.{" "}
+      {"It's very engaging. Right?"}
+      <span className={this.props.classes.arrow} />
+    </React.Fragment>
+  );
+
+  public renderTypeScriptContent = () => (
+    <React.Fragment>
+      <Typography color="inherit">Tooltip with HTML</Typography>
+      <em>{"And here's"}</em> <b>{"some"}</b> <u>{"amazing content"}</u>.{" "}
+      {"It's very engaging. Right?"}
+      <span className={this.props.classes.arrow} />
+    </React.Fragment>
+  );
+
+  public renderReactContent = () => (
+    <React.Fragment>
+      <Typography color="inherit">Tooltip with HTML</Typography>
+      <em>{"And here's"}</em> <b>{"some"}</b> <u>{"amazing content"}</u>.{" "}
+      {"It's very engaging. Right?"}
+      <span className={this.props.classes.arrow} />
+    </React.Fragment>
+  );
+
+  public renderNodeContent = () => (
+    <React.Fragment>
+      <Typography color="inherit">Tooltip with HTML</Typography>
+      <em>{"And here's"}</em> <b>{"some"}</b> <u>{"amazing content"}</u>.{" "}
+      {"It's very engaging. Right?"}
+      <span className={this.props.classes.arrow} />
+    </React.Fragment>
+  );
+
+  public renderTypeOrmContent = () => (
+    <React.Fragment>
+      <Typography color="inherit">Tooltip with HTML</Typography>
+      <em>{"And here's"}</em> <b>{"some"}</b> <u>{"amazing content"}</u>.{" "}
+      {"It's very engaging. Right?"}
+      <span className={this.props.classes.arrow} />
+    </React.Fragment>
+  );
+
+  public renderHoverContent = (field: string) => {
+    let htmlContent = <React.Fragment />;
+
+    switch (field) {
+      case "vim":
+        htmlContent = this.renderVimContent();
+        break;
+      case "vscode":
+        htmlContent = this.renderVsCodeContent();
+        break;
+      case "typescript":
+        htmlContent = this.renderTypeScriptContent();
+        break;
+      case "react":
+        htmlContent = this.renderReactContent();
+        break;
+      case "node":
+        htmlContent = this.renderNodeContent();
+        break;
+      case "typeorm":
+        htmlContent = this.renderTypeOrmContent();
+        break;
+      default:
+        break;
+    }
+
+    return htmlContent;
   };
 
   public render() {
@@ -111,8 +211,20 @@ class DetailSection extends React.Component<IProps> {
                 Editor
               </Typography>
               <div className={classes.buildTools}>
-                <AvatarLabel alt="VsCode" src={vscodeLogo} label="VsCode" />
-                <AvatarLabel alt="Vim" src={vimLogo} label="Vim" />
+                <ArrowTooltip
+                  title={this.renderVsCodeContent()}
+                  interactive={true}
+                  placement="bottom"
+                >
+                  <AvatarLabel alt="VsCode" src={vscodeLogo} label="VsCode" />
+                </ArrowTooltip>
+                <ArrowTooltip
+                  title={this.renderHoverContent("vim")}
+                  interactive={true}
+                  placement="top"
+                >
+                  <AvatarLabel alt="Vim" src={vimLogo} label="Vim" />
+                </ArrowTooltip>
               </div>
             </div>
             <div className={classes.toolsContainer}>
@@ -125,8 +237,24 @@ class DetailSection extends React.Component<IProps> {
                 Client
               </Typography>
               <div className={classes.buildTools}>
-                <AvatarLabel alt="TypeScript" src={tsLogo} label="TypeScript" />
-                <AvatarLabel alt="React" src={reactLogo} label="React" />
+                <ArrowTooltip
+                  title={this.renderTypeScriptContent()}
+                  interactive={true}
+                  placement="bottom"
+                >
+                  <AvatarLabel
+                    alt="TypeScript"
+                    src={tsLogo}
+                    label="TypeScript"
+                  />
+                </ArrowTooltip>
+                <ArrowTooltip
+                  title={this.renderReactContent()}
+                  interactive={true}
+                  placement="top"
+                >
+                  <AvatarLabel alt="React" src={reactLogo} label="React" />
+                </ArrowTooltip>
               </div>
             </div>
             <div className={classes.toolsContainer}>
@@ -139,8 +267,24 @@ class DetailSection extends React.Component<IProps> {
                 Server
               </Typography>
               <div className={classes.buildTools}>
-                <AvatarLabel alt="Node" src={nodeLogo} label="Node" />
-                <AvatarLabel alt="TypeORM" src={typeormLogo} label="TypeORM" />
+                <ArrowTooltip
+                  title={this.renderNodeContent()}
+                  interactive={true}
+                  placement="bottom"
+                >
+                  <AvatarLabel alt="Node" src={nodeLogo} label="Node" />
+                </ArrowTooltip>
+                <ArrowTooltip
+                  title={this.renderTypeOrmContent()}
+                  interactive={true}
+                  placement="top"
+                >
+                  <AvatarLabel
+                    alt="TypeORM"
+                    src={typeormLogo}
+                    label="TypeORM"
+                  />
+                </ArrowTooltip>
               </div>
             </div>
           </div>
