@@ -27,11 +27,16 @@ const styles = (theme: Theme) =>
       display: "flex",
       justifyContent: "center",
       margin: "0 5rem",
-      marginBottom: "5rem"
+      marginBottom: "5rem",
+
+      "@media (max-width: 600px)": {
+        justifyContent: "space-between"
+      }
     },
     devTools: {
       alignItems: "center",
       display: "flex",
+      flexWrap: "wrap",
       justifyContent: "center"
     },
     heading: {
@@ -50,6 +55,11 @@ const styles = (theme: Theme) =>
     subHeading: {
       fontWeight: 600,
       margin: 10
+    },
+    toolsContainer: {
+      "@media (max-width: 600px)": {
+        width: "100%"
+      }
     }
   });
 
@@ -91,7 +101,7 @@ class DetailSection extends React.Component<IProps> {
             Dev Tools
           </Typography>
           <div className={classes.devTools}>
-            <div className="dev-tools">
+            <div className={classes.toolsContainer}>
               <Typography
                 className={classes.subHeading}
                 gutterBottom={true}
@@ -105,7 +115,7 @@ class DetailSection extends React.Component<IProps> {
                 <AvatarLabel alt="Vim" src={vimLogo} label="Vim" />
               </div>
             </div>
-            <div className="client-tools">
+            <div className={classes.toolsContainer}>
               <Typography
                 className={classes.subHeading}
                 gutterBottom={true}
@@ -119,7 +129,7 @@ class DetailSection extends React.Component<IProps> {
                 <AvatarLabel alt="React" src={reactLogo} label="React" />
               </div>
             </div>
-            <div className="server-tools">
+            <div className={classes.toolsContainer}>
               <Typography
                 className={classes.subHeading}
                 gutterBottom={true}

@@ -118,6 +118,7 @@ class ProfileCard extends React.Component<IProps, IState> {
                 <Fab
                   color="primary"
                   aria-label="test"
+                  size="small"
                   className={classes.positionAbsolute}
                 >
                   <AddIcon />
@@ -134,6 +135,7 @@ class ProfileCard extends React.Component<IProps, IState> {
                 <Fab
                   color="primary"
                   aria-label="test"
+                  size="small"
                   className={classes.positionAbsolute}
                 >
                   <AddIcon />
@@ -150,6 +152,7 @@ class ProfileCard extends React.Component<IProps, IState> {
                 <Fab
                   color="primary"
                   aria-label="test"
+                  size="small"
                   className={classes.positionAbsolute}
                 >
                   <AddIcon />

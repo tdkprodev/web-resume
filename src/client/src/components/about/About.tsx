@@ -16,7 +16,9 @@ class About extends React.Component<{}> {
               <ProfileCard />
               <SkillCard />
             </article>
-            <DetailSection />
+            <article className="animateFromRight">
+              <DetailSection />
+            </article>
           </div>
         </div>
       </section>
