@@ -159,9 +159,28 @@ class Projects extends React.Component<{}, IState> {
     event: React.ChangeEvent<HTMLInputElement>,
     value: string
   ) => {
-    this.setState(() => ({
-      filterText: value
-    }));
+    this.setState(
+      () => ({
+        filterText: value
+      }),
+      () => {
+        const compositionPhotos = document.querySelectorAll(
+          ".composition__photo"
+        );
+
+        // tslint:disable-next-line:no-console
+        console.log("compositionPhotos", compositionPhotos);
+
+        Array.prototype.slice
+          .call(compositionPhotos)
+          .forEach((photo: HTMLElement) => {
+            photo.classList.remove("show");
+            photo.classList.remove("slide-in");
+            photo.classList.add("show");
+            photo.classList.add("slide-in");
+          });
+      }
+    );
   };
 
   public render() {

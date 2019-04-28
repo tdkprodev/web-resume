@@ -30,7 +30,7 @@ class Footer extends React.Component<{}> {
               <FaChevronUp />
             </Link>
           </ArrowTooltip>
-          <SocialLinks />
+          <SocialLinks justify="flex-end" />
           <Typography variant="h6" className="copyright animateFromBottom">
             &copy; {new Date().getFullYear()} Thomas Kay
             <br /> All rights reserved

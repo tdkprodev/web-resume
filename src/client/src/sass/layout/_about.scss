@@ -30,10 +30,12 @@
 
     &__description {
       animation: moveInTop 0.5s;
-      display: grid;
+      // display: grid;
+      display: flex;
+      flex-direction: column;
       grid-template-columns: 1fr;
       box-shadow: $shadow-card;
-      grid-gap: 5rem;
+      // grid-gap: 5rem;
       padding: 5rem 1rem;
 
       &:hover {
@@ -82,6 +84,7 @@
       }
 
       margin: 0 auto;
+      margin-bottom: 3rem;
       box-shadow: $shadow-card;
 
       .image {

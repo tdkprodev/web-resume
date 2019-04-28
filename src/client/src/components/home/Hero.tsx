@@ -1,3 +1,5 @@
+// import { Button } from "@material-ui/core";
+import * as $ from "jquery";
 import * as React from "react";
 import ArrowTooltip from "../projects/ArrowTooltip";
 
@@ -17,8 +19,27 @@ class Hero extends React.Component<{}> {
   }
 
   public scrollToProjects = () => {
-    const projectsSection: any = document.querySelector("#projects");
-    window.scrollTo(0, projectsSection!.offsetTop - 20);
+    // tslint:disable-next-line:no-console
+    console.count("adsfadsf");
+
+    const projectsSection = $("#projects");
+    // window.scrollTo(0, projectsSection!.offsetTop - 20);
+
+    $("html,body").animate(
+      {
+        scrollTop: projectsSection.offset()!.top
+      },
+      "slow",
+      "swing",
+      () => {
+        const compositionPhotos = document.querySelectorAll(
+          ".composition__photo"
+        );
+        Array.prototype.slice
+          .call(compositionPhotos)
+          .forEach((photo: HTMLElement) => photo.classList.add("show"));
+      }
+    );
   };
 
   public render() {
@@ -54,6 +75,13 @@ class Hero extends React.Component<{}> {
             >
               View my work
             </div>
+            {/* <Button
+              color="primary"
+              className="btn btn--animated"
+              onClick={this.scrollToProjects}
+            >
+              View my work
+            </Button> */}
           </ArrowTooltip>
         </div>
       </header>

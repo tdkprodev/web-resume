@@ -7,28 +7,28 @@
   background: url(../images/hero.gif);
   background-position: center;
   background-size: cover;
+  background-attachment: fixed;
   transition: background-position 1s ease;
 
   @include respond(phone) {
     background-size: cover;
     background-position: -145%;
-
   }
 
   @media only screen and (max-width: 35.625em) {
     background-size: cover;
     background-position: -110%;
-   };
+  }
 
-  @media only screen and (max-width: 28.125em) { 
+  @media only screen and (max-width: 28.125em) {
     background-position: -105%;
     background-size: cover;
-  };
+  }
 
-  @media only screen and (max-width: 26em) { 
+  @media only screen and (max-width: 26em) {
     background-position: -60%;
     background-size: cover;
-  };
+  }
 
   // @include respond(phone-s) {
   //   background-position: -60%;
@@ -48,7 +48,7 @@
     font-size: $font-xl;
     padding: 0 2rem;
     background: $color-bg;
-    opacity: .5;
+    opacity: 0.5;
 
     clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
   }
@@ -71,12 +71,16 @@
 
     &--accent {
       background: $color-dom;
-      opacity: .7;
+      opacity: 0.7;
       padding: 0 3rem;
       margin-left: 3rem;
 
       display: inline-block;
       transform: skewX(-40deg);
+
+      &:hover {
+        background-color: transparent;
+      }
 
       // clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
 
@@ -90,7 +94,6 @@
     }
 
     &--verbose {
-      
       display: inline-block;
 
       @include respond(phone-s) {

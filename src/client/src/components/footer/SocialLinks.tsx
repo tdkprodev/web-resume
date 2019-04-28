@@ -1,4 +1,5 @@
 import { Avatar, Grid, Link } from "@material-ui/core";
+import { GridItemsAlignment, GridJustification } from "@material-ui/core/Grid";
 import { createStyles, withStyles, WithStyles } from "@material-ui/core/styles";
 import * as React from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
@@ -17,15 +18,18 @@ const styles = createStyles({
   }
 });
 
-interface IProps extends WithStyles<typeof styles> {}
+interface IProps extends WithStyles<typeof styles> {
+  alignItems?: GridItemsAlignment;
+  justify?: GridJustification;
+}
 
 const SocialLinks = (props: IProps) => {
-  const { classes } = props;
+  const { classes, alignItems = "center", justify = "center" } = props;
   const gitHubLink = "https://www.github.com/tdkprodev";
   const linkedInLink = "https://www.linkedin.com/in/thomasdkay/";
 
   return (
-    <Grid container={true} justify="flex-end" alignItems="center">
+    <Grid container={true} justify={justify} alignItems={alignItems}>
       <ArrowTooltip title="GitHub" placement="bottom">
         <Link href={gitHubLink} target="__blank" rel="noreferrer">
           <Avatar alt="GitHub" className={classes.github}>
