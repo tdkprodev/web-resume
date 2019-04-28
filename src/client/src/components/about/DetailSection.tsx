@@ -8,7 +8,16 @@ import {
 } from "@material-ui/core";
 import { createStyles, withStyles, WithStyles } from "@material-ui/core/styles";
 import * as React from "react";
-import { FaChevronDown } from "react-icons/fa";
+import {
+  FaChevronDown
+  // FaHeart,
+  // FaRegHeart,
+  // FaHammer,
+  // FaTools,
+  // FaRaspberryPi,
+  // FaLinux,
+  // FaHiking,
+} from "react-icons/fa";
 import ArrowTooltip from "../projects/ArrowTooltip";
 import AvatarLabel from "./AvatarLabel";
 
@@ -221,7 +230,7 @@ class DetailSection extends React.Component<IProps> {
                 <ArrowTooltip
                   title={this.renderHoverContent("vim")}
                   interactive={true}
-                  placement="top"
+                  placement="bottom"
                 >
                   <AvatarLabel alt="Vim" src={vimLogo} label="Vim" />
                 </ArrowTooltip>
@@ -240,7 +249,7 @@ class DetailSection extends React.Component<IProps> {
                 <ArrowTooltip
                   title={this.renderTypeScriptContent()}
                   interactive={true}
-                  placement="bottom"
+                  placement="top"
                 >
                   <AvatarLabel
                     alt="TypeScript"
@@ -277,7 +286,7 @@ class DetailSection extends React.Component<IProps> {
                 <ArrowTooltip
                   title={this.renderTypeOrmContent()}
                   interactive={true}
-                  placement="top"
+                  placement="bottom"
                 >
                   <AvatarLabel
                     alt="TypeORM"
@@ -288,6 +297,22 @@ class DetailSection extends React.Component<IProps> {
               </div>
             </div>
           </div>
+          <Typography
+            className={classes.subHeading}
+            gutterBottom={true}
+            variant="h4"
+          >
+            What I Like
+          </Typography>
+          <div>placeholder</div>
+          <Typography
+            className={classes.subHeading}
+            gutterBottom={true}
+            variant="h4"
+          >
+            Testimonies
+          </Typography>
+          <div>placeholder</div>
         </ExpansionPanelDetails>
       </ExpansionPanel>
     );

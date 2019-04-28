@@ -1,5 +1,8 @@
 import {
   Avatar,
+  // Card,
+  // CardActions,
+  // CardContent,
   createStyles,
   Divider,
   Fab,
@@ -13,6 +16,7 @@ import {
 import * as React from "react";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import SocialLink from "../footer/SocialLinks";
+import ArrowTooltip from "../projects/ArrowTooltip";
 
 import craftingSkillPhoto from "../../images/devtools-logos/Crafting_Skill.png";
 import energyPhoto from "../../images/devtools-logos/Energy.png";
@@ -20,7 +24,6 @@ import fortidudePhoto from "../../images/devtools-logos/Fortitude.png";
 import healthPhoto from "../../images/devtools-logos/Health.png";
 import meleeDamagePhoto from "../../images/devtools-logos/Melee_Damage.png";
 import movementSpeedPhoto from "../../images/devtools-logos/Movement_Speed.png";
-// import myPhoto from "../../images/propho2.jpg";
 import myPhoto from "../../images/propho.jpg";
 
 const myGreetings = [
@@ -41,6 +44,9 @@ const styles = (theme: Theme) =>
     },
     positionAbsolute: {
       position: "absolute"
+    },
+    skillsPointAttribute: {
+      display: "flex"
     }
   });
 
@@ -61,7 +67,30 @@ interface IAttributeProps extends WithStyles<typeof styles> {
   imgSrc: string;
   angle: number;
   distance?: number;
+  title?: string;
+  points?: number;
 }
+
+interface ISkillsPointProps extends WithStyles<typeof styles> {
+  title?: string;
+  points?: number;
+}
+
+const SkillsPoint = withStyles(styles)((props: ISkillsPointProps) => {
+  const { classes, points = 100, title = "placeholder" } = props;
+  return (
+    <React.Fragment>
+      <Typography variant="h6" align="center">
+        {title}
+      </Typography>
+      <Divider variant="middle" />
+      <div className={classes.skillsPointAttribute}>
+        <Typography variant="overline">Skill point: </Typography>
+        <Typography variant="overline">{points}</Typography>
+      </div>
+    </React.Fragment>
+  );
+});
 
 const Attribute = withStyles(styles)((props: IAttributeProps) => {
   const {
@@ -70,7 +99,9 @@ const Attribute = withStyles(styles)((props: IAttributeProps) => {
     hovering,
     timeout,
     ariaLabel = "",
-    imgSrc
+    imgSrc,
+    title = "placeholder",
+    points = 100
   } = props;
 
   return (
@@ -87,7 +118,12 @@ const Attribute = withStyles(styles)((props: IAttributeProps) => {
         size="small"
         className={props.classes.positionAbsolute}
       >
-        <Avatar src={imgSrc} />
+        <ArrowTooltip
+          title={<SkillsPoint title={title} points={points} />}
+          placement="right-start"
+        >
+          <Avatar src={imgSrc} />
+        </ArrowTooltip>
       </Fab>
     </Grow>
   );
@@ -135,8 +171,6 @@ class ProfileCard extends React.Component<IProps, IState> {
   public handleMouseLeave = () => {
     this.setState(() => ({
       leaveOpenInterval: window.setTimeout(() => {
-        // tslint:disable-next-line:no-console
-        console.log("about to set leaveopen to false");
         this.setState(() => ({
           leaveOpen: false
         }));
@@ -157,36 +191,42 @@ class ProfileCard extends React.Component<IProps, IState> {
         hovering={hovering}
         timeout={3500}
         imgSrc={craftingSkillPhoto}
+        title="Crafting Skill"
       />
       <Attribute
         angle={210}
         hovering={hovering}
         timeout={3000}
         imgSrc={energyPhoto}
+        title="Energy"
       />
       <Attribute
         angle={180}
         hovering={hovering}
         timeout={2500}
         imgSrc={fortidudePhoto}
+        title="Fortitude"
       />
       <Attribute
         angle={150}
         hovering={hovering}
         timeout={2000}
         imgSrc={healthPhoto}
+        title="Health"
       />
       <Attribute
         angle={120}
         hovering={hovering}
         timeout={1500}
         imgSrc={meleeDamagePhoto}
+        title="Melee"
       />
       <Attribute
         angle={90}
         hovering={hovering}
         timeout={1000}
         imgSrc={movementSpeedPhoto}
+        title="Agility"
       />
     </React.Fragment>
   );

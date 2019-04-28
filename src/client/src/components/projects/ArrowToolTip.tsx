@@ -77,7 +77,8 @@ const styles = (theme: Theme) =>
       fontSize: 11
     },
     // tslint:disable-next-line:object-literal-sort-keys
-    arrowPopper: arrowGenerator(theme.palette.grey[500]),
+    // arrowPopper: arrowGenerator(theme.palette.grey[500]),
+    arrowPopper: arrowGenerator("pink"),
     arrow: {
       position: "absolute",
       // tslint:disable-next-line:object-literal-sort-keys
