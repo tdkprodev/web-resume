@@ -206,6 +206,7 @@ class DetailSection extends React.Component<IProps> {
             className={classes.subHeading}
             gutterBottom={true}
             variant="h4"
+            align="center"
           >
             Dev Tools
           </Typography>
@@ -301,6 +302,7 @@ class DetailSection extends React.Component<IProps> {
             className={classes.subHeading}
             gutterBottom={true}
             variant="h4"
+            align="center"
           >
             What I Like
           </Typography>
@@ -309,6 +311,7 @@ class DetailSection extends React.Component<IProps> {
             className={classes.subHeading}
             gutterBottom={true}
             variant="h4"
+            align="center"
           >
             Testimonies
           </Typography>

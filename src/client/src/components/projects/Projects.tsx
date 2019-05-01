@@ -1,3 +1,4 @@
+import { Typography } from "@material-ui/core";
 import * as React from "react";
 import thumbnailBlogsome from "../../images/blogsome.png";
 import thumbnailChat from "../../images/chat.png";
@@ -127,6 +128,12 @@ class Projects extends React.Component<{}, IState> {
     window.addEventListener("load", debounce(checkSlide));
   }
 
+  public renderEmptyPreviews = () => (
+    <Typography align="center" variant="h5">
+      No projects found from filter.
+    </Typography>
+  );
+
   public renderPreviews = () => {
     let filteredPreviews = previews;
     const filterText = this.state.filterText.toLowerCase().trim();
@@ -139,9 +146,9 @@ class Projects extends React.Component<{}, IState> {
           .includes(filterText)
       );
     }
+
     return filteredPreviews.map((preview: IPreview) => {
       const { title, src, alt, href, description } = preview;
-
       return (
         <Preview
           key={title}
@@ -184,6 +191,7 @@ class Projects extends React.Component<{}, IState> {
   };
 
   public render() {
+    const projectPreviews = this.renderPreviews();
     return (
       <section className="projects" id="projects">
         <div className="container">
@@ -196,7 +204,10 @@ class Projects extends React.Component<{}, IState> {
               onChange={this.handleChange}
             />
           </div>
-          <div className="projects__cards">{this.renderPreviews()}</div>
+          <div className="projects__cards">
+            {projectPreviews.length ? projectPreviews : null}
+          </div>
+          {!projectPreviews.length ? this.renderEmptyPreviews() : null}
         </div>
       </section>
     );
