@@ -1,5 +1,5 @@
 import {
-  Avatar,
+  // Avatar,
   // Card,
   // CardActions,
   // CardContent,
@@ -16,7 +16,7 @@ import {
 import * as React from "react";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import SocialLink from "../footer/SocialLinks";
-import ArrowTooltip from "../projects/ArrowTooltip";
+// import ArrowTooltip from "../projects/ArrowTooltip";
 
 import craftingSkillPhoto from "../../images/devtools-logos/Crafting_Skill.png";
 import energyPhoto from "../../images/devtools-logos/Energy.png";
@@ -76,21 +76,21 @@ interface ISkillsPointProps extends WithStyles<typeof styles> {
   points?: number;
 }
 
-const SkillsPoint = withStyles(styles)((props: ISkillsPointProps) => {
-  const { classes, points = 100, title = "placeholder" } = props;
-  return (
-    <React.Fragment>
-      <Typography variant="h6" align="center">
-        {title}
-      </Typography>
-      <Divider variant="middle" />
-      <div className={classes.skillsPointAttribute}>
-        <Typography variant="overline">Skill point: </Typography>
-        <Typography variant="overline">{points}</Typography>
-      </div>
-    </React.Fragment>
-  );
-});
+// const SkillsPoint = withStyles(styles)((props: ISkillsPointProps) => {
+//   const { classes, points = 100, title = "placeholder" } = props;
+//   return (
+//     <React.Fragment>
+//       <Typography variant="h6" align="center">
+//         {title}
+//       </Typography>
+//       <Divider variant="middle" />
+//       <div className={classes.skillsPointAttribute}>
+//         <Typography variant="overline">Skill point: </Typography>
+//         <Typography variant="overline">{points}</Typography>
+//       </div>
+//     </React.Fragment>
+//   );
+// });
 
 const Attribute = withStyles(styles)((props: IAttributeProps) => {
   const {
@@ -99,9 +99,9 @@ const Attribute = withStyles(styles)((props: IAttributeProps) => {
     hovering,
     timeout,
     ariaLabel = "",
-    imgSrc,
-    title = "placeholder",
-    points = 100
+    // imgSrc,
+    title = "placeholder"
+    // points = 100
   } = props;
 
   return (
@@ -118,12 +118,12 @@ const Attribute = withStyles(styles)((props: IAttributeProps) => {
         size="small"
         className={props.classes.positionAbsolute}
       >
-        <ArrowTooltip
+        {/* <ArrowTooltip
           title={<SkillsPoint title={title} points={points} />}
           placement="right-start"
         >
           <Avatar src={imgSrc} />
-        </ArrowTooltip>
+        </ArrowTooltip> */}
       </Fab>
     </Grow>
   );

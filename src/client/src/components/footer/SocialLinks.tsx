@@ -1,9 +1,9 @@
-import { Avatar, Grid, Link } from "@material-ui/core";
+import { Avatar, Grid, Link, Tooltip } from "@material-ui/core";
 import { GridItemsAlignment, GridJustification } from "@material-ui/core/Grid";
 import { createStyles, withStyles, WithStyles } from "@material-ui/core/styles";
 import * as React from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import ArrowTooltip from "../projects/ArrowTooltip";
+// import ArrowTooltip from "../projects/ArrowTooltip";
 
 const styles = createStyles({
   github: {
@@ -30,20 +30,20 @@ const SocialLinks = (props: IProps) => {
 
   return (
     <Grid container={true} justify={justify} alignItems={alignItems}>
-      <ArrowTooltip title="GitHub" placement="bottom">
+      <Tooltip title="GitHub" placement="bottom">
         <Link href={gitHubLink} target="__blank" rel="noreferrer">
           <Avatar alt="GitHub" className={classes.github}>
             <FaGithub size={50} />
           </Avatar>
         </Link>
-      </ArrowTooltip>
-      <ArrowTooltip title="LinkedIn" placement="bottom">
+      </Tooltip>
+      <Tooltip title="LinkedIn" placement="bottom">
         <Link href={linkedInLink} target="__blank" rel="noreferrer">
           <Avatar alt="LinkedIn" className={classes.linkedin}>
             <FaLinkedin size={50} />
           </Avatar>
         </Link>
-      </ArrowTooltip>
+      </Tooltip>
     </Grid>
   );
 };

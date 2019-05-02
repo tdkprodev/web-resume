@@ -18,15 +18,15 @@ import {
   // FaLinux,
   // FaHiking,
 } from "react-icons/fa";
-import ArrowTooltip from "../projects/ArrowTooltip";
-import AvatarLabel from "./AvatarLabel";
+// import ArrowTooltip from "../projects/ArrowTooltip";
+// import AvatarLabel from "./AvatarLabel";
 
-import nodeLogo from "../../images/devtools-logos/node.png";
-import reactLogo from "../../images/devtools-logos/react.png";
-import tsLogo from "../../images/devtools-logos/ts.png";
-import typeormLogo from "../../images/devtools-logos/typeorm.png";
-import vimLogo from "../../images/devtools-logos/vim.png";
-import vscodeLogo from "../../images/devtools-logos/vscode.png";
+// import nodeLogo from "../../images/devtools-logos/node.png";
+// import reactLogo from "../../images/devtools-logos/react.png";
+// import tsLogo from "../../images/devtools-logos/ts.png";
+// import typeormLogo from "../../images/devtools-logos/typeorm.png";
+// import vimLogo from "../../images/devtools-logos/vim.png";
+// import vscodeLogo from "../../images/devtools-logos/vscode.png";
 
 const styles = (theme: Theme) =>
   createStyles({
@@ -211,7 +211,7 @@ class DetailSection extends React.Component<IProps> {
             Dev Tools
           </Typography>
           <div className={classes.devTools}>
-            <div className={classes.toolsContainer}>
+            {/* <div className={classes.toolsContainer}>
               <Typography
                 className={classes.subHeading}
                 gutterBottom={true}
@@ -296,7 +296,7 @@ class DetailSection extends React.Component<IProps> {
                   />
                 </ArrowTooltip>
               </div>
-            </div>
+            </div> */}
           </div>
           <Typography
             className={classes.subHeading}

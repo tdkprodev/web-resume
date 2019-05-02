@@ -1,7 +1,7 @@
 // import { Button } from "@material-ui/core";
 import * as $ from "jquery";
 import * as React from "react";
-import ArrowTooltip from "../projects/ArrowTooltip";
+// import ArrowTooltip from "../projects/ArrowTooltip";
 
 class Hero extends React.Component<{}> {
   constructor(props: any) {
@@ -68,21 +68,21 @@ class Hero extends React.Component<{}> {
               <p className="greeting__text--accent-text">Web Developer</p>
             </span>
           </h2>
-          <ArrowTooltip title="Scroll down">
-            <div
-              className="btn btn--animated view-projects"
-              onClick={this.scrollToProjects}
-            >
-              View my work
-            </div>
-            {/* <Button
+          {/* <ArrowTooltip title="Scroll down"> */}
+          <div
+            className="btn btn--animated view-projects"
+            onClick={this.scrollToProjects}
+          >
+            View my work
+          </div>
+          {/* <Button
               color="primary"
               className="btn btn--animated"
               onClick={this.scrollToProjects}
             >
               View my work
             </Button> */}
-          </ArrowTooltip>
+          {/* </ArrowTooltip> */}
         </div>
       </header>
     );
