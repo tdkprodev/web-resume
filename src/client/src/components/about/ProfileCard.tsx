@@ -71,10 +71,10 @@ interface IAttributeProps extends WithStyles<typeof styles> {
   points?: number;
 }
 
-interface ISkillsPointProps extends WithStyles<typeof styles> {
-  title?: string;
-  points?: number;
-}
+// interface ISkillsPointProps extends WithStyles<typeof styles> {
+//   title?: string;
+//   points?: number;
+// }
 
 // const SkillsPoint = withStyles(styles)((props: ISkillsPointProps) => {
 //   const { classes, points = 100, title = "placeholder" } = props;
@@ -98,9 +98,9 @@ const Attribute = withStyles(styles)((props: IAttributeProps) => {
     distance = 10,
     hovering,
     timeout,
-    ariaLabel = "",
+    ariaLabel = ""
     // imgSrc,
-    title = "placeholder"
+    // title = "placeholder"
     // points = 100
   } = props;
 
