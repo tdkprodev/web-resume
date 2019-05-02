@@ -1,6 +1,5 @@
-import { Tooltip } from "@material-ui/core";
 import * as React from "react";
-// import ArrowTooltip from "./ArrowTooltip";
+import ArrowTooltip from "./ArrowTooltip";
 
 interface IProp {
   title: string;
@@ -28,11 +27,11 @@ class Preview extends React.Component<IProp> {
         <img className="composition__photo slide-in" src={src} alt={alt} />
 
         <div className="overlay">
-          <Tooltip title={dataTip} placement="top">
+          <ArrowTooltip title={dataTip} placement="top">
             <a className="btn btn--white" href={href} target="_blank">
               view
             </a>
-          </Tooltip>
+          </ArrowTooltip>
           <h3 className="heading-small">{title}</h3>
           <p className="overlay__description">{description}</p>
         </div>
