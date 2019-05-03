@@ -1,4 +1,4 @@
-import ArrowTooltip from "@components/ArrowTooltip";
+import ArrowTooltip from "@components/arrow-tooltip";
 import * as React from "react";
 
 interface IProp {
