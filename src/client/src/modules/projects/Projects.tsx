@@ -1,4 +1,4 @@
-import MaterialTextField from "@components/MaterialTextField";
+import MaterialTextField from "@components/material-text-field";
 import thumbnailBlogsome from "@images/thumbnails/blogsome.png";
 import thumbnailChat from "@images/thumbnails/chat.png";
 import thumbnailExpensify from "@images/thumbnails/expensify.png";
@@ -7,7 +7,7 @@ import thumbnailNexter from "@images/thumbnails/nexter.png";
 import thumbnailTrillo from "@images/thumbnails/trillo.png";
 import thumbnailYouTube from "@images/thumbnails/yt.png";
 import { Typography } from "@material-ui/core";
-import Preview from "@modules/projects/components/Preview";
+import Preview from "@modules/projects/components/preview";
 import * as React from "react";
 
 interface IPreview {
