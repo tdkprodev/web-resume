@@ -1,15 +1,9 @@
 // import { Button } from "@material-ui/core";
+import ArrowTooltip from "@modules/projects/components/ArrowTooltip";
 import * as $ from "jquery";
 import * as React from "react";
-import ArrowTooltip from "../../projects/components/ArrowTooltip";
 
 class Hero extends React.Component<{}> {
-  constructor(props: any) {
-    super(props);
-
-    this.state = {};
-  }
-
   public componentDidMount() {
     const flyInText = document.querySelector(".fly-in-text");
 

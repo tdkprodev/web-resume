@@ -4,9 +4,6 @@ import { FaCss3, FaHtml5, FaJs, FaNodeJs, FaReact } from "react-icons/fa";
 
 class SkillCard extends React.Component<{}> {
   public handleMouseOver = (event: React.MouseEvent) => {
-    // tslint:disable-next-line:no-console
-    console.log("event", event);
-
     const { currentTarget } = event;
 
     currentTarget.classList.remove("bar", "bar--html");

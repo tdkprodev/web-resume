@@ -1,10 +1,6 @@
 import * as React from "react";
 
 export class Contact extends React.Component<{}> {
-  constructor(props: any) {
-    super(props);
-    this.state = {};
-  }
   public render() {
     return (
       <section className="contact" id="contact">

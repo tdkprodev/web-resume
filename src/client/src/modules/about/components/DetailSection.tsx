@@ -1,3 +1,9 @@
+import nodeLogo from "@images/devtools-logos/node.png";
+import reactLogo from "@images/devtools-logos/react.png";
+import tsLogo from "@images/devtools-logos/ts.png";
+import typeormLogo from "@images/devtools-logos/typeorm.png";
+import vimLogo from "@images/devtools-logos/vim.png";
+import vscodeLogo from "@images/devtools-logos/vscode.png";
 import {
   ExpansionPanel,
   ExpansionPanelDetails,
@@ -7,6 +13,8 @@ import {
   Typography
 } from "@material-ui/core";
 import { createStyles, withStyles, WithStyles } from "@material-ui/core/styles";
+import AvatarLabel from "@modules/about/components/AvatarLabel";
+import ArrowTooltip from "@modules/projects/components/ArrowTooltip";
 import * as React from "react";
 import {
   FaChevronDown
@@ -18,15 +26,6 @@ import {
   // FaLinux,
   // FaHiking,
 } from "react-icons/fa";
-import ArrowTooltip from "../../projects/components/ArrowTooltip";
-import AvatarLabel from "./AvatarLabel";
-
-import nodeLogo from "../../../images/devtools-logos/node.png";
-import reactLogo from "../../../images/devtools-logos/react.png";
-import tsLogo from "../../../images/devtools-logos/ts.png";
-import typeormLogo from "../../../images/devtools-logos/typeorm.png";
-import vimLogo from "../../../images/devtools-logos/vim.png";
-import vscodeLogo from "../../../images/devtools-logos/vscode.png";
 
 const styles = (theme: Theme) =>
   createStyles({

@@ -1,5 +1,5 @@
+import ArrowTooltip from "@modules/projects/components/ArrowTooltip";
 import * as React from "react";
-import ArrowTooltip from "./ArrowTooltip";
 
 interface IProp {
   title: string;

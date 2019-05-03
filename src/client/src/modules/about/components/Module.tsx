@@ -1,6 +1,4 @@
 import * as React from "react";
-// import { findDOMNode } from "react-dom";
-
 import { FaMinus } from "react-icons/fa";
 import { FaPlus } from "react-icons/fa";
 
@@ -21,36 +19,33 @@ const styles: React.CSSProperties = {
   transition: "all 1s ease-out"
 };
 
-class Module extends React.Component<IProps, IState>{
+class Module extends React.Component<IProps, IState> {
   private myRef = React.createRef<HTMLDivElement>();
 
-  constructor(props: any) {
+  constructor(props: IProps) {
     super(props);
 
     this.state = {
-      height: '0',
-      opacity: '0',
-      padding: '0',
-      showingLess: true,
+      height: "0",
+      opacity: "0",
+      padding: "0",
+      showingLess: true
     };
   }
 
   public toggleVisibility = () => {
     this.setState(() => ({
-      height: this.state.height === '0' ? this.props.height : '0',
-      opacity: this.state.opacity === '1' ? '0' : '1',
-      padding: this.state.padding === '0' ? '1rem' : '0',
-      showingLess: !this.state.showingLess,
+      height: this.state.height === "0" ? this.props.height : "0",
+      opacity: this.state.opacity === "1" ? "0" : "1",
+      padding: this.state.padding === "0" ? "1rem" : "0",
+      showingLess: !this.state.showingLess
     }));
-  }
+  };
 
   public render() {
     return (
       <div className="module animateFadeIn">
-        <div
-          className="module__caption"
-          onClick={this.toggleVisibility}
-        >
+        <div className="module__caption" onClick={this.toggleVisibility}>
           <h2 className="module__caption--title">{this.props.caption}</h2>
           <span
             className="module__caption--icon"

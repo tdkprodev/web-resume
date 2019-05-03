@@ -1,6 +1,6 @@
+import Hero from "@modules/home/components/Hero";
+import Nav from "@modules/home/components/Nav";
 import * as React from "react";
-import Hero from "./components/Hero";
-import Nav from "./components/Nav";
 
 export class Home extends React.Component {
   public render() {

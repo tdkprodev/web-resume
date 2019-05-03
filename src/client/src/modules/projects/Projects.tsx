@@ -1,13 +1,13 @@
+import thumbnailBlogsome from "@images/blogsome.png";
+import thumbnailChat from "@images/chat.png";
+import thumbnailExpensify from "@images/expensify.png";
+import thumbnailNatours from "@images/natours.png";
+import thumbnailNexter from "@images/nexter.png";
+import thumbnailTrillo from "@images/trillo.png";
+import thumbnailYouTube from "@images/yt.png";
 import { Typography } from "@material-ui/core";
+import MaterialTextField from "@modules/projects/components/MaterialTextField";
 import * as React from "react";
-import thumbnailBlogsome from "../../images/blogsome.png";
-import thumbnailChat from "../../images/chat.png";
-import thumbnailExpensify from "../../images/expensify.png";
-import thumbnailNatours from "../../images/natours.png";
-import thumbnailNexter from "../../images/nexter.png";
-import thumbnailTrillo from "../../images/trillo.png";
-import thumbnailYouTube from "../../images/yt.png";
-import MaterialTextField from "./components/MaterialTextField";
 import Preview from "./components/Preview";
 
 interface IPreview {

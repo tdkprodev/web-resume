@@ -2,10 +2,9 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@src/*": ["../*"],
-      "@images/*": ["images/*"],
-      "@modules/*": ["modules/*"],
-      "@media/*": ["media/*"]
+      "@src/*": ["src/*"],
+      "@images/*": ["src/images/*"],
+      "@modules/*": ["src/modules/*"]
     },
     "outDir": "build/dist",
     "module": "esnext",

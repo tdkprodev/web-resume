@@ -1,9 +1,9 @@
 import { Link, Typography } from "@material-ui/core";
+import SocialLinks from "@modules/footer/components/SocialLinks";
+import ArrowTooltip from "@modules/projects/components/ArrowTooltip";
 import * as $ from "jquery";
 import * as React from "react";
 import { FaChevronUp } from "react-icons/fa";
-import ArrowTooltip from "../projects/components/ArrowTooltip";
-import SocialLinks from "./components/SocialLinks";
 
 export class Footer extends React.Component<{}> {
   public componentDidMount() {

@@ -3,8 +3,8 @@ import {
   MuiThemeProvider,
   withStyles
 } from "@material-ui/core/styles";
+import Portfolio from "@modules/Portfolio";
 import * as React from "react";
-import Portfolio from "./modules/Portfolio";
 import "./sass/main.css";
 
 const theme = createMuiTheme({

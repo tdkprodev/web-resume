@@ -1,13 +1,7 @@
+import * as $ from "jquery";
 import * as React from "react";
 
-import * as $ from "jquery";
-
 class Nav extends React.Component {
-  constructor(props: any) {
-    super(props);
-    this.state = {};
-  }
-
   public componentDidMount() {
     const nav = document.querySelector("#main-nav") as HTMLElement;
     const topOfNav = nav!.offsetTop;
@@ -18,7 +12,7 @@ class Nav extends React.Component {
           document.body.style.paddingTop = nav.offsetHeight + "px"; // compensates for the pixels lost due to the nav bar becoming off flow -- to fix the jerking affect.
           document.body.classList.add("fixed-nav");
         } else {
-          document.body.style.paddingTop = '0';
+          document.body.style.paddingTop = "0";
           document.body.classList.remove("fixed-nav");
         }
       }
@@ -45,8 +39,8 @@ class Nav extends React.Component {
         highlightLink("projects");
       }
 
-      if (contact &&
-        pos2 > contact.offsetTop ||
+      if (
+        (contact && pos2 > contact.offsetTop) ||
         pos + scrollBottom === document.body.clientHeight
       ) {
         highlightLink("contact");
@@ -57,7 +51,9 @@ class Nav extends React.Component {
       const navs = document.querySelectorAll(".nav__link.active");
       const focusLink = document.querySelector(`[data-anchor=${anchor}]`);
 
-      Array.prototype.slice.call(navs).forEach((el: Element) => el.classList.remove("active"));
+      Array.prototype.slice
+        .call(navs)
+        .forEach((el: Element) => el.classList.remove("active"));
       focusLink!.classList.add("active");
     }
 
@@ -87,9 +83,8 @@ class Nav extends React.Component {
     // nav.addEventListener('click', traverseAnchor);
 
     // jQuery for dynamic scroll traversal.
-    
-    $(".nav__link").click(function() {
 
+    $(".nav__link").click(function() {
       const anchor = this.dataset.anchor;
       $("html,body").animate(
         {
@@ -98,9 +93,13 @@ class Nav extends React.Component {
         "slow",
         "swing",
         () => {
-          if (anchor === 'projects') {
-            const compositionPhotos = document.querySelectorAll('.composition__photo');
-            Array.prototype.slice.call(compositionPhotos).forEach((photo: HTMLElement) => photo.classList.add('show'));
+          if (anchor === "projects") {
+            const compositionPhotos = document.querySelectorAll(
+              ".composition__photo"
+            );
+            Array.prototype.slice
+              .call(compositionPhotos)
+              .forEach((photo: HTMLElement) => photo.classList.add("show"));
           }
         }
       );
