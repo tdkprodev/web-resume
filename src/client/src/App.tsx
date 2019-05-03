@@ -3,7 +3,7 @@ import {
   MuiThemeProvider,
   withStyles
 } from "@material-ui/core/styles";
-import { Portfolio } from "@modules/portfolio";
+import { Portfolio } from "@modules/portfolio/portfolio";
 import * as React from "react";
 import "./sass/main.css";
 
