@@ -1,18 +1,18 @@
 // import { About } from "@modules/about";
-import { Contact } from "@modules/contact";
-import { Footer } from "@modules/footer";
-import { Home } from "@modules/home";
-import { Projects } from "@modules/projects";
+// import { Contact } from "@modules/contact";
+// import { Footer } from "@modules/footer";
+// import { Home } from "@modules/home";
+// import { Projects } from "@modules/projects";
 import * as React from "react";
 
 export const Portfolio = () => {
   return (
     <div className="portfolio">
-      <Home />
+      {/* <Home /> */}
       {/* <About /> */}
-      <Projects />
+      {/* <Projects />
       <Contact />
-      <Footer />
+      <Footer /> */}
     </div>
   );
 };
