@@ -1,10 +1,10 @@
+import { TextField } from "@material-ui/core";
 import {
   createStyles,
   Theme,
   withStyles,
   WithStyles
 } from "@material-ui/core/styles";
-import TextField from "@material-ui/core/TextField";
 import * as React from "react";
 
 const styles = (theme: Theme) =>

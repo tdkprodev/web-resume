@@ -1,11 +1,11 @@
 import ArrowTooltip from "@components/ArrowTooltip";
 import SocialLink from "@components/SocialLinks";
-import craftingSkillPhoto from "@images/devtools-logos/Crafting_Skill.png";
-import energyPhoto from "@images/devtools-logos/Energy.png";
-import fortidudePhoto from "@images/devtools-logos/Fortitude.png";
-import healthPhoto from "@images/devtools-logos/Health.png";
-import meleeDamagePhoto from "@images/devtools-logos/Melee_Damage.png";
-import movementSpeedPhoto from "@images/devtools-logos/Movement_Speed.png";
+import craftingSkillPhoto from "@images/icons/Crafting_Skill.png";
+import energyPhoto from "@images/icons/Energy.png";
+import fortidudePhoto from "@images/icons/Fortitude.png";
+import healthPhoto from "@images/icons/Health.png";
+import meleeDamagePhoto from "@images/icons/Melee_Damage.png";
+import movementSpeedPhoto from "@images/icons/Movement_Speed.png";
 import myPhoto from "@images/propho.jpg";
 import {
   Avatar,

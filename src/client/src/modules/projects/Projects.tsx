@@ -1,14 +1,14 @@
-import thumbnailBlogsome from "@images/blogsome.png";
-import thumbnailChat from "@images/chat.png";
-import thumbnailExpensify from "@images/expensify.png";
-import thumbnailNatours from "@images/natours.png";
-import thumbnailNexter from "@images/nexter.png";
-import thumbnailTrillo from "@images/trillo.png";
-import thumbnailYouTube from "@images/yt.png";
-import { Typography } from "@material-ui/core";
 import MaterialTextField from "@components/MaterialTextField";
+import thumbnailBlogsome from "@images/thumbnails/blogsome.png";
+import thumbnailChat from "@images/thumbnails/chat.png";
+import thumbnailExpensify from "@images/thumbnails/expensify.png";
+import thumbnailNatours from "@images/thumbnails/natours.png";
+import thumbnailNexter from "@images/thumbnails/nexter.png";
+import thumbnailTrillo from "@images/thumbnails/trillo.png";
+import thumbnailYouTube from "@images/thumbnails/yt.png";
+import { Typography } from "@material-ui/core";
+import Preview from "@modules/projects/components/Preview";
 import * as React from "react";
-import Preview from "./components/Preview";
 
 interface IPreview {
   title: string;
@@ -174,9 +174,6 @@ export class Projects extends React.Component<{}, IState> {
         const compositionPhotos = document.querySelectorAll(
           ".composition__photo"
         );
-
-        // tslint:disable-next-line:no-console
-        console.log("compositionPhotos", compositionPhotos);
 
         Array.prototype.slice
           .call(compositionPhotos)

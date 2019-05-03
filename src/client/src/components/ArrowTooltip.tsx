@@ -1,103 +1,81 @@
+import { Tooltip } from "@material-ui/core";
 import {
   createStyles,
   Theme,
   withStyles,
   WithStyles
 } from "@material-ui/core/styles";
-import Tooltip from "@material-ui/core/Tooltip";
 import * as React from "react";
 
 function arrowGenerator(color: string) {
   return {
     '&[x-placement*="bottom"] $arrow': {
-      top: 0,
-      // tslint:disable-next-line:object-literal-sort-keys
+      "&::before": {
+        borderColor: `transparent transparent ${color} transparent`,
+        borderWidth: "0 1em 1em 1em"
+      },
+      height: "1em",
       left: 0,
       marginTop: "-0.95em",
-      width: "3em",
-      height: "1em",
+      top: 0,
+      width: "3em"
+    },
+    '&[x-placement*="left"] $arrow': {
       "&::before": {
-        borderWidth: "0 1em 1em 1em",
-        // tslint:disable-next-line:object-literal-sort-keys
-        borderColor: `transparent transparent ${color} transparent`
-      }
+        height: "3em",
+        marginRight: "-0.95em",
+        right: 0,
+        width: "1em"
+      },
+      borderColor: `transparent transparent transparent ${color}`,
+      borderWidth: "1em 0 1em 1em"
+    },
+    '&[x-placement*="right"] $arrow': {
+      "&::before": {
+        borderColor: `transparent ${color} transparent transparent`,
+        borderWidth: "1em 1em 1em 0"
+      },
+      height: "3em",
+      left: 0,
+      marginLeft: "-0.95em",
+      width: "1em"
     },
     '&[x-placement*="top"] $arrow': {
+      "&::before": {
+        borderColor: `${color} transparent transparent transparent`,
+        borderWidth: "1em 1em 0 1em"
+      },
       bottom: 0,
       height: "1em",
       left: 0,
       marginBottom: "-0.95em",
-      width: "3em",
-      // tslint:disable-next-line:object-literal-sort-keys
-      "&::before": {
-        borderColor: `${color} transparent transparent transparent`,
-        borderWidth: "1em 1em 0 1em"
-      }
-    },
-    // tslint:disable-next-line:object-literal-sort-keys
-    '&[x-placement*="right"] $arrow': {
-      height: "3em",
-      left: 0,
-      marginLeft: "-0.95em",
-      width: "1em",
-      // tslint:disable-next-line:object-literal-sort-keys
-      "&::before": {
-        borderColor: `transparent ${color} transparent transparent`,
-        borderWidth: "1em 1em 1em 0"
-      }
-    },
-    '&[x-placement*="left"] $arrow': {
-      height: "3em",
-      marginRight: "-0.95em",
-      right: 0,
-      width: "1em",
-      // tslint:disable-next-line:object-literal-sort-keys
-      "&::before": {
-        borderColor: `transparent transparent transparent ${color}`,
-        borderWidth: "1em 0 1em 1em"
-      }
+      width: "3em"
     }
   };
 }
 
 const styles = (theme: Theme) =>
   createStyles({
-    button: {
-      margin: theme.spacing.unit
-    },
-    // tslint:disable-next-line:object-literal-sort-keys
     accentBackground: {
       backgroundColor: "pink"
     },
-    lightTooltip: {
-      backgroundColor: theme.palette.common.white,
-      color: "rgba(0, 0, 0, 0.87)",
-      // tslint:disable-next-line:object-literal-sort-keys
-      boxShadow: theme.shadows[1],
-      fontSize: 11
-    },
-    // tslint:disable-next-line:object-literal-sort-keys
-    // arrowPopper: arrowGenerator(theme.palette.grey[500]),
-    arrowPopper: arrowGenerator("pink"),
     arrow: {
-      position: "absolute",
-      // tslint:disable-next-line:object-literal-sort-keys
-      fontSize: 6,
-      width: "3em",
-      height: "3em",
       "&::before": {
+        borderStyle: "solid",
         content: '""',
-        margin: "auto",
-        // tslint:disable-next-line:object-literal-sort-keys
         display: "block",
-        width: 0,
         height: 0,
-        borderStyle: "solid"
-      }
+        margin: "auto",
+        width: 0
+      },
+      fontSize: 6,
+      height: "3em",
+      position: "absolute",
+      width: "3em"
     },
-    bootstrapPopper: arrowGenerator(theme.palette.common.black),
-    bootstrapTooltip: {
-      backgroundColor: theme.palette.common.black
+    arrowPopper: arrowGenerator("pink"),
+    bootstrapPlacementBottom: {
+      margin: "8px 0"
     },
     bootstrapPlacementLeft: {
       margin: "0 8px"
@@ -108,8 +86,12 @@ const styles = (theme: Theme) =>
     bootstrapPlacementTop: {
       margin: "8px 0"
     },
-    bootstrapPlacementBottom: {
-      margin: "8px 0"
+    bootstrapPopper: arrowGenerator(theme.palette.common.black),
+    bootstrapTooltip: {
+      backgroundColor: theme.palette.common.black
+    },
+    button: {
+      margin: theme.spacing.unit
     },
     htmlPopper: arrowGenerator("#dadde9"),
     htmlTooltip: {
@@ -122,6 +104,12 @@ const styles = (theme: Theme) =>
       "& b": {
         fontWeight: theme.typography.fontWeightMedium
       }
+    },
+    lightTooltip: {
+      backgroundColor: theme.palette.common.white,
+      boxShadow: theme.shadows[1],
+      color: "rgba(0, 0, 0, 0.87)",
+      fontSize: 11
     }
   });
 
@@ -182,9 +170,8 @@ class CustomizedTooltips extends React.Component<IProps, IState> {
           popperOptions: {
             modifiers: {
               arrow: {
-                enabled: Boolean(this.state.arrowRef),
-                // tslint:disable-next-line:object-literal-sort-keys
-                element: this.state.arrowRef
+                element: this.state.arrowRef,
+                enabled: Boolean(this.state.arrowRef)
               }
             }
           }
