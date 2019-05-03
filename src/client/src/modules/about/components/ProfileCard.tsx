@@ -18,13 +18,13 @@ import { FaMapMarkerAlt } from "react-icons/fa";
 import SocialLink from "../../footer/components/SocialLinks";
 import ArrowTooltip from "../../projects/components/ArrowTooltip";
 
-import craftingSkillPhoto from "../../images/devtools-logos/Crafting_Skill.png";
-import energyPhoto from "../../images/devtools-logos/Energy.png";
-import fortidudePhoto from "../../images/devtools-logos/Fortitude.png";
-import healthPhoto from "../../images/devtools-logos/Health.png";
-import meleeDamagePhoto from "../../images/devtools-logos/Melee_Damage.png";
-import movementSpeedPhoto from "../../images/devtools-logos/Movement_Speed.png";
-import myPhoto from "../../images/propho.jpg";
+import craftingSkillPhoto from "../../../images/devtools-logos/Crafting_Skill.png";
+import energyPhoto from "../../../images/devtools-logos/Energy.png";
+import fortidudePhoto from "../../../images/devtools-logos/Fortitude.png";
+import healthPhoto from "../../../images/devtools-logos/Health.png";
+import meleeDamagePhoto from "../../../images/devtools-logos/Melee_Damage.png";
+import movementSpeedPhoto from "../../../images/devtools-logos/Movement_Speed.png";
+import myPhoto from "../../../images/propho.jpg";
 
 const myGreetings = [
   "Hey, what's up?",
