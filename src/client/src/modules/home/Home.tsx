@@ -1,5 +1,5 @@
-import Hero from "@modules/home/components/Hero";
-import Nav from "@modules/home/components/Nav";
+import Hero from "@modules/home/components/hero";
+import Nav from "@modules/home/components/nav";
 import * as React from "react";
 
 export class Home extends React.Component {

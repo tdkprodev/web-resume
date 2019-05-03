@@ -1,5 +1,5 @@
-import ArrowTooltip from "@components/ArrowTooltip";
-import AvatarLabel from "@components/AvatarLabel";
+import ArrowTooltip from "@components/arrow-tooltip";
+import AvatarLabel from "@components/avatar-label";
 import nodeLogo from "@images/icons/node.png";
 import reactLogo from "@images/icons/react.png";
 import tsLogo from "@images/icons/ts.png";
