@@ -1,6 +1,6 @@
+import ArrowTooltip from "@components/ArrowTooltip";
+import SocialLinks from "@components/SocialLinks";
 import { Link, Typography } from "@material-ui/core";
-import SocialLinks from "@modules/footer/components/SocialLinks";
-import ArrowTooltip from "@modules/projects/components/ArrowTooltip";
 import * as $ from "jquery";
 import * as React from "react";
 import { FaChevronUp } from "react-icons/fa";

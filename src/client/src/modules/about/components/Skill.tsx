@@ -1,5 +1,4 @@
 import * as React from "react";
-
 import { FaCss3, FaHtml5, FaJs, FaNodeJs, FaReact } from "react-icons/fa";
 
 class SkillCard extends React.Component<{}> {

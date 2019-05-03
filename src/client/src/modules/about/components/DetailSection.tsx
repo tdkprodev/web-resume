@@ -1,3 +1,5 @@
+import ArrowTooltip from "@components/ArrowTooltip";
+import AvatarLabel from "@components/AvatarLabel";
 import nodeLogo from "@images/devtools-logos/node.png";
 import reactLogo from "@images/devtools-logos/react.png";
 import tsLogo from "@images/devtools-logos/ts.png";
@@ -13,8 +15,6 @@ import {
   Typography
 } from "@material-ui/core";
 import { createStyles, withStyles, WithStyles } from "@material-ui/core/styles";
-import AvatarLabel from "@modules/about/components/AvatarLabel";
-import ArrowTooltip from "@modules/projects/components/ArrowTooltip";
 import * as React from "react";
 import {
   FaChevronDown

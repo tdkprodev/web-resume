@@ -6,7 +6,7 @@ import thumbnailNexter from "@images/nexter.png";
 import thumbnailTrillo from "@images/trillo.png";
 import thumbnailYouTube from "@images/yt.png";
 import { Typography } from "@material-ui/core";
-import MaterialTextField from "@modules/projects/components/MaterialTextField";
+import MaterialTextField from "@components/MaterialTextField";
 import * as React from "react";
 import Preview from "./components/Preview";
 

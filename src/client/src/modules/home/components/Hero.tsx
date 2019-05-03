@@ -1,5 +1,5 @@
 // import { Button } from "@material-ui/core";
-import ArrowTooltip from "@modules/projects/components/ArrowTooltip";
+import ArrowTooltip from "@components/ArrowTooltip";
 import * as $ from "jquery";
 import * as React from "react";
 

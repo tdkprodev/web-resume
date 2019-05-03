@@ -1,8 +1,7 @@
-import * as React from "react";
-
 import DetailSection from "@modules/about/components/DetailSection";
 import ProfileCard from "@modules/about/components/ProfileCard";
 import SkillCard from "@modules/about/components/Skill";
+import * as React from "react";
 
 export class About extends React.Component<{}> {
   public render() {

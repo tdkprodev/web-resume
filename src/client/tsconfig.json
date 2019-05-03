@@ -4,7 +4,8 @@
     "paths": {
       "@src/*": ["src/*"],
       "@images/*": ["src/images/*"],
-      "@modules/*": ["src/modules/*"]
+      "@modules/*": ["src/modules/*"],
+      "@components/*": ["src/components/*"]
     },
     "outDir": "build/dist",
     "module": "esnext",
