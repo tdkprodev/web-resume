@@ -4,7 +4,7 @@ import {
   withStyles
 } from "@material-ui/core/styles";
 import * as React from "react";
-import Portfolio from "./components/Portfolio";
+import Portfolio from "./modules/Portfolio";
 import "./sass/main.css";
 
 const theme = createMuiTheme({

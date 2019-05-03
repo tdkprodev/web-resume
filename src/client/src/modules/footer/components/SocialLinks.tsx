@@ -3,7 +3,7 @@ import { GridItemsAlignment, GridJustification } from "@material-ui/core/Grid";
 import { createStyles, withStyles, WithStyles } from "@material-ui/core/styles";
 import * as React from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import ArrowTooltip from "../projects/ArrowTooltip";
+import ArrowTooltip from "../../projects/components/ArrowTooltip";
 
 const styles = createStyles({
   github: {

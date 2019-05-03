@@ -1,10 +1,10 @@
 import * as React from "react";
 
-import DetailSection from "./DetailSection";
-import ProfileCard from "./ProfileCard";
-import SkillCard from "./Skill";
+import DetailSection from "./components/DetailSection";
+import ProfileCard from "./components/ProfileCard";
+import SkillCard from "./components/Skill";
 
-class About extends React.Component<{}> {
+export class About extends React.Component<{}> {
   public render() {
     return (
       <section className="about" id="about">
@@ -25,5 +25,3 @@ class About extends React.Component<{}> {
     );
   }
 }
-
-export default About;

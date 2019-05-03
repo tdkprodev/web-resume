@@ -15,8 +15,8 @@ import {
 } from "@material-ui/core";
 import * as React from "react";
 import { FaMapMarkerAlt } from "react-icons/fa";
-import SocialLink from "../footer/SocialLinks";
-import ArrowTooltip from "../projects/ArrowTooltip";
+import SocialLink from "../../footer/components/SocialLinks";
+import ArrowTooltip from "../../projects/components/ArrowTooltip";
 
 import craftingSkillPhoto from "../../images/devtools-logos/Crafting_Skill.png";
 import energyPhoto from "../../images/devtools-logos/Energy.png";

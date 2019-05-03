@@ -7,8 +7,8 @@ import thumbnailNatours from "../../images/natours.png";
 import thumbnailNexter from "../../images/nexter.png";
 import thumbnailTrillo from "../../images/trillo.png";
 import thumbnailYouTube from "../../images/yt.png";
-import MaterialTextField from "./MaterialTextField";
-import Preview from "./Preview";
+import MaterialTextField from "./components/MaterialTextField";
+import Preview from "./components/Preview";
 
 interface IPreview {
   title: string;
@@ -74,7 +74,7 @@ interface IState {
   filterText: string;
 }
 
-class Projects extends React.Component<{}, IState> {
+export class Projects extends React.Component<{}, IState> {
   public state = {
     filterText: ""
   };
@@ -213,5 +213,3 @@ class Projects extends React.Component<{}, IState> {
     );
   }
 }
-
-export default Projects;

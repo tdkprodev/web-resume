@@ -2,10 +2,10 @@ import { Link, Typography } from "@material-ui/core";
 import * as $ from "jquery";
 import * as React from "react";
 import { FaChevronUp } from "react-icons/fa";
-import ArrowTooltip from "../projects/ArrowTooltip";
-import SocialLinks from "./SocialLinks";
+import ArrowTooltip from "../projects/components/ArrowTooltip";
+import SocialLinks from "./components/SocialLinks";
 
-class Footer extends React.Component<{}> {
+export class Footer extends React.Component<{}> {
   public componentDidMount() {
     // jQuery implementationS
     $(".return-to-top").click(() => {
@@ -40,5 +40,3 @@ class Footer extends React.Component<{}> {
     );
   }
 }
-
-export default Footer;

@@ -18,7 +18,7 @@ import {
   // FaLinux,
   // FaHiking,
 } from "react-icons/fa";
-import ArrowTooltip from "../projects/ArrowTooltip";
+import ArrowTooltip from "../../projects/components/ArrowTooltip";
 import AvatarLabel from "./AvatarLabel";
 
 import nodeLogo from "../../images/devtools-logos/node.png";

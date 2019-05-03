@@ -1,7 +1,7 @@
 // import { Button } from "@material-ui/core";
 import * as $ from "jquery";
 import * as React from "react";
-import ArrowTooltip from "../projects/ArrowTooltip";
+import ArrowTooltip from "../../projects/components/ArrowTooltip";
 
 class Hero extends React.Component<{}> {
   constructor(props: any) {
