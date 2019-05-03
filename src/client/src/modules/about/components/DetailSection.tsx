@@ -1,11 +1,11 @@
 import ArrowTooltip from "@components/ArrowTooltip";
 import AvatarLabel from "@components/AvatarLabel";
-import nodeLogo from "@images/devtools-logos/node.png";
-import reactLogo from "@images/devtools-logos/react.png";
-import tsLogo from "@images/devtools-logos/ts.png";
-import typeormLogo from "@images/devtools-logos/typeorm.png";
-import vimLogo from "@images/devtools-logos/vim.png";
-import vscodeLogo from "@images/devtools-logos/vscode.png";
+import nodeLogo from "@images/icons/node.png";
+import reactLogo from "@images/icons/react.png";
+import tsLogo from "@images/icons/ts.png";
+import typeormLogo from "@images/icons/typeorm.png";
+import vimLogo from "@images/icons/vim.png";
+import vscodeLogo from "@images/icons/vscode.png";
 import {
   ExpansionPanel,
   ExpansionPanelDetails,
