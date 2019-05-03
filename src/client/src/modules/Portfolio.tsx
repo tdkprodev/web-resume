@@ -5,7 +5,7 @@ import { Home } from "@modules/home";
 import { Projects } from "@modules/projects";
 import * as React from "react";
 
-const Portfolio = () => {
+export const Portfolio = () => {
   return (
     <div className="portfolio">
       <Home />
@@ -16,5 +16,3 @@ const Portfolio = () => {
     </div>
   );
 };
-
-export default Portfolio;
