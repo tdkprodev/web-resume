@@ -12,9 +12,6 @@ class Hero extends React.Component<{}> {
   }
 
   public scrollToProjects = () => {
-    // tslint:disable-next-line:no-console
-    console.count("adsfadsf");
-
     const projectsSection = $("#projects");
     // window.scrollTo(0, projectsSection!.offsetTop - 20);
 
