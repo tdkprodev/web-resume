@@ -2,14 +2,14 @@ import { MaterialTextField } from "@components/material-text-field";
 import { IPreview } from "@interface/preview";
 import { Typography } from "@material-ui/core";
 import { previews } from "@modules/projects/assets/previews";
-import Preview from "@modules/projects/components/preview";
+import { Preview } from "@modules/projects/components/preview";
 import * as React from "react";
 
 interface IState {
   filterText: string;
 }
 
-export class Projects extends React.Component<{}, IState> {
+class Projects extends React.Component<{}, IState> {
   public state = {
     filterText: ""
   };
@@ -145,3 +145,5 @@ export class Projects extends React.Component<{}, IState> {
     );
   }
 }
+
+export default Projects;

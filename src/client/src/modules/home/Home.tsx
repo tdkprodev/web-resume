@@ -1,8 +1,8 @@
-import Hero from "@modules/home/components/hero";
-import Nav from "@modules/home/components/nav";
+import { Hero } from "@modules/home/components/hero";
+import { Nav } from "@modules/home/components/nav";
 import * as React from "react";
 
-export class Home extends React.Component {
+class Home extends React.Component {
   public render() {
     return (
       <React.Fragment>
@@ -12,3 +12,5 @@ export class Home extends React.Component {
     );
   }
 }
+
+export default Home;

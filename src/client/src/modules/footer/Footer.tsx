@@ -5,7 +5,7 @@ import * as $ from "jquery";
 import * as React from "react";
 import { FaChevronUp } from "react-icons/fa";
 
-export class Footer extends React.Component<{}> {
+class Footer extends React.Component<{}> {
   public componentDidMount() {
     // jQuery implementationS
     $(".return-to-top").click(() => {
@@ -40,3 +40,5 @@ export class Footer extends React.Component<{}> {
     );
   }
 }
+
+export default Footer;

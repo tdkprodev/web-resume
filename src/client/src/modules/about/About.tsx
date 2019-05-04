@@ -1,9 +1,9 @@
-import DetailSection from "@modules/about/components/detail-section";
-import ProfileCard from "@modules/about/components/profile-card";
-import SkillCard from "@modules/about/components/skill";
+import { DetailSection } from "@modules/about/components/detail-section";
+import { ProfileCard } from "@modules/about/components/profile-card";
+import { SkillCard } from "@modules/about/components/skill";
 import * as React from "react";
 
-export class About extends React.Component<{}> {
+class About extends React.Component<{}> {
   public render() {
     return (
       <section className="about" id="about">
@@ -24,3 +24,5 @@ export class About extends React.Component<{}> {
     );
   }
 }
+
+export default About;
