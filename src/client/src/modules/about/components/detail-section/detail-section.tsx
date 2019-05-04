@@ -293,6 +293,7 @@ class DetailSection extends React.Component<IProps> {
         <ExpansionPanelDetails classes={{ root: classes.root }}>
           {this.renderDevToolsSection()}
           {this.renderPassionSection()}
+          {this.renderInfluencersSection()}
           {this.renderCollaboratorsSection()}
         </ExpansionPanelDetails>
       </ExpansionPanel>
