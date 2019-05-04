@@ -1,4 +1,3 @@
-import { ArrowTooltip } from "@components/arrow-tooltip";
 import { SocialLinks } from "@components/social-links";
 import craftingSkillPhoto from "@images/icons/crafting-skill.png";
 import energyPhoto from "@images/icons/energy.png";
@@ -8,20 +7,18 @@ import meleeDamagePhoto from "@images/icons/melee-damage.png";
 import movementSpeedPhoto from "@images/icons/movement-speed.png";
 import myPhoto from "@images/propho.jpg";
 import {
-  Avatar,
   createStyles,
   Divider,
-  Fab,
-  Grow,
   Theme,
   Tooltip,
   Typography,
   WithStyles,
   withStyles
 } from "@material-ui/core";
+import { AgeDisplay } from "@modules/about/components/profile-card/components/age-display";
+import { Attribute } from "@modules/about/components/profile-card/components/attribute";
 import * as React from "react";
 import { FaMapMarkerAlt } from "react-icons/fa";
-import { AgeDisplay } from "./age-display";
 
 const myGreetings = [
   "Hey, what's up?",
@@ -35,15 +32,6 @@ const styles = (theme: Theme) =>
       alignItems: "center",
       display: "flex",
       minHeight: 50
-    },
-    margin: {
-      margin: theme.spacing.unit
-    },
-    positionAbsolute: {
-      position: "absolute"
-    },
-    skillsPointAttribute: {
-      display: "flex"
     }
   });
 
@@ -56,75 +44,6 @@ interface IState {
 }
 
 interface IProps extends WithStyles<typeof styles> {}
-
-interface IAttributeProps extends WithStyles<typeof styles> {
-  hovering: boolean;
-  timeout: number;
-  ariaLabel?: string;
-  imgSrc: string;
-  angle: number;
-  distance?: number;
-  title?: string;
-  points?: number;
-}
-
-interface ISkillsPointProps extends WithStyles<typeof styles> {
-  title?: string;
-  points?: number;
-}
-
-const SkillsPoint = withStyles(styles)((props: ISkillsPointProps) => {
-  const { classes, points = 100, title = "placeholder" } = props;
-  return (
-    <React.Fragment>
-      <Typography variant="h6" align="center">
-        {title}
-      </Typography>
-      <Divider variant="middle" />
-      <div className={classes.skillsPointAttribute}>
-        <Typography variant="overline">Skill point: </Typography>
-        <Typography variant="overline">{points}</Typography>
-      </div>
-    </React.Fragment>
-  );
-});
-
-const Attribute = withStyles(styles)((props: IAttributeProps) => {
-  const {
-    angle,
-    distance = 10,
-    hovering,
-    timeout,
-    ariaLabel = "",
-    imgSrc,
-    title = "placeholder",
-    points = 100
-  } = props;
-
-  return (
-    <Grow
-      in={hovering}
-      style={{
-        transform: `rotate(${angle}deg) translate(${distance}rem) rotate(-${angle}deg)`,
-        transformOrigin: "0 0 0"
-      }}
-      {...(hovering ? { timeout } : {})}
-    >
-      <Fab
-        aria-label={ariaLabel}
-        size="small"
-        className={props.classes.positionAbsolute}
-      >
-        <ArrowTooltip
-          title={<SkillsPoint title={title} points={points} />}
-          placement="right-start"
-        >
-          <Avatar src={imgSrc} />
-        </ArrowTooltip>
-      </Fab>
-    </Grow>
-  );
-});
 
 class ProfileCard extends React.Component<IProps, IState> {
   public state = {
@@ -210,7 +129,10 @@ class ProfileCard extends React.Component<IProps, IState> {
         timeout={2000}
         imgSrc={healthPhoto}
         title="Health"
-      />
+      >
+        <Typography>Age:</Typography>
+        <AgeDisplay />
+      </Attribute>
       <Attribute
         angle={120}
         hovering={hovering}
@@ -233,7 +155,6 @@ class ProfileCard extends React.Component<IProps, IState> {
     const { classes } = this.props;
     return (
       <div className="profile__description">
-        <AgeDisplay />
         <div className="profile__photo circle animateFromTop">
           <Tooltip
             open={leaveOpen}
