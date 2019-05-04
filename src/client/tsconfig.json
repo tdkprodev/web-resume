@@ -1,16 +1,16 @@
 {
   "compilerOptions": {
-    "baseUrl": "../",
+    "baseUrl": "../../",
     "paths": {
-      "@client/*": ["client/*"],
-      "@src/*": ["client/src/*"],
-      "@images/*": ["client/src/images/*"],
-      "@modules/*": ["client/src/modules/*"],
-      "@components/*": ["client/src/components/*"],
-      "@server/*": ["server/*"],
-      "@shared/*": ["shared/*"],
-      "@connection/*": ["shared/connection/*"],
-      "@interface/*": ["shared/interface/*"]
+      "@client/*": ["src/client/*"],
+      "@src/*": ["src/client/src/*"],
+      "@images/*": ["src/client/src/images/*"],
+      "@modules/*": ["src/client/src/modules/*"],
+      "@components/*": ["src/client/src/components/*"],
+      "@server/*": ["src/server/*"],
+      "@shared/*": ["src/shared/*"],
+      "@connection/*": ["src/shared/connection/*"],
+      "@interface/*": ["src/shared/interface/*"]
     },
     "outDir": "build/dist",
     "module": "esnext",
@@ -20,7 +20,7 @@
     "allowJs": true,
     "jsx": "react",
     "moduleResolution": "node",
-    "rootDir": ".",
+    "rootDir": "../../",
     "forceConsistentCasingInFileNames": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,

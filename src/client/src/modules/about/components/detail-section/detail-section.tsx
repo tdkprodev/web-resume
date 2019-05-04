@@ -15,6 +15,14 @@ import {
   Typography
 } from "@material-ui/core";
 import { createStyles, withStyles, WithStyles } from "@material-ui/core/styles";
+import {
+  NodeHoverDetail,
+  ReactHoverDetail,
+  TypeOrmHoverDetail,
+  TypeScriptHoverDetail,
+  VimHoverDetail,
+  VsCodeHoverDetail
+} from "@modules/about/components/detail-section/components/hover-details";
 import * as React from "react";
 import {
   FaChevronDown
@@ -108,90 +116,6 @@ class DetailSection extends React.Component<IProps> {
     });
   };
 
-  public renderVsCodeContent = () => (
-    <React.Fragment>
-      <Typography color="inherit">Tooltip with HTML</Typography>
-      <em>{"And here's"}</em> <b>{"some"}</b> <u>{"amazing content"}</u>.{" "}
-      {"It's very engaging. Right?"}
-      <a href="https://google.com">google</a>
-      <span className={this.props.classes.arrow} />
-    </React.Fragment>
-  );
-
-  public renderVimContent = () => (
-    <React.Fragment>
-      <Typography color="inherit">Tooltip with HTML</Typography>
-      <em>{"And here's"}</em> <b>{"some"}</b> <u>{"amazing content"}</u>.{" "}
-      {"It's very engaging. Right?"}
-      <span className={this.props.classes.arrow} />
-    </React.Fragment>
-  );
-
-  public renderTypeScriptContent = () => (
-    <React.Fragment>
-      <Typography color="inherit">Tooltip with HTML</Typography>
-      <em>{"And here's"}</em> <b>{"some"}</b> <u>{"amazing content"}</u>.{" "}
-      {"It's very engaging. Right?"}
-      <span className={this.props.classes.arrow} />
-    </React.Fragment>
-  );
-
-  public renderReactContent = () => (
-    <React.Fragment>
-      <Typography color="inherit">Tooltip with HTML</Typography>
-      <em>{"And here's"}</em> <b>{"some"}</b> <u>{"amazing content"}</u>.{" "}
-      {"It's very engaging. Right?"}
-      <span className={this.props.classes.arrow} />
-    </React.Fragment>
-  );
-
-  public renderNodeContent = () => (
-    <React.Fragment>
-      <Typography color="inherit">Tooltip with HTML</Typography>
-      <em>{"And here's"}</em> <b>{"some"}</b> <u>{"amazing content"}</u>.{" "}
-      {"It's very engaging. Right?"}
-      <span className={this.props.classes.arrow} />
-    </React.Fragment>
-  );
-
-  public renderTypeOrmContent = () => (
-    <React.Fragment>
-      <Typography color="inherit">Tooltip with HTML</Typography>
-      <em>{"And here's"}</em> <b>{"some"}</b> <u>{"amazing content"}</u>.{" "}
-      {"It's very engaging. Right?"}
-      <span className={this.props.classes.arrow} />
-    </React.Fragment>
-  );
-
-  public renderHoverContent = (field: string) => {
-    let htmlContent = <React.Fragment />;
-
-    switch (field) {
-      case "vim":
-        htmlContent = this.renderVimContent();
-        break;
-      case "vscode":
-        htmlContent = this.renderVsCodeContent();
-        break;
-      case "typescript":
-        htmlContent = this.renderTypeScriptContent();
-        break;
-      case "react":
-        htmlContent = this.renderReactContent();
-        break;
-      case "node":
-        htmlContent = this.renderNodeContent();
-        break;
-      case "typeorm":
-        htmlContent = this.renderTypeOrmContent();
-        break;
-      default:
-        break;
-    }
-
-    return htmlContent;
-  };
-
   public render() {
     const { expanded } = this.state;
     const { classes } = this.props;
@@ -225,14 +149,14 @@ class DetailSection extends React.Component<IProps> {
               </Typography>
               <div className={classes.buildTools}>
                 <ArrowTooltip
-                  title={this.renderVsCodeContent()}
+                  title={<VsCodeHoverDetail classes={classes} />}
                   interactive={true}
                   placement="bottom"
                 >
                   <AvatarLabel alt="VsCode" src={vscodeLogo} label="VsCode" />
                 </ArrowTooltip>
                 <ArrowTooltip
-                  title={this.renderHoverContent("vim")}
+                  title={<VimHoverDetail classes={classes} />}
                   interactive={true}
                   placement="bottom"
                 >
@@ -251,7 +175,7 @@ class DetailSection extends React.Component<IProps> {
               </Typography>
               <div className={classes.buildTools}>
                 <ArrowTooltip
-                  title={this.renderTypeScriptContent()}
+                  title={<TypeScriptHoverDetail classes={classes} />}
                   interactive={true}
                   placement="top"
                 >
@@ -262,7 +186,7 @@ class DetailSection extends React.Component<IProps> {
                   />
                 </ArrowTooltip>
                 <ArrowTooltip
-                  title={this.renderReactContent()}
+                  title={<ReactHoverDetail classes={classes} />}
                   interactive={true}
                   placement="top"
                 >
@@ -281,14 +205,14 @@ class DetailSection extends React.Component<IProps> {
               </Typography>
               <div className={classes.buildTools}>
                 <ArrowTooltip
-                  title={this.renderNodeContent()}
+                  title={<NodeHoverDetail classes={classes} />}
                   interactive={true}
                   placement="bottom"
                 >
                   <AvatarLabel alt="Node" src={nodeLogo} label="Node" />
                 </ArrowTooltip>
                 <ArrowTooltip
-                  title={this.renderTypeOrmContent()}
+                  title={<TypeOrmHoverDetail classes={classes} />}
                   interactive={true}
                   placement="bottom"
                 >
