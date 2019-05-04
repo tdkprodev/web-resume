@@ -6,7 +6,6 @@ import {
   withStyles,
   WithStyles
 } from "@material-ui/core";
-// import { AgeDisplay } from "@modules/about/components/profile-card/components/age-display";
 
 import * as React from "react";
 
@@ -23,7 +22,6 @@ const styles = (theme: Theme) =>
     },
     dataLabel: {
       alignItems: "center"
-      // display: "flex"
     },
     dataValue: {
       marginLeft: 25
@@ -55,9 +53,7 @@ class SkillPoint extends React.Component<ISkillsPointProps> {
   };
 
   public render() {
-    const { classes, points = 100, title = "placeholder", data } = this.props;
-    // tslint:disable-next-line:no-console
-    console.log("data", data);
+    const { classes, points = 100, title = "placeholder" } = this.props;
     return (
       <React.Fragment>
         <Typography variant="h6" align="center">

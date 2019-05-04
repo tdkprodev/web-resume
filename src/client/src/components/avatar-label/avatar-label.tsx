@@ -1,4 +1,4 @@
-import { Avatar, Theme, Typography } from "@material-ui/core";
+import { Avatar, Grow, Theme, Typography } from "@material-ui/core";
 import { createStyles, withStyles, WithStyles } from "@material-ui/core/styles";
 import * as React from "react";
 
@@ -18,7 +18,7 @@ const styles = (theme: Theme) =>
         height: 85,
         width: 85
       },
-      "@media (max-width: 900px)": {
+      "@media (max-width: 960px)": {
         height: 70,
         width: 70
       }
@@ -44,12 +44,14 @@ class AvatarLabel extends React.Component<IProps> {
     const { classes, src, alt = "", label } = this.props;
     return (
       <div className={classes.avatarLabelContainer}>
-        <Avatar
-          classes={{ img: classes.img }}
-          className={classes.avatar}
-          alt={alt}
-          src={src}
-        />
+        <Grow in={true}>
+          <Avatar
+            classes={{ img: classes.img }}
+            className={classes.avatar}
+            alt={alt}
+            src={src}
+          />
+        </Grow>
         <Typography variant="h6" align="center">
           {label}
         </Typography>

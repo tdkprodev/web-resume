@@ -67,13 +67,18 @@ const styles = (theme: Theme) =>
         marginBottom: "5rem"
       },
       "@media (max-width: 600px)": {
-        justifyContent: "space-between"
+        justifyContent: "space-around"
       }
     },
     devTools: {
       alignItems: "center",
       display: "flex",
       flexWrap: "wrap",
+      justifyContent: "center"
+    },
+    devToolsContainer: {
+      alignItems: "center",
+      display: "flex",
       justifyContent: "center"
     },
     heading: {
@@ -128,83 +133,93 @@ class DetailSection extends React.Component<IProps> {
         >
           Dev Tools
         </Typography>
-        <div className={classes.devTools}>
-          <div className={classes.toolsContainer}>
-            <Typography
-              className={classes.subHeading}
-              gutterBottom={true}
-              align="center"
-              variant="h5"
-            >
-              Editor
-            </Typography>
-            <div className={classes.buildTools}>
-              <ArrowTooltip
-                title={<VsCodeHoverDetail classes={classes} />}
-                interactive={true}
-                placement="bottom"
+        <div className={classes.devToolsContainer}>
+          <div className={classes.devTools}>
+            <div className={classes.toolsContainer}>
+              <Typography
+                className={classes.subHeading}
+                gutterBottom={true}
+                align="center"
+                variant="h5"
               >
-                <AvatarLabel alt="VsCode" src={vscodeLogo} label="VsCode" />
-              </ArrowTooltip>
-              <ArrowTooltip
-                title={<VimHoverDetail classes={classes} />}
-                interactive={true}
-                placement="bottom"
-              >
-                <AvatarLabel alt="Vim" src={vimLogo} label="Vim" />
-              </ArrowTooltip>
+                Editor
+              </Typography>
+              <div className={classes.buildTools}>
+                <ArrowTooltip
+                  title={<VsCodeHoverDetail classes={classes} />}
+                  interactive={true}
+                  placement="top"
+                >
+                  <AvatarLabel alt="VsCode" src={vscodeLogo} label="VsCode" />
+                </ArrowTooltip>
+                <ArrowTooltip
+                  title={<VimHoverDetail classes={classes} />}
+                  interactive={true}
+                  placement="top"
+                >
+                  <AvatarLabel alt="Vim" src={vimLogo} label="Vim" />
+                </ArrowTooltip>
+              </div>
             </div>
-          </div>
-          <div className={classes.toolsContainer}>
-            <Typography
-              className={classes.subHeading}
-              gutterBottom={true}
-              align="center"
-              variant="h5"
-            >
-              Client
-            </Typography>
-            <div className={classes.buildTools}>
-              <ArrowTooltip
-                title={<TypeScriptHoverDetail classes={classes} />}
-                interactive={true}
-                placement="top"
+            <div className={classes.toolsContainer}>
+              <Typography
+                className={classes.subHeading}
+                gutterBottom={true}
+                align="center"
+                variant="h5"
               >
-                <AvatarLabel alt="TypeScript" src={tsLogo} label="TypeScript" />
-              </ArrowTooltip>
-              <ArrowTooltip
-                title={<ReactHoverDetail classes={classes} />}
-                interactive={true}
-                placement="top"
-              >
-                <AvatarLabel alt="React" src={reactLogo} label="React" />
-              </ArrowTooltip>
+                Client
+              </Typography>
+              <div className={classes.buildTools}>
+                <ArrowTooltip
+                  title={<TypeScriptHoverDetail classes={classes} />}
+                  interactive={true}
+                  placement="top"
+                >
+                  <AvatarLabel
+                    alt="TypeScript"
+                    src={tsLogo}
+                    label="TypeScript"
+                  />
+                </ArrowTooltip>
+                <ArrowTooltip
+                  title={<ReactHoverDetail classes={classes} />}
+                  interactive={true}
+                  placement="top"
+                >
+                  <AvatarLabel alt="React" src={reactLogo} label="React" />
+                </ArrowTooltip>
+              </div>
             </div>
-          </div>
-          <div className={classes.toolsContainer}>
-            <Typography
-              className={classes.subHeading}
-              gutterBottom={true}
-              align="center"
-              variant="h5"
-            >
-              Server
-            </Typography>
-            <div className={classes.buildTools}>
-              <ArrowTooltip
-                title={<NodeHoverDetail classes={classes} />}
-                interactive={true}
-                placement="bottom"
+            <div className={classes.toolsContainer}>
+              <Typography
+                className={classes.subHeading}
+                gutterBottom={true}
+                align="center"
+                variant="h5"
               >
-                <AvatarLabel alt="Node" src={nodeLogo} label="Node" />
-              </ArrowTooltip>
-              <ArrowTooltip
-                title={<TypeOrmHoverDetail classes={classes} />}
-                interactive={true}
-                placement="bottom"
-              >
-                <AvatarLabel alt="TypeORM" src={typeormLogo} label="TypeORM" />
-              </ArrowTooltip>
+                Server
+              </Typography>
+              <div className={classes.buildTools}>
+                <ArrowTooltip
+                  title={<NodeHoverDetail classes={classes} />}
+                  interactive={true}
+                  placement="top"
+                >
+                  <AvatarLabel alt="Node" src={nodeLogo} label="Node" />
+                </ArrowTooltip>
+                <ArrowTooltip
+                  title={<TypeOrmHoverDetail classes={classes} />}
+                  interactive={true}
+                  placement="top"
+                >
+                  <AvatarLabel
+                    alt="TypeORM"
+                    src={typeormLogo}
+                    label="TypeORM"
+                  />
+                </ArrowTooltip>
+              </div>
             </div>
           </div>
         </div>

@@ -23,9 +23,6 @@ class AgeDisplay extends React.Component<{}, IState> {
       this.setState(() => ({
         age: getAge(dob)
       }));
-
-      // tslint:disable-next-line:no-console
-      console.log("asdfasdf");
     }, 1000);
 
     this.setState(() => ({ ageInterval }));
