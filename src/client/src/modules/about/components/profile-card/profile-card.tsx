@@ -108,12 +108,15 @@ class ProfileCard extends React.Component<IProps, IState> {
         timeout={3500}
         imgSrc={craftingSkillPhoto}
         title="Crafting Skill"
+        points={87}
+        data={[["Guitar", "Novice"], ["Computer", "Intermediate"]]}
       />
       <Attribute
         angle={210}
         hovering={hovering}
         timeout={3000}
         imgSrc={energyPhoto}
+        points={90}
         title="Energy"
       />
       <Attribute
@@ -121,6 +124,7 @@ class ProfileCard extends React.Component<IProps, IState> {
         hovering={hovering}
         timeout={2500}
         imgSrc={fortidudePhoto}
+        points={85}
         title="Fortitude"
       />
       <Attribute
@@ -129,15 +133,15 @@ class ProfileCard extends React.Component<IProps, IState> {
         timeout={2000}
         imgSrc={healthPhoto}
         title="Health"
-      >
-        <Typography>Age:</Typography>
-        <AgeDisplay />
-      </Attribute>
+        points={92}
+        data={[["Age", <AgeDisplay key="age" />]]}
+      />
       <Attribute
         angle={120}
         hovering={hovering}
         timeout={1500}
         imgSrc={meleeDamagePhoto}
+        points={85}
         title="Melee"
       />
       <Attribute
@@ -145,6 +149,7 @@ class ProfileCard extends React.Component<IProps, IState> {
         hovering={hovering}
         timeout={1000}
         imgSrc={movementSpeedPhoto}
+        points={88}
         title="Agility"
       />
     </React.Fragment>

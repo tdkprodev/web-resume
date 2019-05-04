@@ -1,6 +1,5 @@
 import { getAge } from "@utils/getAge";
 import * as React from "react";
-import { Typography } from "@material-ui/core";
 
 interface IState {
   ageInterval: number;
@@ -38,12 +37,7 @@ class AgeDisplay extends React.Component<{}, IState> {
 
   public render() {
     const { age } = this.state;
-    return (
-      <React.Fragment>
-        <Typography>AGE:</Typography>
-        {age}
-      </React.Fragment>
-    );
+    return <React.Fragment>{age}</React.Fragment>;
   }
 }
 

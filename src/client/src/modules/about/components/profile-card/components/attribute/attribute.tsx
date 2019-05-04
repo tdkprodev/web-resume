@@ -14,19 +14,8 @@ import * as React from "react";
 
 const styles = (theme: Theme) =>
   createStyles({
-    customTip: {
-      alignItems: "center",
-      display: "flex",
-      minHeight: 50
-    },
-    margin: {
-      margin: theme.spacing.unit
-    },
     positionAbsolute: {
       position: "absolute"
-    },
-    skillsPointAttribute: {
-      display: "flex"
     }
   });
 
@@ -39,6 +28,7 @@ interface IAttributeProps extends WithStyles<typeof styles> {
   distance?: number;
   title?: string;
   points?: number;
+  data?: Array<[string, any]>;
 }
 
 class Attribute extends React.Component<IAttributeProps> {
@@ -53,7 +43,8 @@ class Attribute extends React.Component<IAttributeProps> {
       title = "placeholder",
       points = 100,
       classes,
-      children
+      children,
+      data
     } = this.props;
 
     return (
@@ -72,7 +63,7 @@ class Attribute extends React.Component<IAttributeProps> {
         >
           <ArrowTooltip
             title={
-              <SkillPoint title={title} points={points}>
+              <SkillPoint title={title} points={points} data={data}>
                 {children}
               </SkillPoint>
             }
