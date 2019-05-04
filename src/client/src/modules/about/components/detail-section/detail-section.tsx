@@ -244,6 +244,23 @@ class DetailSection extends React.Component<IProps> {
     );
   };
 
+  public renderInfluencersSection = () => {
+    const { classes } = this.props;
+    return (
+      <React.Fragment>
+        <Typography
+          className={classes.subHeading}
+          gutterBottom={true}
+          variant="h4"
+          align="center"
+        >
+          Influencers
+        </Typography>
+        <div>placeholder</div>
+      </React.Fragment>
+    );
+  };
+
   public renderCollaboratorsSection = () => {
     const { classes } = this.props;
     return (

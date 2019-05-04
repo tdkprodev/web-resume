@@ -1,5 +1,5 @@
 import { ArrowTooltip } from "@components/arrow-tooltip";
-import { Avatar, Grid, Link } from "@material-ui/core";
+import { Avatar, Grid, Grow, Link } from "@material-ui/core";
 import { GridItemsAlignment, GridJustification } from "@material-ui/core/Grid";
 import { createStyles, withStyles, WithStyles } from "@material-ui/core/styles";
 import * as React from "react";
@@ -30,20 +30,24 @@ const SocialLinks = (props: IProps) => {
 
   return (
     <Grid container={true} justify={justify} alignItems={alignItems}>
-      <ArrowTooltip title="GitHub" placement="bottom">
-        <Link href={gitHubLink} target="__blank" rel="noreferrer">
-          <Avatar alt="GitHub" className={classes.github}>
-            <FaGithub size={50} />
-          </Avatar>
-        </Link>
-      </ArrowTooltip>
-      <ArrowTooltip title="LinkedIn" placement="bottom">
-        <Link href={linkedInLink} target="__blank" rel="noreferrer">
-          <Avatar alt="LinkedIn" className={classes.linkedin}>
-            <FaLinkedin size={50} />
-          </Avatar>
-        </Link>
-      </ArrowTooltip>
+      <Grow in={true}>
+        <ArrowTooltip title="GitHub" placement="bottom">
+          <Link href={gitHubLink} target="__blank" rel="noreferrer">
+            <Avatar alt="GitHub" className={classes.github}>
+              <FaGithub size={50} />
+            </Avatar>
+          </Link>
+        </ArrowTooltip>
+      </Grow>
+      <Grow in={true}>
+        <ArrowTooltip title="LinkedIn" placement="bottom">
+          <Link href={linkedInLink} target="__blank" rel="noreferrer">
+            <Avatar alt="LinkedIn" className={classes.linkedin}>
+              <FaLinkedin size={50} />
+            </Avatar>
+          </Link>
+        </ArrowTooltip>
+      </Grow>
     </Grid>
   );
 };
