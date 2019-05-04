@@ -1,4 +1,4 @@
-import ArrowTooltip from "@components/arrow-tooltip";
+import { ArrowTooltip } from "@components/arrow-tooltip";
 import { Avatar, Grid, Link } from "@material-ui/core";
 import { GridItemsAlignment, GridJustification } from "@material-ui/core/Grid";
 import { createStyles, withStyles, WithStyles } from "@material-ui/core/styles";

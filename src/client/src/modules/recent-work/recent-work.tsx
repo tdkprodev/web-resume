@@ -1,4 +1,4 @@
-import MaterialTextField from "@components/material-text-field";
+import { MaterialTextField } from "@components/material-text-field";
 // import { Typography } from "@material-ui/core";
 import * as React from "react";
 

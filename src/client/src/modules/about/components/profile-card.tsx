@@ -1,5 +1,5 @@
-import ArrowTooltip from "@components/arrow-tooltip";
-import SocialLink from "@components/social-links";
+import { ArrowTooltip } from "@components/arrow-tooltip";
+import { SocialLinks } from "@components/social-links";
 import craftingSkillPhoto from "@images/icons/crafting-skill.png";
 import energyPhoto from "@images/icons/energy.png";
 import fortidudePhoto from "@images/icons/fortitude.png";
@@ -263,7 +263,7 @@ class ProfileCard extends React.Component<IProps, IState> {
           Charlotte, NC
         </Typography>
         <Divider variant="middle" />
-        <SocialLink />
+        <SocialLinks />
         <Typography className="profile__text animateFromBottom">
           I'm a developer from Charlotte, North Carlolina. I'm passionate about
           the web technologies that connects us all.

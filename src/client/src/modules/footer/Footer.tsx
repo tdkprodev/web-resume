@@ -1,5 +1,5 @@
-import ArrowTooltip from "@components/arrow-tooltip";
-import SocialLinks from "@components/social-links";
+import { ArrowTooltip } from "@components/arrow-tooltip";
+import { SocialLinks } from "@components/social-links";
 import { Link, Typography } from "@material-ui/core";
 import * as $ from "jquery";
 import * as React from "react";

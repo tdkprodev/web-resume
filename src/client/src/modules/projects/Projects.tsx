@@ -1,4 +1,4 @@
-import MaterialTextField from "@components/material-text-field";
+import { MaterialTextField } from "@components/material-text-field";
 import { IPreview } from "@interface/preview";
 import { Typography } from "@material-ui/core";
 import { previews } from "@modules/projects/assets/previews";
