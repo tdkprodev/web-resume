@@ -7,6 +7,7 @@
       "@images/*": ["src/client/src/images/*"],
       "@modules/*": ["src/client/src/modules/*"],
       "@components/*": ["src/client/src/components/*"],
+      "@utils/*": ["src/client/src/utils/*"],
       "@server/*": ["src/server/*"],
       "@shared/*": ["src/shared/*"],
       "@connection/*": ["src/shared/connection/*"],

@@ -21,6 +21,7 @@ import {
 } from "@material-ui/core";
 import * as React from "react";
 import { FaMapMarkerAlt } from "react-icons/fa";
+import { AgeDisplay } from "./age-display";
 
 const myGreetings = [
   "Hey, what's up?",
@@ -232,6 +233,7 @@ class ProfileCard extends React.Component<IProps, IState> {
     const { classes } = this.props;
     return (
       <div className="profile__description">
+        <AgeDisplay />
         <div className="profile__photo circle animateFromTop">
           <Tooltip
             open={leaveOpen}
