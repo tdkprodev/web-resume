@@ -38,7 +38,7 @@ class Hero extends React.Component<{}> {
   public render() {
     return (
       <header className="hero" id="home">
-        <div className="hero__logo parallelogram">TDK</div>
+        <div className="hero__logo parallelogram">THMS</div>
 
         <div className="greeting">
           <h1 className="greeting__text heading-title">

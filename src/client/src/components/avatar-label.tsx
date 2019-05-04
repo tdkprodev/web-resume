@@ -13,12 +13,23 @@ const styles = (theme: Theme) =>
       "&:hover": {
         backgroundColor: "#f7f6f6",
         transform: "scale(1.1)"
+      },
+      "@media (max-width: 1200px)": {
+        height: 85,
+        width: 85
+      },
+      "@media (max-width: 900px)": {
+        height: 70,
+        width: 70
       }
     },
     avatarLabelContainer: {
       marginRight: 20,
 
       "&:hover": {}
+    },
+    img: {
+      transform: "scale(.9)"
     }
   });
 
@@ -33,7 +44,12 @@ class AvatarLabel extends React.Component<IProps> {
     const { classes, src, alt = "", label } = this.props;
     return (
       <div className={classes.avatarLabelContainer}>
-        <Avatar className={classes.avatar} alt={alt} src={src} />
+        <Avatar
+          classes={{ img: classes.img }}
+          className={classes.avatar}
+          alt={alt}
+          src={src}
+        />
         <Typography variant="h6" align="center">
           {label}
         </Typography>

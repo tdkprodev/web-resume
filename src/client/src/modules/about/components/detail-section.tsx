@@ -54,6 +54,10 @@ const styles = (theme: Theme) =>
       margin: "0 5rem",
       marginBottom: "5rem",
 
+      "@media (max-width: 1200px)": {
+        margin: "0 3rem",
+        marginBottom: "5rem"
+      },
       "@media (max-width: 600px)": {
         justifyContent: "space-between"
       }

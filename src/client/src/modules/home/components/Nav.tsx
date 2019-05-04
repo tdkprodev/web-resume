@@ -110,7 +110,7 @@ class Nav extends React.Component {
       <nav className="nav" id="main-nav">
         <div className="container container--nav">
           <ul className="nav__list">
-            <li className="logo parallelogram">TDK</li>
+            <li className="logo parallelogram">THMS</li>
             <li className="nav__link active" data-anchor="home">
               Home
             </li>

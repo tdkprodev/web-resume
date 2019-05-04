@@ -1,11 +1,16 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
+    "baseUrl": "../",
     "paths": {
-      "@src/*": ["src/*"],
-      "@images/*": ["src/images/*"],
-      "@modules/*": ["src/modules/*"],
-      "@components/*": ["src/components/*"]
+      "@client/*": ["client/*"],
+      "@src/*": ["client/src/*"],
+      "@images/*": ["client/src/images/*"],
+      "@modules/*": ["client/src/modules/*"],
+      "@components/*": ["client/src/components/*"],
+      "@server/*": ["server/*"],
+      "@shared/*": ["shared/*"],
+      "@connection/*": ["shared/connection/*"],
+      "@interface/*": ["shared/interface/*"]
     },
     "outDir": "build/dist",
     "module": "esnext",
