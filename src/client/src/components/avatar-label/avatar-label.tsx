@@ -5,18 +5,18 @@ import * as React from "react";
 const styles = (theme: Theme) =>
   createStyles({
     avatar: {
-      height: 100,
+      height: 90,
       marginBottom: 10,
       padding: 10,
-      width: 100,
+      width: 90,
 
       "&:hover": {
         backgroundColor: "#f7f6f6",
         transform: "scale(1.1)"
       },
       "@media (max-width: 1200px)": {
-        height: 85,
-        width: 85
+        height: 80,
+        width: 80
       },
       "@media (max-width: 960px)": {
         height: 70,
@@ -28,8 +28,30 @@ const styles = (theme: Theme) =>
 
       "&:hover": {}
     },
+    bigAvatar: {
+      height: 120,
+      marginBottom: 10,
+      padding: 10,
+      width: 120,
+
+      "&:hover": {
+        backgroundColor: "#f7f6f6",
+        transform: "scale(1.1)"
+      },
+      "@media (max-width: 1200px)": {
+        height: 110,
+        width: 110
+      },
+      "@media (max-width: 960px)": {
+        height: 100,
+        width: 100
+      }
+    },
     img: {
       transform: "scale(.9)"
+    },
+    imgCircle: {
+      borderRadius: "50%"
     }
   });
 
@@ -37,17 +59,18 @@ interface IProps extends WithStyles<typeof styles> {
   src: string;
   alt?: string;
   label: string;
+  large?: boolean;
 }
 
 class AvatarLabel extends React.Component<IProps> {
   public render() {
-    const { classes, src, alt = "", label } = this.props;
+    const { classes, src, alt = "", label, large = false } = this.props;
     return (
       <div className={classes.avatarLabelContainer}>
         <Grow in={true}>
           <Avatar
-            classes={{ img: classes.img }}
-            className={classes.avatar}
+            classes={{ img: large ? classes.imgCircle : classes.img }}
+            className={large ? classes.bigAvatar : classes.avatar}
             alt={alt}
             src={src}
           />

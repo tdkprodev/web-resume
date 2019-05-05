@@ -1,11 +1,3 @@
-import { ArrowTooltip } from "@components/arrow-tooltip";
-import { AvatarLabel } from "@components/avatar-label";
-import nodeLogo from "@images/icons/node.png";
-import reactLogo from "@images/icons/react.png";
-import tsLogo from "@images/icons/ts.png";
-import typeormLogo from "@images/icons/typeorm.png";
-import vimLogo from "@images/icons/vim.png";
-import vscodeLogo from "@images/icons/vscode.png";
 import {
   ExpansionPanel,
   ExpansionPanelDetails,
@@ -15,14 +7,10 @@ import {
   Typography
 } from "@material-ui/core";
 import { createStyles, withStyles, WithStyles } from "@material-ui/core/styles";
-import {
-  NodeHoverDetail,
-  ReactHoverDetail,
-  TypeOrmHoverDetail,
-  TypeScriptHoverDetail,
-  VimHoverDetail,
-  VsCodeHoverDetail
-} from "@modules/about/components/detail-section/components/hover-details";
+import { CollaboratorsSection } from "@modules/about/components/detail-section/components/collaborators-section";
+import { DevToolsSection } from "@modules/about/components/detail-section/components/dev-tools-section";
+import { InfluencersSection } from "@modules/about/components/detail-section/components/influencers-section";
+import { PassionSection } from "@modules/about/components/detail-section/components/passion-section";
 import * as React from "react";
 import {
   FaChevronDown
@@ -121,163 +109,6 @@ class DetailSection extends React.Component<IProps> {
     });
   };
 
-  public renderDevToolsSection = () => {
-    const { classes } = this.props;
-    return (
-      <React.Fragment>
-        <Typography
-          className={classes.subHeading}
-          gutterBottom={true}
-          variant="h4"
-          align="center"
-        >
-          Dev Tools
-        </Typography>
-        <div className={classes.devToolsContainer}>
-          <div className={classes.devTools}>
-            <div className={classes.toolsContainer}>
-              <Typography
-                className={classes.subHeading}
-                gutterBottom={true}
-                align="center"
-                variant="h5"
-              >
-                Editor
-              </Typography>
-              <div className={classes.buildTools}>
-                <ArrowTooltip
-                  title={<VsCodeHoverDetail classes={classes} />}
-                  interactive={true}
-                  placement="top"
-                >
-                  <AvatarLabel alt="VsCode" src={vscodeLogo} label="VsCode" />
-                </ArrowTooltip>
-                <ArrowTooltip
-                  title={<VimHoverDetail classes={classes} />}
-                  interactive={true}
-                  placement="top"
-                >
-                  <AvatarLabel alt="Vim" src={vimLogo} label="Vim" />
-                </ArrowTooltip>
-              </div>
-            </div>
-            <div className={classes.toolsContainer}>
-              <Typography
-                className={classes.subHeading}
-                gutterBottom={true}
-                align="center"
-                variant="h5"
-              >
-                Client
-              </Typography>
-              <div className={classes.buildTools}>
-                <ArrowTooltip
-                  title={<TypeScriptHoverDetail classes={classes} />}
-                  interactive={true}
-                  placement="top"
-                >
-                  <AvatarLabel
-                    alt="TypeScript"
-                    src={tsLogo}
-                    label="TypeScript"
-                  />
-                </ArrowTooltip>
-                <ArrowTooltip
-                  title={<ReactHoverDetail classes={classes} />}
-                  interactive={true}
-                  placement="top"
-                >
-                  <AvatarLabel alt="React" src={reactLogo} label="React" />
-                </ArrowTooltip>
-              </div>
-            </div>
-            <div className={classes.toolsContainer}>
-              <Typography
-                className={classes.subHeading}
-                gutterBottom={true}
-                align="center"
-                variant="h5"
-              >
-                Server
-              </Typography>
-              <div className={classes.buildTools}>
-                <ArrowTooltip
-                  title={<NodeHoverDetail classes={classes} />}
-                  interactive={true}
-                  placement="top"
-                >
-                  <AvatarLabel alt="Node" src={nodeLogo} label="Node" />
-                </ArrowTooltip>
-                <ArrowTooltip
-                  title={<TypeOrmHoverDetail classes={classes} />}
-                  interactive={true}
-                  placement="top"
-                >
-                  <AvatarLabel
-                    alt="TypeORM"
-                    src={typeormLogo}
-                    label="TypeORM"
-                  />
-                </ArrowTooltip>
-              </div>
-            </div>
-          </div>
-        </div>
-      </React.Fragment>
-    );
-  };
-
-  public renderPassionSection = () => {
-    const { classes } = this.props;
-    return (
-      <React.Fragment>
-        <Typography
-          className={classes.subHeading}
-          gutterBottom={true}
-          variant="h4"
-          align="center"
-        >
-          What I Like
-        </Typography>
-        <div>placeholder</div>
-      </React.Fragment>
-    );
-  };
-
-  public renderInfluencersSection = () => {
-    const { classes } = this.props;
-    return (
-      <React.Fragment>
-        <Typography
-          className={classes.subHeading}
-          gutterBottom={true}
-          variant="h4"
-          align="center"
-        >
-          Influencers
-        </Typography>
-        <div>placeholder</div>
-      </React.Fragment>
-    );
-  };
-
-  public renderCollaboratorsSection = () => {
-    const { classes } = this.props;
-    return (
-      <React.Fragment>
-        <Typography
-          className={classes.subHeading}
-          gutterBottom={true}
-          variant="h4"
-          align="center"
-        >
-          Collaborators
-        </Typography>
-        <div>placeholder</div>
-      </React.Fragment>
-    );
-  };
-
   public render() {
     const { expanded } = this.state;
     const { classes } = this.props;
@@ -291,10 +122,10 @@ class DetailSection extends React.Component<IProps> {
           <Typography variant="h4">More About Me</Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails classes={{ root: classes.root }}>
-          {this.renderDevToolsSection()}
-          {this.renderPassionSection()}
-          {this.renderInfluencersSection()}
-          {this.renderCollaboratorsSection()}
+          <DevToolsSection />
+          <PassionSection />
+          <InfluencersSection />
+          <CollaboratorsSection />
         </ExpansionPanelDetails>
       </ExpansionPanel>
     );
