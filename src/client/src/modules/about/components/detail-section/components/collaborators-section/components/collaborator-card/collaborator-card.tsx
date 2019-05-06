@@ -22,22 +22,36 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import ShareIcon from "@material-ui/icons/Share";
+import { default as classnames } from "classnames";
+
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const defaultAvatarUrl = "";
 
 const styles = (theme: Theme) =>
   createStyles({
+    actions: {
+      display: "flex"
+    },
     avatarContainer: {
       alignItems: "center",
       display: "flex",
       justifyContent: "center"
     },
     card: {
-      height: 350,
       margin: "1rem",
-      minHeight: 300,
-      overflow: "auto",
+      minHeight: 350,
       width: 300
+    },
+    expand: {
+      marginLeft: "auto",
+      transform: "rotate(0deg)",
+      transition: theme.transitions.create("transform", {
+        duration: theme.transitions.duration.shortest
+      })
+    },
+    expandOpen: {
+      transform: "rotate(180deg)"
     }
   });
 
@@ -52,7 +66,19 @@ interface IProps extends WithStyles<typeof styles> {
   login?: string;
 }
 
-class CollaboratorCard extends React.Component<IProps> {
+interface IState {
+  expand: boolean;
+}
+
+class CollaboratorCard extends React.Component<IProps, IState> {
+  public state = {
+    expand: false
+  };
+
+  public handleExpandClick = () => {
+    this.setState(() => ({ expand: !this.state.expand }));
+  };
+
   public render() {
     const {
       avatarUrl = defaultAvatarUrl,
@@ -65,6 +91,8 @@ class CollaboratorCard extends React.Component<IProps> {
       login,
       classes
     } = this.props;
+
+    const { expand } = this.state;
 
     return (
       <Card className={classes.card}>
@@ -79,13 +107,36 @@ class CollaboratorCard extends React.Component<IProps> {
         />
         <div className={classes.avatarContainer}>
           <ArrowTooltip title={bio} interactive={true} placement="top">
-            <AvatarLabel alt={name} src={avatarUrl} label={name} large={true} />
+            <AvatarLabel
+              alt={name}
+              src={avatarUrl}
+              label={name}
+              larger={true}
+            />
           </ArrowTooltip>
         </div>
         <CardContent>
           <Typography component="p">{bio}</Typography>
         </CardContent>
-        <Collapse in={true} timeout="auto" unmountOnExit={true}>
+        <CardActions className={classes.actions} disableActionSpacing={true}>
+          <IconButton aria-label="Github">
+            <FaGithub />
+          </IconButton>
+          <IconButton aria-label="LinkedIn">
+            <FaLinkedin />
+          </IconButton>
+          <IconButton
+            className={classnames(classes.expand, {
+              [classes.expandOpen]: this.state.expand
+            })}
+            onClick={this.handleExpandClick}
+            aria-expanded={this.state.expand}
+            aria-label="Show more"
+          >
+            <ExpandMoreIcon />
+          </IconButton>
+        </CardActions>
+        <Collapse in={expand} timeout="auto" unmountOnExit={true}>
           <CardContent>
             <Typography>Method:</Typography>
           </CardContent>

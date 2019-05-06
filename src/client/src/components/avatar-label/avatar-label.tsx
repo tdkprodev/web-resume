@@ -1,5 +1,6 @@
 import { Avatar, Grow, Theme, Typography } from "@material-ui/core";
 import { createStyles, withStyles, WithStyles } from "@material-ui/core/styles";
+import { default as classnames } from "classnames";
 import * as React from "react";
 
 const styles = (theme: Theme) =>
@@ -52,6 +53,10 @@ const styles = (theme: Theme) =>
     },
     imgCircle: {
       borderRadius: "50%"
+    },
+    larger: {
+      height: 150,
+      width: 150
     }
   });
 
@@ -60,17 +65,27 @@ interface IProps extends WithStyles<typeof styles> {
   alt?: string;
   label: string;
   large?: boolean;
+  larger?: boolean;
 }
 
 class AvatarLabel extends React.Component<IProps> {
   public render() {
-    const { classes, src, alt = "", label, large = false } = this.props;
+    const {
+      classes,
+      src,
+      alt = "",
+      label,
+      large = false,
+      larger = false
+    } = this.props;
     return (
       <div className={classes.avatarLabelContainer}>
         <Grow in={true}>
           <Avatar
-            classes={{ img: large ? classes.imgCircle : classes.img }}
-            className={large ? classes.bigAvatar : classes.avatar}
+            classes={{ img: larger ? classes.imgCircle : classes.img }}
+            className={classnames(classes.bigAvatar, {
+              [classes.larger]: larger
+            })}
             alt={alt}
             src={src}
           />

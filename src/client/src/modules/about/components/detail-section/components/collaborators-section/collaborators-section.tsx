@@ -4,7 +4,14 @@ import { CollaboratorCard } from "@modules/about/components/detail-section/compo
 import { Nullable } from "@shared/interface";
 import { ICollaborator } from "@shared/interface/collaborator";
 import * as React from "react";
-const collaboratorsGithub = ["tdkprodev", "mdawsondev"];
+const collaboratorsGithub = [
+  "tdkprodev",
+  "mdawsondev",
+  "gaearon",
+  "appleboy",
+  "stof",
+  "fabpot"
+];
 
 const styles = (theme: Theme) =>
   createStyles({
