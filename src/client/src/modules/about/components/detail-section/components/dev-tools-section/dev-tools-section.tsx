@@ -43,11 +43,11 @@ const styles = (theme: Theme) =>
       display: "flex",
       justifyContent: "center",
       margin: "0 5rem",
-      marginBottom: "5rem",
+      // marginBottom: "5rem",
 
       "@media (max-width: 1200px)": {
-        margin: "0 3rem",
-        marginBottom: "5rem"
+        margin: "0 3rem"
+        // marginBottom: "5rem"
       },
       "@media (max-width: 600px)": {
         justifyContent: "space-around"
@@ -57,7 +57,8 @@ const styles = (theme: Theme) =>
       alignItems: "center",
       display: "flex",
       flexWrap: "wrap",
-      justifyContent: "center"
+      justifyContent: "center",
+      marginBottom: "5rem"
     },
     devToolsContainer: {
       alignItems: "center",

@@ -32,7 +32,8 @@ const styles = (theme: Theme) =>
       alignItems: "center",
       display: "flex",
       flexWrap: "wrap",
-      justifyContent: "center"
+      justifyContent: "center",
+      marginBottom: "5rem"
     },
     subHeading: {
       fontWeight: 600,

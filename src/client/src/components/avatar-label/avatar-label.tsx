@@ -36,7 +36,7 @@ const styles = (theme: Theme) =>
 
       "&:hover": {
         backgroundColor: "#f7f6f6",
-        transform: "scale(1.1)"
+        transform: "scale(1.1) !important"
       },
       "@media (max-width: 1200px)": {
         height: 110,
