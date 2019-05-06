@@ -54,7 +54,7 @@ class ProfileCard extends React.Component<IProps, IState> {
     leaveOpenInterval: 0
   };
 
-  public componentDidMount() {
+  public async componentDidMount() {
     const rand = Math.floor(Math.random() * myGreetings.length);
     this.setState({
       greeting: myGreetings[rand]

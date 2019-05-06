@@ -1,16 +1,10 @@
-import { ArrowTooltip } from "@components/arrow-tooltip";
-import { AvatarLabel } from "@components/avatar-label";
 import { Theme, Typography } from "@material-ui/core";
 import { createStyles, withStyles, WithStyles } from "@material-ui/core/styles";
+import { CollaboratorCard } from "@modules/about/components/detail-section/components/collaborators-section/components/collaborator-card";
+import { Nullable } from "@shared/interface";
+import { ICollaborator } from "@shared/interface/collaborator";
 import * as React from "react";
-
-import banisterPhoto from "@images/influencers/banister.jpg";
-import hotzPhoto from "@images/influencers/hotz.jpg";
-import jobPhoto from "@images/influencers/job.jpg";
-import kipchogePhoto from "@images/influencers/kipchoge.jpg";
-import maPhoto from "@images/influencers/ma.jpg";
-import penaPhoto from "@images/influencers/pena.jpg";
-import williamsPhoto from "@images/influencers/williams.jpg";
+const collaboratorsGithub = ["tdkprodev", "mdawsondev"];
 
 const styles = (theme: Theme) =>
   createStyles({
@@ -29,11 +23,12 @@ const styles = (theme: Theme) =>
         width: 0
       }
     },
-    influencersContainer: {
-      alignItems: "center",
+    collaboratorsContainer: {
+      // alignItems: "center",
       display: "flex",
       flexWrap: "wrap",
-      justifyContent: "center"
+      justifyContent: "center",
+      marginBottom: "5rem"
     },
     subHeading: {
       fontWeight: 600,
@@ -43,9 +38,75 @@ const styles = (theme: Theme) =>
 
 interface IProps extends WithStyles<typeof styles> {}
 
-class CollaboratorsSection extends React.Component<IProps> {
+interface IState {
+  collaborators: Array<Nullable<ICollaborator>>;
+  expanded: string;
+}
+
+class CollaboratorsSection extends React.Component<IProps, IState> {
   public state = {
+    collaborators: [],
     expanded: "detail-panel"
+  };
+
+  public async componentDidMount() {
+    this.fetchCollaborators();
+  }
+
+  public fetchCollaborators = async () => {
+    const results = [];
+    for (const developer of collaboratorsGithub) {
+      const url = `https://api.github.com/users/${developer}`;
+      const result = fetch(url).then(res => res.json());
+      results.push(result);
+    }
+
+    let collaborators: Array<Nullable<ICollaborator>> = [];
+    try {
+      collaborators = await Promise.all(results);
+    } catch (error) {
+      // tslint:disable-next-line:no-console
+      console.error("Error in fetching collaborators from GitHub API.", error);
+    } finally {
+      this.setState(() => ({
+        collaborators: collaborators || []
+      }));
+    }
+    // tslint:disable-next-line:no-console
+    console.log("collaborators ----", collaborators);
+  };
+
+  public renderCollaborators = () => {
+    const { collaborators } = this.state;
+
+    return collaborators.length
+      ? collaborators.map((collaborator: ICollaborator, index) => {
+          const {
+            avatar_url,
+            bio,
+            blog,
+            company,
+            html_url,
+            location,
+            name,
+            login
+          } = collaborator;
+
+          return (
+            <CollaboratorCard
+              key={index}
+              avatarUrl={avatar_url}
+              bio={bio}
+              blog={blog}
+              company={company}
+              url={html_url}
+              location={location}
+              name={name}
+              login={login}
+            />
+          );
+        })
+      : [];
   };
 
   public render() {
@@ -61,72 +122,8 @@ class CollaboratorsSection extends React.Component<IProps> {
         >
           Collaborators
         </Typography>
-        <div className={classes.influencersContainer}>
-          <ArrowTooltip
-            title={"placeholder"}
-            interactive={true}
-            placement="top"
-          >
-            <AvatarLabel
-              alt="Roger Banister"
-              src={banisterPhoto}
-              label="Roger Banister"
-            />
-          </ArrowTooltip>
-          <ArrowTooltip
-            title={"placeholder"}
-            interactive={true}
-            placement="top"
-          >
-            <AvatarLabel
-              alt="George Hotz"
-              src={hotzPhoto}
-              label="George Hotz"
-            />
-          </ArrowTooltip>
-          <ArrowTooltip
-            title={"placeholder"}
-            interactive={true}
-            placement="top"
-          >
-            <AvatarLabel alt="Steve Job" src={jobPhoto} label="Steve Job" />
-          </ArrowTooltip>
-          <ArrowTooltip
-            title={"placeholder"}
-            interactive={true}
-            placement="top"
-          >
-            <AvatarLabel
-              alt="Eliude Kipchoge"
-              src={kipchogePhoto}
-              label="Eliude Kipchoge"
-            />
-          </ArrowTooltip>
-          <ArrowTooltip
-            title={"placeholder"}
-            interactive={true}
-            placement="top"
-          >
-            <AvatarLabel alt="Jack Ma" src={maPhoto} label="Jack Ma" />
-          </ArrowTooltip>
-          <ArrowTooltip
-            title={"placeholder"}
-            interactive={true}
-            placement="top"
-          >
-            <AvatarLabel alt="Dan Pena" src={penaPhoto} label="Dan Pena" />
-          </ArrowTooltip>
-          <ArrowTooltip
-            title={"placeholder"}
-            interactive={true}
-            placement="top"
-          >
-            <AvatarLabel
-              alt="Art Williams"
-              src={williamsPhoto}
-              label="Art Williams"
-            />
-          </ArrowTooltip>
+        <div className={classes.collaboratorsContainer}>
+          {this.renderCollaborators()}
         </div>
       </React.Fragment>
     );

@@ -123,7 +123,7 @@ class DetailSection extends React.Component<IProps> {
         </ExpansionPanelSummary>
         <ExpansionPanelDetails classes={{ root: classes.root }}>
           <DevToolsSection />
-          <PassionSection />
+          {/* <PassionSection /> */}
           <InfluencersSection />
           <CollaboratorsSection />
         </ExpansionPanelDetails>
