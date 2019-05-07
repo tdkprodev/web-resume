@@ -64,6 +64,7 @@ interface IProps extends WithStyles<typeof styles> {
   src: string;
   alt?: string;
   label: string;
+  sublabel?: string;
   large?: boolean;
   larger?: boolean;
 }
@@ -74,7 +75,8 @@ class AvatarLabel extends React.Component<IProps> {
       classes,
       src,
       alt = "",
-      label,
+      label = "",
+      sublabel = "",
       large = false,
       larger = false
     } = this.props;
@@ -92,6 +94,9 @@ class AvatarLabel extends React.Component<IProps> {
         </Grow>
         <Typography variant="h6" align="center">
           {label}
+        </Typography>
+        <Typography variant="overline" align="center">
+          {sublabel}
         </Typography>
       </div>
     );

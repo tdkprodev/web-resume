@@ -1,16 +1,12 @@
 import { ArrowTooltip } from "@client/src/components/arrow-tooltip";
 import { AvatarLabel } from "@client/src/components/avatar-label";
-import * as React from "react";
-
-import Avatar from "@material-ui/core/Avatar";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import CardHeader from "@material-ui/core/CardHeader";
-import CardMedia from "@material-ui/core/CardMedia";
 import Collapse from "@material-ui/core/Collapse";
-import red from "@material-ui/core/colors/red";
 import IconButton from "@material-ui/core/IconButton";
+import Link from "@material-ui/core/Link";
 import {
   createStyles,
   Theme,
@@ -19,12 +15,10 @@ import {
 } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import FavoriteIcon from "@material-ui/icons/Favorite";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
-import ShareIcon from "@material-ui/icons/Share";
 import { default as classnames } from "classnames";
-
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import * as React from "react";
+import { FaGithub, FaHome } from "react-icons/fa";
 
 const defaultAvatarUrl = "";
 
@@ -64,6 +58,10 @@ interface IProps extends WithStyles<typeof styles> {
   location?: string;
   name?: string;
   login?: string;
+  followers?: number;
+  following?: number;
+  gistsCount?: number;
+  reposCount?: number;
 }
 
 interface IState {
@@ -84,6 +82,10 @@ class CollaboratorCard extends React.Component<IProps, IState> {
       avatarUrl = defaultAvatarUrl,
       bio,
       blog,
+      followers,
+      following,
+      gistsCount,
+      reposCount,
       company,
       url,
       location,
@@ -111,6 +113,7 @@ class CollaboratorCard extends React.Component<IProps, IState> {
               alt={name}
               src={avatarUrl}
               label={name}
+              sublabel={location}
               larger={true}
             />
           </ArrowTooltip>
@@ -119,12 +122,16 @@ class CollaboratorCard extends React.Component<IProps, IState> {
           <Typography component="p">{bio}</Typography>
         </CardContent>
         <CardActions className={classes.actions} disableActionSpacing={true}>
-          <IconButton aria-label="Github">
-            <FaGithub />
-          </IconButton>
-          <IconButton aria-label="LinkedIn">
-            <FaLinkedin />
-          </IconButton>
+          <Link href={url} target="__blank" rel="noreferrer">
+            <IconButton aria-label="Github">
+              <FaGithub />
+            </IconButton>
+          </Link>
+          <Link href={blog} target="__blank" rel="noreferrer">
+            <IconButton aria-label="LinkedIn">
+              <FaHome />
+            </IconButton>
+          </Link>
           <IconButton
             className={classnames(classes.expand, {
               [classes.expandOpen]: this.state.expand
@@ -138,7 +145,10 @@ class CollaboratorCard extends React.Component<IProps, IState> {
         </CardActions>
         <Collapse in={expand} timeout="auto" unmountOnExit={true}>
           <CardContent>
-            <Typography>Method:</Typography>
+            <Typography>Followers: {followers}</Typography>
+            <Typography>Following: {following}</Typography>
+            <Typography>Repos: {reposCount}</Typography>
+            <Typography>Gists: {gistsCount}</Typography>
           </CardContent>
         </Collapse>
       </Card>

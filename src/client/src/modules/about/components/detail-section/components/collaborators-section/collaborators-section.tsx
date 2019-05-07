@@ -96,7 +96,11 @@ class CollaboratorsSection extends React.Component<IProps, IState> {
             html_url,
             location,
             name,
-            login
+            login,
+            followers,
+            following,
+            public_gists,
+            public_repos
           } = collaborator;
 
           return (
@@ -110,6 +114,10 @@ class CollaboratorsSection extends React.Component<IProps, IState> {
               location={location}
               name={name}
               login={login}
+              followers={followers}
+              following={following}
+              gistsCount={public_gists}
+              reposCount={public_repos}
             />
           );
         })
