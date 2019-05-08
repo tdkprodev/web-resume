@@ -57,8 +57,9 @@ const styles = (theme: Theme) =>
       alignItems: "center",
       display: "flex",
       flexWrap: "wrap",
-      justifyContent: "center",
-      marginBottom: "5rem"
+      justifyContent: "space-around",
+      marginBottom: "5rem",
+      width: "100%"
     },
     devToolsContainer: {
       alignItems: "center",
