@@ -7,6 +7,10 @@ import {
   Typography
 } from "@material-ui/core";
 import { createStyles, withStyles, WithStyles } from "@material-ui/core/styles";
+import { CollaboratorsSection } from "@modules/about/components/detail-section/components/collaborators-section";
+import { DevToolsSection } from "@modules/about/components/detail-section/components/dev-tools-section";
+import { InfluencersSection } from "@modules/about/components/detail-section/components/influencers-section";
+import { PassionSection } from "@modules/about/components/detail-section/components/passion-section";
 import * as React from "react";
 import {
   FaChevronDown
@@ -18,10 +22,6 @@ import {
   // FaLinux,
   // FaHiking,
 } from "react-icons/fa";
-import { CollaboratorsSection } from "../../../../modules/about/components/detail-section/components/collaborators-section";
-import { DevToolsSection } from "../../../../modules/about/components/detail-section/components/dev-tools-section";
-import { InfluencersSection } from "../../../../modules/about/components/detail-section/components/influencers-section";
-import { PassionSection } from "../../../../modules/about/components/detail-section/components/passion-section";
 
 const styles = (theme: Theme) =>
   createStyles({

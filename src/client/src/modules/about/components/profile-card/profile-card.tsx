@@ -1,5 +1,11 @@
-import { SocialLinks } from "../../../../components/social-links";
-
+import { SocialLinks } from "@components/social-links";
+import craftingSkillPhoto from "@images/icons/crafting-skill.png";
+import energyPhoto from "@images/icons/energy.png";
+import fortidudePhoto from "@images/icons/fortitude.png";
+import healthPhoto from "@images/icons/health.png";
+import meleeDamagePhoto from "@images/icons/melee-damage.png";
+import movementSpeedPhoto from "@images/icons/movement-speed.png";
+import myPhoto from "@images/propho.jpg";
 import {
   createStyles,
   Divider,
@@ -9,19 +15,10 @@ import {
   WithStyles,
   withStyles
 } from "@material-ui/core";
-import craftingSkillPhoto from "../../../.././images/icons/crafting-skill.png";
-import energyPhoto from "../../../.././images/icons/energy.png";
-import fortidudePhoto from "../../../.././images/icons/fortitude.png";
-import healthPhoto from "../../../.././images/icons/health.png";
-import meleeDamagePhoto from "../../../.././images/icons/melee-damage.png";
-import movementSpeedPhoto from "../../../.././images/icons/movement-speed.png";
-import myPhoto from "../../../.././images/propho.jpg";
-
-import { AgeDisplay } from "../../../../modules/about/components/profile-card/components/age-display";
-
+import { AgeDisplay } from "@modules/about/components/profile-card/components/age-display";
+import { Attribute } from "@modules/about/components/profile-card/components/attribute";
 import * as React from "react";
 import { FaMapMarkerAlt } from "react-icons/fa";
-import { Attribute } from "../../../../modules/about/components/profile-card/components/attribute";
 
 const myGreetings = [
   "Hey, what's up?",

@@ -1,10 +1,9 @@
-import { MaterialTextField } from "../../components/material-text-field";
-
+import { MaterialTextField } from "@components/material-text-field";
+import { IPreview } from "@interface/preview";
 import { Typography } from "@material-ui/core";
+import { previews } from "@modules/projects/assets/previews";
+import { Preview } from "@modules/projects/components/preview";
 import * as React from "react";
-import { IPreview } from "../../../../shared/interface/preview";
-import { previews } from "../../modules/projects/assets/previews";
-import { Preview } from "../../modules/projects/components/preview";
 
 interface IState {
   filterText: string;

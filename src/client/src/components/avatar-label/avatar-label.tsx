@@ -6,22 +6,22 @@ import * as React from "react";
 const styles = (theme: Theme) =>
   createStyles({
     avatar: {
-      height: 90,
+      height: 100,
       marginBottom: 10,
       padding: 10,
-      width: 90,
+      width: 100,
 
       "&:hover": {
         backgroundColor: "#f7f6f6",
         transform: "scale(1.1)"
       },
       "@media (max-width: 1200px)": {
-        height: 80,
-        width: 80
+        height: 95,
+        width: 95
       },
       "@media (max-width: 960px)": {
-        height: 70,
-        width: 70
+        height: 85,
+        width: 85
       }
     },
     avatarLabelContainer: {
@@ -65,6 +65,7 @@ interface IProps extends WithStyles<typeof styles> {
   alt?: string;
   label: string;
   sublabel?: string;
+  circle?: boolean;
   large?: boolean;
   larger?: boolean;
 }
@@ -77,6 +78,7 @@ class AvatarLabel extends React.Component<IProps> {
       alt = "",
       label = "",
       sublabel = "",
+      circle = false,
       large = false,
       larger = false
     } = this.props;
@@ -84,8 +86,9 @@ class AvatarLabel extends React.Component<IProps> {
       <div className={classes.avatarLabelContainer}>
         <Grow in={true}>
           <Avatar
-            classes={{ img: larger ? classes.imgCircle : classes.img }}
-            className={classnames(classes.bigAvatar, {
+            classes={{ img: circle ? classes.imgCircle : classes.img }}
+            className={classnames(classes.avatar, {
+              [classes.bigAvatar]: large,
               [classes.larger]: larger
             })}
             alt={alt}

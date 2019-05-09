@@ -1,6 +1,6 @@
+import { ArrowTooltip } from "@components/arrow-tooltip";
+import { AvatarLabel } from "@components/avatar-label";
 import * as React from "react";
-import { ArrowTooltip } from "../../components/arrow-tooltip";
-import { AvatarLabel } from "../../components/avatar-label";
 
 interface IProps {
   alt: string;

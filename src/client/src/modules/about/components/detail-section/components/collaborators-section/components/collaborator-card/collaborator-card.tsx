@@ -1,6 +1,5 @@
-import { ArrowTooltip } from "../../../../../../../../../../client/src/components/arrow-tooltip";
-import { AvatarLabel } from "../../../../../../../../../../client/src/components/avatar-label";
-
+import { ArrowTooltip } from "@client/src/components/arrow-tooltip";
+import { AvatarLabel } from "@client/src/components/avatar-label";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
@@ -116,6 +115,7 @@ class CollaboratorCard extends React.Component<IProps, IState> {
               label={name}
               sublabel={location}
               larger={true}
+              circle={true}
             />
           </ArrowTooltip>
         </div>
@@ -123,15 +123,27 @@ class CollaboratorCard extends React.Component<IProps, IState> {
           <Typography component="p">{bio}</Typography>
         </CardContent>
         <CardActions className={classes.actions} disableActionSpacing={true}>
-          <Link href={url} target="__blank" rel="noreferrer">
-            <IconButton aria-label="Github">
-              <FaGithub />
-            </IconButton>
-          </Link>
+          <ArrowTooltip
+            title={`${name}'s Github`}
+            interactive={true}
+            placement="top"
+          >
+            <Link href={url} target="__blank" rel="noreferrer">
+              <IconButton aria-label="Github">
+                <FaGithub />
+              </IconButton>
+            </Link>
+          </ArrowTooltip>
           <Link href={blog} target="__blank" rel="noreferrer">
-            <IconButton aria-label="LinkedIn">
-              <FaHome />
-            </IconButton>
+            <ArrowTooltip
+              title={`${name}'s Blog.`}
+              interactive={true}
+              placement="top"
+            >
+              <IconButton aria-label="Home">
+                <FaHome />
+              </IconButton>
+            </ArrowTooltip>
           </Link>
           <IconButton
             className={classnames(classes.expand, {

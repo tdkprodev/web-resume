@@ -1,16 +1,15 @@
-import { ArrowTooltip } from "../../../../../../components/arrow-tooltip";
-import { AvatarLabel } from "../../../../../../components/avatar-label";
-
+import { ArrowTooltip } from "@components/arrow-tooltip";
+import { AvatarLabel } from "@components/avatar-label";
+import banisterPhoto from "@images/influencers/banister.jpg";
+import hotzPhoto from "@images/influencers/hotz.jpg";
+import jobPhoto from "@images/influencers/job.jpg";
+import kipchogePhoto from "@images/influencers/kipchoge.jpg";
+import maPhoto from "@images/influencers/ma.jpg";
+import penaPhoto from "@images/influencers/pena.jpg";
+import williamsPhoto from "@images/influencers/williams.jpg";
 import { Theme, Typography } from "@material-ui/core";
 import { createStyles, withStyles, WithStyles } from "@material-ui/core/styles";
 import * as React from "react";
-import banisterPhoto from "../../../../../.././images/influencers/banister.jpg";
-import hotzPhoto from "../../../../../.././images/influencers/hotz.jpg";
-import jobPhoto from "../../../../../.././images/influencers/job.jpg";
-import kipchogePhoto from "../../../../../.././images/influencers/kipchoge.jpg";
-import maPhoto from "../../../../../.././images/influencers/ma.jpg";
-import penaPhoto from "../../../../../.././images/influencers/pena.jpg";
-import williamsPhoto from "../../../../../.././images/influencers/williams.jpg";
 
 const styles = (theme: Theme) =>
   createStyles({
@@ -69,6 +68,7 @@ class InfluencersSection extends React.Component<IProps> {
               src={banisterPhoto}
               label="Roger Banister"
               large={true}
+              circle={true}
             />
           </ArrowTooltip>
           <ArrowTooltip
@@ -83,6 +83,7 @@ class InfluencersSection extends React.Component<IProps> {
               src={hotzPhoto}
               label="George Hotz"
               large={true}
+              circle={true}
             />
           </ArrowTooltip>
           <ArrowTooltip
@@ -95,6 +96,7 @@ class InfluencersSection extends React.Component<IProps> {
               src={jobPhoto}
               label="Steve Job"
               large={true}
+              circle={true}
             />
           </ArrowTooltip>
           <ArrowTooltip
@@ -107,6 +109,7 @@ class InfluencersSection extends React.Component<IProps> {
               src={kipchogePhoto}
               label="Eliude Kipchoge"
               large={true}
+              circle={true}
             />
           </ArrowTooltip>
           <ArrowTooltip
@@ -119,6 +122,7 @@ class InfluencersSection extends React.Component<IProps> {
               src={maPhoto}
               label="Jack Ma"
               large={true}
+              circle={true}
             />
           </ArrowTooltip>
           <ArrowTooltip title={"Do it!"} interactive={true} placement="top">
@@ -127,6 +131,7 @@ class InfluencersSection extends React.Component<IProps> {
               src={williamsPhoto}
               label="Art Williams"
               large={true}
+              circle={true}
             />
           </ArrowTooltip>
           <ArrowTooltip
@@ -139,6 +144,7 @@ class InfluencersSection extends React.Component<IProps> {
               src={penaPhoto}
               label="Dan Pena"
               large={true}
+              circle={true}
             />
           </ArrowTooltip>
         </div>

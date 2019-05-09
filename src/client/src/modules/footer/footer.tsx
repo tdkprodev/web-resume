@@ -1,10 +1,9 @@
-import { ArrowTooltip } from "../../components/arrow-tooltip";
-
+import { ArrowTooltip } from "@components/arrow-tooltip";
+import { SocialLinks } from "@components/social-links";
 import { Link, Typography } from "@material-ui/core";
 import * as $ from "jquery";
 import * as React from "react";
 import { FaChevronUp } from "react-icons/fa";
-import { SocialLinks } from "../../components/social-links";
 
 class Footer extends React.Component<{}> {
   public componentDidMount() {
