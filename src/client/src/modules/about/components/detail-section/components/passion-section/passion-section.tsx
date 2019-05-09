@@ -1,16 +1,17 @@
-import { ArrowTooltip } from "@components/arrow-tooltip";
-import { AvatarLabel } from "@components/avatar-label";
+import { ArrowTooltip } from "../../../../../../components/arrow-tooltip";
+import { AvatarLabel } from "../../../../../../components/avatar-label";
+
 import { Theme, Typography } from "@material-ui/core";
 import { createStyles, withStyles, WithStyles } from "@material-ui/core/styles";
 import * as React from "react";
 
-import banisterPhoto from "@images/influencers/banister.jpg";
-import hotzPhoto from "@images/influencers/hotz.jpg";
-import jobPhoto from "@images/influencers/job.jpg";
-import kipchogePhoto from "@images/influencers/kipchoge.jpg";
-import maPhoto from "@images/influencers/ma.jpg";
-import penaPhoto from "@images/influencers/pena.jpg";
-import williamsPhoto from "@images/influencers/williams.jpg";
+import banisterPhoto from "../../../../../.././images/influencers/banister.jpg";
+import hotzPhoto from "../../../../../.././images/influencers/hotz.jpg";
+import jobPhoto from "../../../../../.././images/influencers/job.jpg";
+import kipchogePhoto from "../../../../../.././images/influencers/kipchoge.jpg";
+import maPhoto from "../../../../../.././images/influencers/ma.jpg";
+import penaPhoto from "../../../../../.././images/influencers/pena.jpg";
+import williamsPhoto from "../../../../../.././images/influencers/williams.jpg";
 
 const styles = (theme: Theme) =>
   createStyles({

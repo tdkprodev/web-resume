@@ -1,5 +1,5 @@
-import { getAge } from "@utils/getAge";
 import * as React from "react";
+import { getAge } from "../../../../../../utils/getAge";
 
 interface IState {
   ageInterval: number;

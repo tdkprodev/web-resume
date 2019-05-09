@@ -1,5 +1,6 @@
-import { ArrowTooltip } from "@client/src/components/arrow-tooltip";
-import { AvatarLabel } from "@client/src/components/avatar-label";
+import { ArrowTooltip } from "../../../../../../../../../../client/src/components/arrow-tooltip";
+import { AvatarLabel } from "../../../../../../../../../../client/src/components/avatar-label";
+
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";

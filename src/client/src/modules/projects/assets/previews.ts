@@ -1,12 +1,12 @@
-import thumbnailBlogsome from "@images/thumbnails/blogsome.png";
-import thumbnailChat from "@images/thumbnails/chat.png";
-import thumbnailExpensify from "@images/thumbnails/expensify.png";
-import thumbnailNatours from "@images/thumbnails/natours.png";
-import thumbnailNexter from "@images/thumbnails/nexter.png";
-import thumbnailTrillo from "@images/thumbnails/trillo.png";
-import thumbnailYouTube from "@images/thumbnails/yt.png";
+import thumbnailBlogsome from "../../.././images/thumbnails/blogsome.png";
+import thumbnailChat from "../../.././images/thumbnails/chat.png";
+import thumbnailExpensify from "../../.././images/thumbnails/expensify.png";
+import thumbnailNatours from "../../.././images/thumbnails/natours.png";
+import thumbnailNexter from "../../.././images/thumbnails/nexter.png";
+import thumbnailTrillo from "../../.././images/thumbnails/trillo.png";
+import thumbnailYouTube from "../../.././images/thumbnails/yt.png";
 
-import { IPreview } from "@interface/preview";
+import { IPreview } from "../../../../../shared/interface/preview";
 
 export const previews: IPreview[] = [
   {

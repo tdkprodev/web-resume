@@ -1,4 +1,3 @@
-import { ArrowTooltip } from "@client/src/components/arrow-tooltip";
 import {
   Avatar,
   createStyles,
@@ -8,7 +7,8 @@ import {
   WithStyles,
   withStyles
 } from "@material-ui/core";
-import { SkillPoint } from "@modules/about/components/profile-card/components/skill-point";
+import { ArrowTooltip } from "../../../../../../../../client/src/components/arrow-tooltip";
+import { SkillPoint } from "../../../../../../modules/about/components/profile-card/components/skill-point";
 
 import * as React from "react";
 

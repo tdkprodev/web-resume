@@ -1,6 +1,6 @@
-import { ArrowTooltip } from "@components/arrow-tooltip";
 import * as $ from "jquery";
 import * as React from "react";
+import { ArrowTooltip } from "../../../../components/arrow-tooltip";
 
 class Hero extends React.Component<{}> {
   public componentDidMount() {

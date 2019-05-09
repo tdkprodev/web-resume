@@ -1,13 +1,15 @@
-import { ArrowTooltip } from "@components/arrow-tooltip";
-import { AvatarLabel } from "@components/avatar-label";
-import nodeLogo from "@images/icons/node.png";
-import reactLogo from "@images/icons/react.png";
-import tsLogo from "@images/icons/ts.png";
-import typeormLogo from "@images/icons/typeorm.png";
-import vimLogo from "@images/icons/vim.png";
-import vscodeLogo from "@images/icons/vscode.png";
+import { ArrowTooltip } from "../../../../../../components/arrow-tooltip";
+import { AvatarLabel } from "../../../../../../components/avatar-label";
+
 import { Theme, Typography } from "@material-ui/core";
 import { createStyles, withStyles, WithStyles } from "@material-ui/core/styles";
+import * as React from "react";
+import nodeLogo from "../../../../../.././images/icons/node.png";
+import reactLogo from "../../../../../.././images/icons/react.png";
+import tsLogo from "../../../../../.././images/icons/ts.png";
+import typeormLogo from "../../../../../.././images/icons/typeorm.png";
+import vimLogo from "../../../../../.././images/icons/vim.png";
+import vscodeLogo from "../../../../../.././images/icons/vscode.png";
 import {
   NodeHoverDetail,
   ReactHoverDetail,
@@ -15,8 +17,7 @@ import {
   TypeScriptHoverDetail,
   VimHoverDetail,
   VsCodeHoverDetail
-} from "@modules/about/components/detail-section/components/hover-details";
-import * as React from "react";
+} from "../../../../../../modules/about/components/detail-section/components/hover-details";
 
 const styles = (theme: Theme) =>
   createStyles({
