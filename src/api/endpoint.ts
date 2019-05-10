@@ -23,7 +23,9 @@ import { IApiResponse } from "./index"; // import the IApiResponse interface
 
 /** Get token from localStorage or return an empty string */
 export function getCurrentToken() {
-  if (typeof localStorage === "undefined") return "";
+  if (typeof localStorage === "undefined") {
+    return "";
+  }
   return localStorage.getItem("token") || "";
 }
 

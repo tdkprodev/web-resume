@@ -4,10 +4,12 @@
     "rules": {
       "no-console": false,
       "jsx-boolean-value": [false, "never"],
-      "no-unused-variable": false
+      "no-unused-variable": false,
+      "interface-over-type-literal": false
     },
     "exclude": [
       "config/**/*.js",
+      "api/**/*",
       "node_modules/**/*.ts",
       "coverage/lcov-report/*.js"
     ]

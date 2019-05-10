@@ -2,10 +2,12 @@
   "extends": ["tslint:recommended", "tslint-react", "tslint-config-prettier"],
   "linterOptions": {
     "rules": {
-      "no-console": false
+      "no-console": false,
+      "interface-over-type-literal": false
     },
     "exclude": [
       "config/**/*.js",
+      "src/api/**/*",
       "node_modules/**/*.ts",
       "coverage/lcov-report/*.js"
     ]

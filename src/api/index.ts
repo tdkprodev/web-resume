@@ -1,4 +1,4 @@
-import { Endpoint, ParamsType, TokenMap } from "@api/endpoint";
+import { Endpoint, ParamsType, TokenMap } from "./endpoint";
 import { Request, RequestHandler, Response, Router } from "express";
 
 import { Logger } from "@shared/logger";
