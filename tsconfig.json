@@ -1,10 +1,17 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
+    "baseUrl": "./src",
+    "paths": {
+      "@api/*": ["api/*"],
+      "@server/*": ["server/*"],
+      "@shared/*": ["shared/*"],
+      "@connection/*": ["shared/connection/*"],
+      "@interface/*": ["shared/interface/*"]
+    },
     "outDir": "build/dist",
     "module": "commonjs",
     "target": "es5",
-    "lib": ["es6", "dom"],
+    "lib": ["es2017", "dom"],
     "sourceMap": true,
     "allowJs": true,
     "jsx": "react",
