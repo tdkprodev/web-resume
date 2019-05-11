@@ -7426,9 +7426,10 @@ tslint-react@^3.2.0:
   dependencies:
     tsutils "^2.13.1"
 
-tslint@^5.7.0:
+tslint@^5.16.0, tslint@^5.7.0:
   version "5.16.0"
   resolved "https://registry.yarnpkg.com/tslint/-/tslint-5.16.0.tgz#ae61f9c5a98d295b9a4f4553b1b1e831c1984d67"
+  integrity sha512-UxG2yNxJ5pgGwmMzPMYh/CCnCnh0HfPgtlVRDs1ykZklufFBL1ZoTlWFRz2NQjcoEiDoRp+JyT0lhBbbH/obyA==
   dependencies:
     "@babel/code-frame" "^7.0.0"
     builtin-modules "^1.1.1"

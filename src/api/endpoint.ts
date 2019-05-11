@@ -52,12 +52,12 @@ export type EndpointConstructorKeys =
  * @param options The options object containing permission, method
  */
 export class Endpoint<TBody, TResponse, TTokens extends TokenMap> {
-  path: string;
-  method: MethodType;
-  formData?: boolean;
-  permissions: string;
-  tokens?: TTokens;
-  query?: any;
+  public path: string;
+  public method: MethodType;
+  public formData?: boolean;
+  public permissions: string;
+  public tokens?: TTokens;
+  public query?: any;
 
   /**
    * Parses the tokens object from the options passed in with createEndpoint and
@@ -106,7 +106,7 @@ export class Endpoint<TBody, TResponse, TTokens extends TokenMap> {
    * const user = { firstName: 'Iam', lastName: 'Legend' };
    * const result = UserEndpoint.create.apiCall(null, { user });
    */
-  async apiCall(
+  public async apiCall(
     options?: {} | null,
     body?: TBody
   ): Promise<IApiResponse<TResponse>> {

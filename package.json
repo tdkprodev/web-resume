@@ -8,7 +8,8 @@
     "start": "ts-node src/server/index.ts",
     "server": "nodemon",
     "client": "ts-node script/start-script.ts",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false yarn install && cd src/client && yarn install && yarn build"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false yarn install && cd src/client && yarn install && yarn build",
+    "lint": "cd src/client && yarn lint"
   },
   "devDependencies": {},
   "dependencies": {
@@ -24,6 +25,7 @@
     "nodemon": "^1.18.9",
     "ramda": "^0.26.1",
     "ts-node": "^8.1.0",
+    "tslint": "^5.16.0",
     "typeorm": "^0.2.11",
     "typescript": "^3.2.2"
   }
