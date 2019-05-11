@@ -109,7 +109,8 @@ const styles = (theme: Theme) =>
       backgroundColor: theme.palette.common.white,
       boxShadow: theme.shadows[1],
       color: "rgba(0, 0, 0, 0.87)",
-      fontSize: 11
+      fontSize: 11,
+      zIndex: 9000
     }
   });
 
@@ -164,7 +165,6 @@ class CustomizedTooltips extends React.Component<IProps, IState> {
         }
         placement={placement}
         classes={{ popper: classes.arrowPopper, tooltip: classes.lightTooltip }}
-        style={{ zIndex: 9000 }}
         interactive={interactive}
         PopperProps={{
           popperOptions: {
