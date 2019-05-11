@@ -62,7 +62,13 @@ class InfluencersSection extends React.Component<IProps> {
           Influencers
         </Typography>
         <div className={classes.influencersContainer}>
-          <ArrowTooltip title={"Sub 4 mile"} interactive={true} placement="top">
+          <ArrowTooltip
+            title={
+              "The man who can drive himself further once the effort gets painful is the man who will win."
+            }
+            interactive={true}
+            placement="top"
+          >
             <AvatarLabel
               alt="Roger Banister"
               src={banisterPhoto}
@@ -100,7 +106,9 @@ class InfluencersSection extends React.Component<IProps> {
             />
           </ArrowTooltip>
           <ArrowTooltip
-            title={"Sub 2 marathon"}
+            title={
+              "Don't be the fastest runner in the world. Be the fastest runner in history."
+            }
             interactive={true}
             placement="top"
           >
