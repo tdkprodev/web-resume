@@ -1,9 +1,9 @@
-import { MaterialTextField } from "@components/material-text-field";
-import { IPreview } from "@interface/preview";
-import { Typography } from "@material-ui/core";
-import { previews } from "@modules/projects/assets/previews";
-import { Preview } from "@modules/projects/components/preview";
-import * as React from "react";
+import { MaterialTextField } from '../../components/material-text-field';
+import { IPreview } from '../../../../shared/interface/preview';
+import { Typography } from '@material-ui/core';
+import { previews } from './assets/previews';
+import { Preview } from './components/preview';
+import * as React from 'react';
 
 interface IState {
   filterText: string;
@@ -11,7 +11,7 @@ interface IState {
 
 class Projects extends React.Component<{}, IState> {
   public state = {
-    filterText: ""
+    filterText: '',
   };
 
   public componentDidMount() {
@@ -37,9 +37,9 @@ class Projects extends React.Component<{}, IState> {
       };
     }
 
-    const sliderCompositions = document.querySelectorAll(".slide-in");
+    const sliderCompositions = document.querySelectorAll('.slide-in');
 
-    function checkSlide(e: Event) {
+    function checkSlide() {
       Array.prototype.slice
         .call(sliderCompositions)
         .forEach((sliderComposition: any) => {
@@ -52,15 +52,15 @@ class Projects extends React.Component<{}, IState> {
           const isNotScrollPast = window.scrollY > compositionBottom;
 
           if (isHalfShown && isNotScrollPast) {
-            sliderComposition.classList.add("show");
+            sliderComposition.classList.add('show');
           } else {
-            sliderComposition.classList.remove("show");
+            sliderComposition.classList.remove('show');
           }
         });
     }
 
-    window.addEventListener("scroll", debounce(checkSlide));
-    window.addEventListener("load", debounce(checkSlide));
+    window.addEventListener('scroll', debounce(checkSlide));
+    window.addEventListener('load', debounce(checkSlide));
   }
 
   public renderEmptyPreviews = () => (
@@ -78,7 +78,7 @@ class Projects extends React.Component<{}, IState> {
         preview.title
           .toLowerCase()
           .trim()
-          .includes(filterText)
+          .includes(filterText),
       );
     }
 
@@ -99,26 +99,28 @@ class Projects extends React.Component<{}, IState> {
 
   public handleChange = (
     event: React.ChangeEvent<HTMLInputElement>,
-    value: string
+    value: string,
   ) => {
+    event.preventDefault();
+
     this.setState(
       () => ({
-        filterText: value
+        filterText: value,
       }),
       () => {
         const compositionPhotos = document.querySelectorAll(
-          ".composition__photo"
+          '.composition__photo',
         );
 
         Array.prototype.slice
           .call(compositionPhotos)
           .forEach((photo: HTMLElement) => {
-            photo.classList.remove("show");
-            photo.classList.remove("slide-in");
-            photo.classList.add("show");
-            photo.classList.add("slide-in");
+            photo.classList.remove('show');
+            photo.classList.remove('slide-in');
+            photo.classList.add('show');
+            photo.classList.add('slide-in');
           });
-      }
+      },
     );
   };
 

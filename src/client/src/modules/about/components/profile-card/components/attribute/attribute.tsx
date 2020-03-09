@@ -1,4 +1,4 @@
-import { ArrowTooltip } from "@client/src/components/arrow-tooltip";
+import { Tooltip } from '@material-ui/core';
 import {
   Avatar,
   createStyles,
@@ -6,17 +6,17 @@ import {
   Grow,
   Theme,
   WithStyles,
-  withStyles
-} from "@material-ui/core";
-import { SkillPoint } from "@modules/about/components/profile-card/components/skill-point";
+  withStyles,
+} from '@material-ui/core';
+import { SkillPoint } from '../../components/skill-point';
 
-import * as React from "react";
+import * as React from 'react';
 
 const styles = (theme: Theme) =>
   createStyles({
     positionAbsolute: {
-      position: "absolute"
-    }
+      position: 'absolute',
+    },
   });
 
 interface IAttributeProps extends WithStyles<typeof styles> {
@@ -38,13 +38,13 @@ class Attribute extends React.Component<IAttributeProps> {
       distance = 10,
       hovering,
       timeout,
-      ariaLabel = "",
+      ariaLabel = '',
       imgSrc,
-      title = "placeholder",
+      title = 'placeholder',
       points = 100,
       classes,
       children,
-      data
+      data,
     } = this.props;
 
     return (
@@ -52,7 +52,7 @@ class Attribute extends React.Component<IAttributeProps> {
         in={hovering}
         style={{
           transform: `rotate(${angle}deg) translate(${distance}rem) rotate(-${angle}deg)`,
-          transformOrigin: "0 0 0"
+          transformOrigin: '0 0 0',
         }}
         {...(hovering ? { timeout } : {})}
       >
@@ -61,7 +61,7 @@ class Attribute extends React.Component<IAttributeProps> {
           size="small"
           className={classes.positionAbsolute}
         >
-          <ArrowTooltip
+          <Tooltip
             title={
               <SkillPoint title={title} points={points} data={data}>
                 {children}
@@ -70,7 +70,7 @@ class Attribute extends React.Component<IAttributeProps> {
             placement="right-start"
           >
             <Avatar src={imgSrc} />
-          </ArrowTooltip>
+          </Tooltip>
         </Fab>
       </Grow>
     );

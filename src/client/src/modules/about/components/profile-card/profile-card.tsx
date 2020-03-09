@@ -1,38 +1,37 @@
-import { SocialLinks } from "@components/social-links";
-import craftingSkillPhoto from "@images/icons/crafting-skill.png";
-import energyPhoto from "@images/icons/energy.png";
-import fortidudePhoto from "@images/icons/fortitude.png";
-import healthPhoto from "@images/icons/health.png";
-import meleeDamagePhoto from "@images/icons/melee-damage.png";
-import movementSpeedPhoto from "@images/icons/movement-speed.png";
-import myPhoto from "@images/propho.jpg";
+import { SocialLinks } from '../../../../components/social-links';
+import craftingSkillPhoto from '../../../../images/icons/crafting-skill.png';
+import energyPhoto from '../../../../images/icons/energy.png';
+import fortidudePhoto from '../../../../images/icons/fortitude.png';
+import healthPhoto from '../../../../images/icons/health.png';
+import meleeDamagePhoto from '../../../../images/icons/melee-damage.png';
+import movementSpeedPhoto from '../../../../images/icons/movement-speed.png';
+import myPhoto from '../../../../images/propho.jpg';
 import {
   createStyles,
   Divider,
-  Theme,
   Tooltip,
   Typography,
   WithStyles,
-  withStyles
-} from "@material-ui/core";
-import { AgeDisplay } from "@modules/about/components/profile-card/components/age-display";
-import { Attribute } from "@modules/about/components/profile-card/components/attribute";
-import * as React from "react";
-import { FaMapMarkerAlt } from "react-icons/fa";
+  withStyles,
+} from '@material-ui/core';
+import { AgeDisplay } from './components/age-display';
+import { Attribute } from './components/attribute';
+import * as React from 'react';
+import { FaMapMarkerAlt } from 'react-icons/fa';
 
 const myGreetings = [
-  "Hey, what's up?",
-  "Thanks for viewing.",
-  "Did you know birds fly south?"
+  `Hey, what's up?`,
+  'Thanks for viewing.',
+  'Did you know birds fly south?',
 ];
 
-const styles = (theme: Theme) =>
+const styles = () =>
   createStyles({
     customTip: {
-      alignItems: "center",
-      display: "flex",
-      minHeight: 50
-    }
+      alignItems: 'center',
+      display: 'flex',
+      minHeight: 50,
+    },
   });
 
 interface IState {
@@ -43,7 +42,7 @@ interface IState {
   leaveOpenInterval: number;
 }
 
-interface IProps extends WithStyles<typeof styles> {}
+type IProps = WithStyles<typeof styles>;
 
 class ProfileCard extends React.Component<IProps, IState> {
   public state = {
@@ -51,24 +50,24 @@ class ProfileCard extends React.Component<IProps, IState> {
     greetingIntervalId: 0,
     hovering: false,
     leaveOpen: false,
-    leaveOpenInterval: 0
+    leaveOpenInterval: 0,
   };
 
-  public async componentDidMount() {
+  public async componentDidMount(): Promise<void> {
     const rand = Math.floor(Math.random() * myGreetings.length);
     this.setState({
-      greeting: myGreetings[rand]
+      greeting: myGreetings[rand],
     });
 
     const greetingIntervalId = window.setInterval(() => {
       const randomIndex = Math.floor(Math.random() * myGreetings.length);
       this.setState({
-        greeting: myGreetings[randomIndex]
+        greeting: myGreetings[randomIndex],
       });
     }, 5000);
 
     this.setState(() => ({
-      greetingIntervalId
+      greetingIntervalId,
     }));
   }
 
@@ -80,7 +79,7 @@ class ProfileCard extends React.Component<IProps, IState> {
     window.clearTimeout(this.state.leaveOpenInterval);
     this.setState(() => ({
       hovering: true,
-      leaveOpen: true
+      leaveOpen: true,
     }));
   };
 
@@ -88,15 +87,15 @@ class ProfileCard extends React.Component<IProps, IState> {
     this.setState(() => ({
       leaveOpenInterval: window.setTimeout(() => {
         this.setState(() => ({
-          leaveOpen: false
+          leaveOpen: false,
         }));
-      }, 7000)
+      }, 7000),
     }));
   };
 
   public handleClick = () => {
     this.setState(() => ({
-      hovering: false
+      hovering: false,
     }));
   };
 
@@ -109,7 +108,10 @@ class ProfileCard extends React.Component<IProps, IState> {
         imgSrc={craftingSkillPhoto}
         title="Crafting Skill"
         points={87}
-        data={[["Guitar", "Novice"], ["Computer", "Intermediate"]]}
+        data={[
+          ['Guitar', 'Novice'],
+          ['Computer', 'Intermediate'],
+        ]}
       />
       <Attribute
         angle={210}
@@ -134,7 +136,7 @@ class ProfileCard extends React.Component<IProps, IState> {
         imgSrc={healthPhoto}
         title="Health"
         points={92}
-        data={[["Age", <AgeDisplay key="age" />]]}
+        data={[['Age', <AgeDisplay key="age" />]]}
       />
       <Attribute
         angle={120}
@@ -174,7 +176,7 @@ class ProfileCard extends React.Component<IProps, IState> {
                 onClick={this.handleClick}
                 className="image circle"
                 src={myPhoto}
-                alt="My Photo"
+                alt="My Avatar"
               />
             </div>
           </Tooltip>
@@ -193,8 +195,8 @@ class ProfileCard extends React.Component<IProps, IState> {
         <Divider variant="middle" />
         <SocialLinks />
         <Typography className="profile__text animateFromBottom">
-          I'm a developer from Charlotte, North Carlolina. I'm passionate about
-          the web technologies that connects us all.
+          {`I'm a developer from Charlotte, North Carlolina. I'm passionate about
+          the web technologies that connects us all.`}
         </Typography>
       </div>
     );

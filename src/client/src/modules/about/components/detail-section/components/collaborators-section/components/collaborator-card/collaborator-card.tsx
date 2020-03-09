@@ -1,52 +1,54 @@
-import { ArrowTooltip } from "@client/src/components/arrow-tooltip";
-import { AvatarLabel } from "@client/src/components/avatar-label";
-import Card from "@material-ui/core/Card";
-import CardActions from "@material-ui/core/CardActions";
-import CardContent from "@material-ui/core/CardContent";
-import CardHeader from "@material-ui/core/CardHeader";
-import Collapse from "@material-ui/core/Collapse";
-import IconButton from "@material-ui/core/IconButton";
-import Link from "@material-ui/core/Link";
+import {
+  Tooltip,
+  Card,
+  CardActions,
+  CardContent,
+  CardHeader,
+  Collapse,
+  IconButton,
+} from '@material-ui/core';
+import { AvatarLabel } from '../../../../../../../../components/avatar-label';
+import Link from '@material-ui/core/Link';
 import {
   createStyles,
   Theme,
   withStyles,
-  WithStyles
-} from "@material-ui/core/styles";
-import Typography from "@material-ui/core/Typography";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import MoreVertIcon from "@material-ui/icons/MoreVert";
-import { default as classnames } from "classnames";
-import * as React from "react";
-import { FaGithub, FaHome } from "react-icons/fa";
+  WithStyles,
+} from '@material-ui/core/styles';
+import Typography from '@material-ui/core/Typography';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import MoreVertIcon from '@material-ui/icons/MoreVert';
+import { default as classnames } from 'classnames';
+import * as React from 'react';
+import { FaGithub, FaHome } from 'react-icons/fa';
 
-const defaultAvatarUrl = "";
+const defaultAvatarUrl = '';
 
 const styles = (theme: Theme) =>
   createStyles({
     actions: {
-      display: "flex"
+      display: 'flex',
     },
     avatarContainer: {
-      alignItems: "center",
-      display: "flex",
-      justifyContent: "center"
+      alignItems: 'center',
+      display: 'flex',
+      justifyContent: 'center',
     },
     card: {
-      margin: "1rem",
+      margin: '1rem',
       minHeight: 350,
-      width: 300
+      width: 300,
     },
     expand: {
-      marginLeft: "auto",
-      transform: "rotate(0deg)",
-      transition: theme.transitions.create("transform", {
-        duration: theme.transitions.duration.shortest
-      })
+      marginLeft: 'auto',
+      transform: 'rotate(0deg)',
+      transition: theme.transitions.create('transform', {
+        duration: theme.transitions.duration.shortest,
+      }),
     },
     expandOpen: {
-      transform: "rotate(180deg)"
-    }
+      transform: 'rotate(180deg)',
+    },
   });
 
 interface IProps extends WithStyles<typeof styles> {
@@ -70,7 +72,7 @@ interface IState {
 
 class CollaboratorCard extends React.Component<IProps, IState> {
   public state = {
-    expand: false
+    expand: false,
   };
 
   public handleExpandClick = () => {
@@ -89,9 +91,9 @@ class CollaboratorCard extends React.Component<IProps, IState> {
       company,
       url,
       location,
-      name = "Anonymous",
+      name = 'Anonymous',
       login,
-      classes
+      classes,
     } = this.props;
 
     const { expand } = this.state;
@@ -104,11 +106,11 @@ class CollaboratorCard extends React.Component<IProps, IState> {
               <MoreVertIcon />
             </IconButton>
           }
-          title={login || "<Alias>"}
-          subheader={company || "<Company>"}
+          title={login || '<Alias>'}
+          subheader={company || '<Company>'}
         />
         <div className={classes.avatarContainer}>
-          <ArrowTooltip title={bio} interactive={true} placement="top">
+          <Tooltip title={bio} interactive={true} placement="top">
             <AvatarLabel
               alt={name}
               src={avatarUrl}
@@ -117,13 +119,13 @@ class CollaboratorCard extends React.Component<IProps, IState> {
               larger={true}
               circle={true}
             />
-          </ArrowTooltip>
+          </Tooltip>
         </div>
         <CardContent>
           <Typography component="p">{bio}</Typography>
         </CardContent>
-        <CardActions className={classes.actions} disableActionSpacing={true}>
-          <ArrowTooltip
+        <CardActions className={classes.actions}>
+          <Tooltip
             title={`${name}'s Github`}
             interactive={true}
             placement="top"
@@ -133,9 +135,9 @@ class CollaboratorCard extends React.Component<IProps, IState> {
                 <FaGithub />
               </IconButton>
             </Link>
-          </ArrowTooltip>
+          </Tooltip>
           <Link href={blog} target="__blank" rel="noreferrer">
-            <ArrowTooltip
+            <Tooltip
               title={`${name}'s Blog.`}
               interactive={true}
               placement="top"
@@ -143,11 +145,11 @@ class CollaboratorCard extends React.Component<IProps, IState> {
               <IconButton aria-label="Home">
                 <FaHome />
               </IconButton>
-            </ArrowTooltip>
+            </Tooltip>
           </Link>
           <IconButton
             className={classnames(classes.expand, {
-              [classes.expandOpen]: this.state.expand
+              [classes.expandOpen]: this.state.expand,
             })}
             onClick={this.handleExpandClick}
             aria-expanded={this.state.expand}

@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from 'react';
 
 class Contact extends React.Component<{}> {
   public render() {
@@ -16,7 +16,7 @@ class Contact extends React.Component<{}> {
           >
             <div className="form__info">
               <div className="form__group">
-                <input type="text" name="_gotcha" style={{ display: "none" }} />
+                <input type="text" name="_gotcha" style={{ display: 'none' }} />
                 <input
                   type="text"
                   name="user_name"

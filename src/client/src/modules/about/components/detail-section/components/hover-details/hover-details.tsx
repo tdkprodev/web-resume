@@ -1,5 +1,5 @@
-import { Typography, Divider } from "@material-ui/core";
-import * as React from "react";
+import { Typography, Divider } from '@material-ui/core';
+import * as React from 'react';
 
 interface IProps {
   classes: any;
@@ -15,35 +15,35 @@ interface IDetail {
 
 const details = [
   {
-    name: "VsCode",
-    content: "The multitool of editors.",
-    link: "https://code.visualstudio.com/"
+    name: 'VsCode',
+    content: 'The multitool of editors.',
+    link: 'https://code.visualstudio.com/',
   },
   {
-    name: "Vim",
-    content: "The manual transmission of editors.",
-    link: "https://www.vim.org/"
+    name: 'Vim',
+    content: 'The manual transmission of editors.',
+    link: 'https://www.vim.org/',
   },
   {
-    name: "TypeScript",
-    content: "The better JavaScript.",
-    link: "https://www.typescriptlang.org/"
+    name: 'TypeScript',
+    content: 'The better JavaScript.',
+    link: 'https://www.typescriptlang.org/',
   },
   {
-    name: "React",
-    content: "The lego of front end framework.",
-    link: "https://reactjs.org/"
+    name: 'React',
+    content: 'The lego of front end framework.',
+    link: 'https://reactjs.org/',
   },
   {
-    name: "Node",
-    content: "JavaScript for the server.",
-    link: "https://nodejs.org/en/"
+    name: 'Node',
+    content: 'JavaScript for the server.',
+    link: 'https://nodejs.org/en/',
   },
   {
-    name: "TypeORM",
-    content: "ORM for TypeScript.",
-    link: "https://www.typeorm.io/"
-  }
+    name: 'TypeORM',
+    content: 'ORM for TypeScript.',
+    link: 'https://www.typeorm.io/',
+  },
 ];
 
 const [
@@ -52,18 +52,17 @@ const [
   typeScriptDetail,
   reactDetail,
   nodeDetail,
-  typeOrmDetail
+  typeOrmDetail,
 ] = details;
 
 const DetailGenerator = (props: IProps & IDetail) => {
   const {
-    classes,
-    detail: { name, content, link }
+    detail: { name, content, link },
   } = props;
 
   return (
     <React.Fragment>
-      <Typography variant="title" align="center" color="inherit">
+      <Typography variant="h3" align="center" color="inherit">
         {name}
       </Typography>
       <Divider variant="middle" />
@@ -71,7 +70,7 @@ const DetailGenerator = (props: IProps & IDetail) => {
       <Typography>
         <a target="__blank" href={link}>
           click here
-        </a>{" "}
+        </a>{' '}
         for more info.
       </Typography>
     </React.Fragment>
@@ -108,5 +107,5 @@ export {
   TypeScriptHoverDetail,
   ReactHoverDetail,
   NodeHoverDetail,
-  TypeOrmHoverDetail
+  TypeOrmHoverDetail,
 };

@@ -4,10 +4,10 @@ import {
   Theme,
   Typography,
   withStyles,
-  WithStyles
-} from "@material-ui/core";
+  WithStyles,
+} from '@material-ui/core';
 
-import * as React from "react";
+import * as React from 'react';
 
 interface ISkillsPointProps extends WithStyles<typeof styles> {
   title?: string;
@@ -18,20 +18,20 @@ interface ISkillsPointProps extends WithStyles<typeof styles> {
 const styles = (theme: Theme) =>
   createStyles({
     dataKey: {
-      fontWeight: 900
+      fontWeight: 900,
     },
     dataLabel: {
-      alignItems: "center"
+      alignItems: 'center',
     },
     dataValue: {
-      marginLeft: 25
+      marginLeft: 25,
     },
     rightMargin: {
-      rightMargin: 10
+      rightMargin: 10,
     },
     skillsPointAttribute: {
-      display: "flex"
-    }
+      display: 'flex',
+    },
   });
 
 class SkillPoint extends React.Component<ISkillsPointProps> {
@@ -53,7 +53,7 @@ class SkillPoint extends React.Component<ISkillsPointProps> {
   };
 
   public render() {
-    const { classes, points = 100, title = "placeholder" } = this.props;
+    const { classes, points = 100, title = 'placeholder' } = this.props;
     return (
       <React.Fragment>
         <Typography variant="h6" align="center">

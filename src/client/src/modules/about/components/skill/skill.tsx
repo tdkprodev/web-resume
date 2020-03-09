@@ -1,13 +1,13 @@
-import * as React from "react";
-import { FaCss3, FaHtml5, FaJs, FaNodeJs, FaReact } from "react-icons/fa";
+import * as React from 'react';
+import { FaCss3, FaHtml5, FaJs, FaNodeJs, FaReact } from 'react-icons/fa';
 
 class SkillCard extends React.Component<{}> {
   public handleMouseOver = (event: React.MouseEvent) => {
     const { currentTarget } = event;
 
-    currentTarget.classList.remove("bar", "bar--html");
-    currentTarget.classList.add("bar");
-    currentTarget.classList.add("bar--html");
+    currentTarget.classList.remove('bar', 'bar--html');
+    currentTarget.classList.add('bar');
+    currentTarget.classList.add('bar--html');
   };
 
   public render() {

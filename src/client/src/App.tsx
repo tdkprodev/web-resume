@@ -1,11 +1,10 @@
 import {
   createMuiTheme,
-  MuiThemeProvider,
+  ThemeProvider,
   withStyles,
 } from '@material-ui/core/styles';
-import { Portfolio } from '@modules/portfolio';
+import { Portfolio } from './modules/portfolio';
 import * as React from 'react';
-import './sass/main.css';
 
 const theme = createMuiTheme({
   overrides: {
@@ -22,11 +21,38 @@ const styles = {};
 class App extends React.Component {
   public render(): React.ReactNode {
     return (
-      <MuiThemeProvider theme={theme}>
+      <ThemeProvider theme={theme}>
         <Portfolio />
-      </MuiThemeProvider>
+      </ThemeProvider>
     );
   }
 }
 
 export default withStyles(styles)(App);
+
+// import React from 'react';
+// import logo from './logo.svg';
+// import './App.css';
+
+// function App() {
+//   return (
+//     <div className="App">
+//       <header className="App-header">
+//         <img src={logo} className="App-logo" alt="logo" />
+//         <p>
+//           Edit <code>src/App.tsx</code> and save to reload.
+//         </p>
+//         <a
+//           className="App-link"
+//           href="https://reactjs.org"
+//           target="_blank"
+//           rel="noopener noreferrer"
+//         >
+//           Learn React asdfd dfdlsfjklfj
+//         </a>
+//       </header>
+//     </div>
+//   );
+// }
+
+// export default App;
