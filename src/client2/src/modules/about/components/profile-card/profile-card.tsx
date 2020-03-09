@@ -177,7 +177,7 @@ class ProfileCard extends React.Component<IProps, IState> {
                 onClick={this.handleClick}
                 className="image circle"
                 src={myPhoto}
-                alt="My Photo"
+                alt="My Avatar"
               />
             </div>
           </Tooltip>

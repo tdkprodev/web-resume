@@ -1,25 +1,12 @@
 import { ArrowTooltip } from '../../components/arrow-tooltip';
 import { SocialLinks } from '../../components/social-links';
 import { Link, Typography } from '@material-ui/core';
-import * as $ from 'jquery';
 import * as React from 'react';
 import { FaChevronUp } from 'react-icons/fa';
 
 class Footer extends React.Component<{}> {
-  public componentDidMount() {
-    // jQuery implementationS
-    // $('.return-to-top').click(() => {
-    //   const body: JQuery<HTMLElement> = $('body') || {};
-    //   if (body !== undefined) {
-    //     $('html,body').animate(
-    //       {
-    //         scrollTop: 0,
-    //       },
-    //       'medium',
-    //     );
-    //   }
-    // });
-  }
+  public componentDidMount() {}
+
   public render() {
     return (
       <footer className="footer">

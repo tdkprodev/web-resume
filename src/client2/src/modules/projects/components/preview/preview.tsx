@@ -28,7 +28,12 @@ class Preview extends React.Component<IProp> {
 
         <div className="overlay">
           <ArrowTooltip title={dataTip} placement="top">
-            <a className="btn btn--white" href={href} target="_blank">
+            <a
+              className="btn btn--white"
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               view
             </a>
           </ArrowTooltip>

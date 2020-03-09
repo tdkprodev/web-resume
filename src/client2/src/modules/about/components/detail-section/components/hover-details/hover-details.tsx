@@ -57,7 +57,6 @@ const [
 
 const DetailGenerator = (props: IProps & IDetail) => {
   const {
-    classes,
     detail: { name, content, link },
   } = props;
 
