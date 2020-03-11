@@ -2,6 +2,14 @@ console.log('server index.ts starting');
 import * as express from 'express';
 import * as path from 'path';
 
+import * as eslint from 'eslint';
+const eslintCli = new eslint.CLIEngine();
+const eslintConfig = eslintCli.getConfigForFile(
+  '../client/src/components/avatar-label/avatar-label.tsx',
+);
+
+console.log('eslintConfig ', eslintConfig);
+
 const app = express();
 const port = process.env.PORT || 3001;
 

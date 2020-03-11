@@ -1,11 +1,11 @@
-import { Theme, Typography } from '@material-ui/core';
+import { Typography } from '@material-ui/core';
 import { createStyles, withStyles, WithStyles } from '@material-ui/core/styles';
 import { CollaboratorCard } from '../../../../../../modules/about/components/detail-section/components/collaborators-section/components/collaborator-card';
 import { Nullable } from '../../../../../../../../shared/interface';
 import { ICollaborator } from '../../../../../../../../shared/interface/collaborator';
 import * as React from 'react';
 const collaboratorsGithub = [
-  'tdkprodev',
+  'tomxkay',
   'mdawsondev',
   'gaearon',
   'appleboy',
@@ -13,7 +13,7 @@ const collaboratorsGithub = [
   'fabpot',
 ];
 
-const styles = (theme: Theme) =>
+const styles = () =>
   createStyles({
     arrow: {
       fontSize: 6,

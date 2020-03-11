@@ -38,6 +38,7 @@ const styles = (theme: Theme) =>
       margin: '1rem',
       minHeight: 350,
       width: 300,
+      background: '#fafaff',
     },
     expand: {
       marginLeft: 'auto',
@@ -48,6 +49,18 @@ const styles = (theme: Theme) =>
     },
     expandOpen: {
       transform: 'rotate(180deg)',
+    },
+    githubGreen: {
+      color: '#6cc644',
+    },
+    blue: {
+      color: '#0054ff',
+    },
+    defaultContent: {
+      minHeight: '100%',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'space-between',
     },
   });
 
@@ -100,72 +113,82 @@ class CollaboratorCard extends React.Component<IProps, IState> {
 
     return (
       <Card className={classes.card}>
-        <CardHeader
-          action={
-            <IconButton>
-              <MoreVertIcon />
-            </IconButton>
-          }
-          title={login || '<Alias>'}
-          subheader={company || '<Company>'}
-        />
-        <div className={classes.avatarContainer}>
-          <Tooltip title={bio} interactive={true} placement="top">
-            <AvatarLabel
-              alt={name}
-              src={avatarUrl}
-              label={name}
-              sublabel={location}
-              larger={true}
-              circle={true}
+        <div className={classes.defaultContent}>
+          <div>
+            <CardHeader
+              action={
+                <IconButton>
+                  <MoreVertIcon />
+                </IconButton>
+              }
+              title={login || '<Alias>'}
+              subheader={company || '<Company>'}
             />
-          </Tooltip>
-        </div>
-        <CardContent>
-          <Typography component="p">{bio}</Typography>
-        </CardContent>
-        <CardActions className={classes.actions}>
-          <Tooltip
-            title={`${name}'s Github`}
-            interactive={true}
-            placement="top"
-          >
-            <Link href={url} target="__blank" rel="noreferrer">
-              <IconButton aria-label="Github">
-                <FaGithub />
-              </IconButton>
-            </Link>
-          </Tooltip>
-          <Link href={blog} target="__blank" rel="noreferrer">
             <Tooltip
-              title={`${name}'s Blog.`}
+              title={bio && bio.trim() ? bio : '...'}
               interactive={true}
               placement="top"
             >
-              <IconButton aria-label="Home">
-                <FaHome />
-              </IconButton>
+              <div className={classes.avatarContainer}>
+                <AvatarLabel
+                  alt={name}
+                  src={avatarUrl}
+                  label={name}
+                  sublabel={location}
+                  larger={true}
+                  circle={true}
+                />
+              </div>
             </Tooltip>
-          </Link>
-          <IconButton
-            className={classnames(classes.expand, {
-              [classes.expandOpen]: this.state.expand,
-            })}
-            onClick={this.handleExpandClick}
-            aria-expanded={this.state.expand}
-            aria-label="Show more"
-          >
-            <ExpandMoreIcon />
-          </IconButton>
-        </CardActions>
-        <Collapse in={expand} timeout="auto" unmountOnExit={true}>
-          <CardContent>
-            <Typography>Followers: {followers}</Typography>
-            <Typography>Following: {following}</Typography>
-            <Typography>Repos: {reposCount}</Typography>
-            <Typography>Gists: {gistsCount}</Typography>
-          </CardContent>
-        </Collapse>
+            <CardContent>
+              <Typography component="p">{bio}</Typography>
+            </CardContent>
+          </div>
+          <div>
+            <CardActions className={classes.actions}>
+              <Tooltip
+                title={`${name}'s Github`}
+                interactive={true}
+                placement="top"
+              >
+                <Link href={url} target="__blank" rel="noreferrer">
+                  <IconButton aria-label="Github">
+                    <FaGithub className={classes.githubGreen} />
+                  </IconButton>
+                </Link>
+              </Tooltip>
+              <Link href={blog} target="__blank" rel="noreferrer">
+                <Tooltip
+                  title={`${name}'s Blog.`}
+                  interactive={true}
+                  placement="top"
+                >
+                  <IconButton aria-label="Home">
+                    <FaHome className={classes.blue} />
+                  </IconButton>
+                </Tooltip>
+              </Link>
+              <IconButton
+                className={classnames(classes.expand, {
+                  [classes.expandOpen]: this.state.expand,
+                })}
+                onClick={this.handleExpandClick}
+                aria-expanded={this.state.expand}
+                aria-label="Show more"
+              >
+                <ExpandMoreIcon />
+              </IconButton>
+            </CardActions>
+            <Collapse in={expand} timeout="auto" unmountOnExit={true}>
+              <CardContent>
+                <Typography>Followers: {followers}</Typography>
+                <Typography>Following: {following}</Typography>
+                <Typography>Repos: {reposCount}</Typography>
+                <Typography>Gists: {gistsCount}</Typography>
+              </CardContent>
+            </Collapse>
+          </div>
+        </div>
       </Card>
     );
   }

@@ -19,7 +19,7 @@ module.exports = {
     // !important rules
     'no-unused-vars': 'off',
     '@typescript-eslint/no-unused-vars': [
-      'warn',
+      'error',
       {
         ignoreSiblings: true,
         argsIgnorePattern: 'res|next|^err|theme|Theme|event',

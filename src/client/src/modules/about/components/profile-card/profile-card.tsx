@@ -5,7 +5,7 @@ import fortidudePhoto from '../../../../images/icons/fortitude.png';
 import healthPhoto from '../../../../images/icons/health.png';
 import meleeDamagePhoto from '../../../../images/icons/melee-damage.png';
 import movementSpeedPhoto from '../../../../images/icons/movement-speed.png';
-import myPhoto from '../../../../images/propho.jpg';
+/* import myPhoto from '../../../../images/propho.jpg'; */
 import {
   createStyles,
   Divider,
@@ -175,7 +175,7 @@ class ProfileCard extends React.Component<IProps, IState> {
                 onMouseLeave={this.handleMouseLeave}
                 onClick={this.handleClick}
                 className="image circle"
-                src={myPhoto}
+                src={''}
                 alt="My Avatar"
               />
             </div>

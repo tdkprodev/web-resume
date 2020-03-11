@@ -1,6 +1,7 @@
 import { MaterialTextField } from '../../components/material-text-field';
+import { SwipeableTextMobileStepper } from '../../components/stepper/stepper';
 import { IPreview } from '../../../../shared/interface/preview';
-import { Typography } from '@material-ui/core';
+import { Typography, Paper } from '@material-ui/core';
 import { previews } from './assets/previews';
 import { Preview } from './components/preview';
 import * as React from 'react';
@@ -127,23 +128,26 @@ class Projects extends React.Component<{}, IState> {
   public render() {
     const projectPreviews = this.renderPreviews();
     return (
-      <section className="projects" id="projects">
-        <div className="container">
-          <h1 className="heading-secondary">Recent Work</h1>
-          <div className="projects__filter">
-            <MaterialTextField
-              label="Search projects"
-              placeholder="Search projects"
-              variant="outlined"
-              onChange={this.handleChange}
-            />
+      <Paper>
+        <section className="projects" id="projects">
+          <SwipeableTextMobileStepper />
+          <div className="container">
+            <h1 className="heading-secondary">Recent Work</h1>
+            <div className="projects__filter">
+              <MaterialTextField
+                label="Search projects"
+                placeholder="Search projects"
+                variant="outlined"
+                onChange={this.handleChange}
+              />
+            </div>
+            <div className="projects__cards">
+              {projectPreviews.length ? projectPreviews : null}
+            </div>
+            {!projectPreviews.length ? this.renderEmptyPreviews() : null}
           </div>
-          <div className="projects__cards">
-            {projectPreviews.length ? projectPreviews : null}
-          </div>
-          {!projectPreviews.length ? this.renderEmptyPreviews() : null}
-        </div>
-      </section>
+        </section>
+      </Paper>
     );
   }
 }
