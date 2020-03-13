@@ -1,14 +1,14 @@
-import { Tooltip } from '@material-ui/core';
 import {
   Avatar,
-  createStyles,
   Fab,
   Grow,
   Theme,
   WithStyles,
+  createStyles,
   withStyles,
 } from '@material-ui/core';
 import { SkillPoint } from '../../components/skill-point';
+import { Tooltip } from '@material-ui/core';
 
 import * as React from 'react';
 

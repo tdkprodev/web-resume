@@ -1,6 +1,9 @@
 // import { Tooltip } from '../../../../../../components/arrow-tooltip';
-import { Tooltip } from '@material-ui/core';
+import * as React from 'react';
 import { AvatarLabel } from '../../../../../../components/avatar-label';
+import { Theme, Typography } from '@material-ui/core';
+import { Tooltip } from '@material-ui/core';
+import { WithStyles, createStyles, withStyles } from '@material-ui/core/styles';
 import banisterPhoto from '../../../../../../images/influencers/banister.jpg';
 import hotzPhoto from '../../../../../../images/influencers/hotz.jpg';
 import jobPhoto from '../../../../../../images/influencers/job.jpg';
@@ -8,18 +11,10 @@ import kipchogePhoto from '../../../../../../images/influencers/kipchoge.jpg';
 import maPhoto from '../../../../../../images/influencers/ma.jpg';
 import penaPhoto from '../../../../../../images/influencers/pena.jpg';
 import williamsPhoto from '../../../../../../images/influencers/williams.jpg';
-import { Theme, Typography } from '@material-ui/core';
-import { createStyles, withStyles, WithStyles } from '@material-ui/core/styles';
-import * as React from 'react';
 
 const styles = (theme: Theme) =>
   createStyles({
     arrow: {
-      fontSize: 6,
-      height: '3em',
-      position: 'absolute',
-      width: '3em',
-
       '&::before': {
         borderStyle: 'solid',
         content: '""',
@@ -28,6 +23,11 @@ const styles = (theme: Theme) =>
         margin: 'auto',
         width: 0,
       },
+      fontSize: 6,
+      height: '3em',
+      position: 'absolute',
+
+      width: '3em',
     },
     influencersContainer: {
       alignItems: 'center',

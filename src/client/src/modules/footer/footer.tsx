@@ -1,7 +1,7 @@
-import { SocialLinks } from '../../components/social-links';
-import { Link, Typography, Tooltip } from '@material-ui/core';
 import * as React from 'react';
 import { FaChevronUp } from 'react-icons/fa';
+import { Link, Tooltip, Typography } from '@material-ui/core';
+import { SocialLinks } from '../../components/social-links';
 
 class Footer extends React.Component<{}> {
   public render() {

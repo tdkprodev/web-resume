@@ -1,10 +1,10 @@
-import { MaterialTextField } from '../../components/material-text-field';
-import { SwipeableTextMobileStepper } from '../../components/stepper/stepper';
-import { IPreview } from '../../../../shared/interface/preview';
-import { Typography, Paper } from '@material-ui/core';
-import { previews } from './assets/previews';
-import { Preview } from './components/preview';
 import * as React from 'react';
+import { IPreview } from '../../../../shared/interface/preview';
+import { MaterialTextField } from '../../components/material-text-field';
+import { Paper, Typography } from '@material-ui/core';
+import { Preview } from './components/preview';
+import { SwipeableTextMobileStepper } from '../../components/stepper/stepper';
+import { previews } from './assets/previews';
 
 interface IState {
   filterText: string;
@@ -128,26 +128,30 @@ class Projects extends React.Component<{}, IState> {
   public render() {
     const projectPreviews = this.renderPreviews();
     return (
-      <Paper>
-        <section className="projects" id="projects">
+      <div>
+        <Paper>
           <SwipeableTextMobileStepper />
-          <div className="container">
-            <h1 className="heading-secondary">Recent Work</h1>
-            <div className="projects__filter">
-              <MaterialTextField
-                label="Search projects"
-                placeholder="Search projects"
-                variant="outlined"
-                onChange={this.handleChange}
-              />
+        </Paper>
+        <Paper>
+          <section className="projects" id="projects">
+            <div className="container">
+              <h1 className="heading-secondary">Recent Work</h1>
+              <div className="projects__filter">
+                <MaterialTextField
+                  label="Search projects"
+                  placeholder="Search projects"
+                  variant="outlined"
+                  onChange={this.handleChange}
+                />
+              </div>
+              <div className="projects__cards">
+                {projectPreviews.length ? projectPreviews : null}
+              </div>
+              {!projectPreviews.length ? this.renderEmptyPreviews() : null}
             </div>
-            <div className="projects__cards">
-              {projectPreviews.length ? projectPreviews : null}
-            </div>
-            {!projectPreviews.length ? this.renderEmptyPreviews() : null}
-          </div>
-        </section>
-      </Paper>
+          </section>
+        </Paper>
+      </div>
     );
   }
 }

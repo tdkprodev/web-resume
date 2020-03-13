@@ -1,13 +1,5 @@
-import { Tooltip } from '@material-ui/core';
+import * as React from 'react';
 import { AvatarLabel } from '../../../../../../components/avatar-label';
-import nodeLogo from '../../../../../../images/icons/node.png';
-import reactLogo from '../../../../../../images/icons/react.png';
-import tsLogo from '../../../../../../images/icons/ts.png';
-import typeormLogo from '../../../../../../images/icons/typeorm.png';
-import vimLogo from '../../../../../../images/icons/vim.png';
-import vscodeLogo from '../../../../../../images/icons/vscode.png';
-import { Theme, Typography } from '@material-ui/core';
-import { createStyles, withStyles, WithStyles } from '@material-ui/core/styles';
 import {
   NodeHoverDetail,
   ReactHoverDetail,
@@ -16,16 +8,19 @@ import {
   VimHoverDetail,
   VsCodeHoverDetail,
 } from '../../../../../../modules/about/components/detail-section/components/hover-details';
-import * as React from 'react';
+import { Theme, Typography } from '@material-ui/core';
+import { Tooltip } from '@material-ui/core';
+import { WithStyles, createStyles, withStyles } from '@material-ui/core/styles';
+import nodeLogo from '../../../../../../images/icons/node.png';
+import reactLogo from '../../../../../../images/icons/react.png';
+import tsLogo from '../../../../../../images/icons/ts.png';
+import typeormLogo from '../../../../../../images/icons/typeorm.png';
+import vimLogo from '../../../../../../images/icons/vim.png';
+import vscodeLogo from '../../../../../../images/icons/vscode.png';
 
 const styles = (theme: Theme) =>
   createStyles({
     arrow: {
-      fontSize: 6,
-      height: '3em',
-      position: 'absolute',
-      width: '3em',
-
       '&::before': {
         borderStyle: 'solid',
         content: '""',
@@ -34,17 +29,16 @@ const styles = (theme: Theme) =>
         margin: 'auto',
         width: 0,
       },
+      fontSize: 6,
+      height: '3em',
+      position: 'absolute',
+
+      width: '3em',
     },
     border: {
       border: 'solid pink 3px',
     },
     buildTools: {
-      alignItems: 'center',
-      display: 'flex',
-      justifyContent: 'center',
-      margin: '0 5rem',
-      // marginBottom: "5rem",
-
       '@media (max-width: 1200px)': {
         margin: '0 3rem',
         // marginBottom: "5rem"
@@ -52,6 +46,12 @@ const styles = (theme: Theme) =>
       '@media (max-width: 600px)': {
         justifyContent: 'space-around',
       },
+      alignItems: 'center',
+      display: 'flex',
+      // marginBottom: "5rem",
+
+      justifyContent: 'center',
+      margin: '0 5rem',
     },
     devTools: {
       alignItems: 'center',

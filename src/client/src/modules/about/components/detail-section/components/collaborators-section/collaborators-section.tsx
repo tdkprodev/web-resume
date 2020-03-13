@@ -1,9 +1,9 @@
-import { Typography } from '@material-ui/core';
-import { createStyles, withStyles, WithStyles } from '@material-ui/core/styles';
-import { CollaboratorCard } from '../../../../../../modules/about/components/detail-section/components/collaborators-section/components/collaborator-card';
-import { Nullable } from '../../../../../../../../shared/interface';
-import { ICollaborator } from '../../../../../../../../shared/interface/collaborator';
 import * as React from 'react';
+import { CollaboratorCard } from '../../../../../../modules/about/components/detail-section/components/collaborators-section/components/collaborator-card';
+import { ICollaborator } from '../../../../../../../../shared/interface/collaborator';
+import { Nullable } from '../../../../../../../../shared/interface';
+import { Typography } from '@material-ui/core';
+import { WithStyles, createStyles, withStyles } from '@material-ui/core/styles';
 const collaboratorsGithub = [
   'tomxkay',
   'mdawsondev',
@@ -16,11 +16,6 @@ const collaboratorsGithub = [
 const styles = () =>
   createStyles({
     arrow: {
-      fontSize: 6,
-      height: '3em',
-      position: 'absolute',
-      width: '3em',
-
       '&::before': {
         borderStyle: 'solid',
         content: '""',
@@ -29,6 +24,11 @@ const styles = () =>
         margin: 'auto',
         width: 0,
       },
+      fontSize: 6,
+      height: '3em',
+      position: 'absolute',
+
+      width: '3em',
     },
     collaboratorsContainer: {
       // alignItems: "center",

@@ -1,5 +1,5 @@
-import { Typography, Divider } from '@material-ui/core';
 import * as React from 'react';
+import { Divider, Typography } from '@material-ui/core';
 
 interface IProps {
   classes: any;
@@ -15,34 +15,34 @@ interface IDetail {
 
 const details = [
   {
-    name: 'VsCode',
     content: 'The multitool of editors.',
     link: 'https://code.visualstudio.com/',
+    name: 'VsCode',
   },
   {
-    name: 'Vim',
     content: 'The manual transmission of editors.',
     link: 'https://www.vim.org/',
+    name: 'Vim',
   },
   {
-    name: 'TypeScript',
     content: 'The better JavaScript.',
     link: 'https://www.typescriptlang.org/',
+    name: 'TypeScript',
   },
   {
-    name: 'React',
     content: 'The lego of front end framework.',
     link: 'https://reactjs.org/',
+    name: 'React',
   },
   {
-    name: 'Node',
     content: 'JavaScript for the server.',
     link: 'https://nodejs.org/en/',
+    name: 'Node',
   },
   {
-    name: 'TypeORM',
     content: 'ORM for TypeScript.',
     link: 'https://www.typeorm.io/',
+    name: 'TypeORM',
   },
 ];
 

@@ -1,5 +1,5 @@
-import { Tooltip } from '@material-ui/core';
 import * as React from 'react';
+import { Tooltip } from '@material-ui/core';
 
 class Hero extends React.Component<{}> {
   public render() {

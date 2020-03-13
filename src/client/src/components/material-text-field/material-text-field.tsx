@@ -1,11 +1,11 @@
+import * as React from 'react';
 import { TextField } from '@material-ui/core';
 import {
-  createStyles,
   Theme,
-  withStyles,
   WithStyles,
+  createStyles,
+  withStyles,
 } from '@material-ui/core/styles';
-import * as React from 'react';
 
 const styles = (theme: Theme) =>
   createStyles({

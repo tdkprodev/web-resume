@@ -6,17 +6,17 @@ import healthPhoto from '../../../../images/icons/health.png';
 import meleeDamagePhoto from '../../../../images/icons/melee-damage.png';
 import movementSpeedPhoto from '../../../../images/icons/movement-speed.png';
 /* import myPhoto from '../../../../images/propho.jpg'; */
+import * as React from 'react';
+import { AgeDisplay } from './components/age-display';
+import { Attribute } from './components/attribute';
 import {
-  createStyles,
   Divider,
   Tooltip,
   Typography,
   WithStyles,
+  createStyles,
   withStyles,
 } from '@material-ui/core';
-import { AgeDisplay } from './components/age-display';
-import { Attribute } from './components/attribute';
-import * as React from 'react';
 import { FaMapMarkerAlt } from 'react-icons/fa';
 
 const myGreetings = [

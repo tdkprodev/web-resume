@@ -1,16 +1,11 @@
-import { Avatar, Grow, Typography } from '@material-ui/core';
-import { createStyles, withStyles, WithStyles } from '@material-ui/core/styles';
-import { default as classnames } from 'classnames';
 import * as React from 'react';
+import { Avatar, Grow, Typography } from '@material-ui/core';
+import { WithStyles, createStyles, withStyles } from '@material-ui/core/styles';
+import { default as classnames } from 'classnames';
 
 const styles = () =>
   createStyles({
     avatar: {
-      height: 100,
-      marginBottom: 10,
-      padding: 10,
-      width: 100,
-
       '&:hover': {
         backgroundColor: '#f7f6f6',
         transform: 'scale(1.1)',
@@ -23,18 +18,18 @@ const styles = () =>
         height: 85,
         width: 85,
       },
-    },
-    avatarLabelContainer: {
-      marginRight: 20,
+      height: 100,
 
-      '&:hover': {},
-    },
-    bigAvatar: {
-      height: 120,
       marginBottom: 10,
       padding: 10,
-      width: 120,
+      width: 100,
+    },
+    avatarLabelContainer: {
+      '&:hover': {},
 
+      marginRight: 20,
+    },
+    bigAvatar: {
       '&:hover': {
         backgroundColor: '#f7f6f6',
         transform: 'scale(1.1) !important',
@@ -47,6 +42,11 @@ const styles = () =>
         height: 100,
         width: 100,
       },
+      height: 120,
+
+      marginBottom: 10,
+      padding: 10,
+      width: 120,
     },
     img: {
       transform: 'scale(.9)',

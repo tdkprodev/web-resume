@@ -1,26 +1,26 @@
+import * as React from 'react';
+import { AvatarLabel } from '../../../../../../../../components/avatar-label';
 import {
-  Tooltip,
   Card,
   CardActions,
   CardContent,
   CardHeader,
   Collapse,
   IconButton,
+  Tooltip,
 } from '@material-ui/core';
-import { AvatarLabel } from '../../../../../../../../components/avatar-label';
-import Link from '@material-ui/core/Link';
-import {
-  createStyles,
-  Theme,
-  withStyles,
-  WithStyles,
-} from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
-import { default as classnames } from 'classnames';
-import * as React from 'react';
 import { FaGithub, FaHome } from 'react-icons/fa';
+import {
+  Theme,
+  WithStyles,
+  createStyles,
+  withStyles,
+} from '@material-ui/core/styles';
+import { default as classnames } from 'classnames';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import Link from '@material-ui/core/Link';
+import MoreVertIcon from '@material-ui/icons/MoreVert';
+import Typography from '@material-ui/core/Typography';
 
 const defaultAvatarUrl = '';
 
@@ -34,11 +34,19 @@ const styles = (theme: Theme) =>
       display: 'flex',
       justifyContent: 'center',
     },
+    blue: {
+      color: '#0054ff',
+    },
     card: {
       margin: '1rem',
       minHeight: 350,
       width: 300,
-      background: '#fafaff',
+    },
+    defaultContent: {
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'space-between',
+      minHeight: '100%',
     },
     expand: {
       marginLeft: 'auto',
@@ -52,15 +60,6 @@ const styles = (theme: Theme) =>
     },
     githubGreen: {
       color: '#6cc644',
-    },
-    blue: {
-      color: '#0054ff',
-    },
-    defaultContent: {
-      minHeight: '100%',
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'space-between',
     },
   });
 

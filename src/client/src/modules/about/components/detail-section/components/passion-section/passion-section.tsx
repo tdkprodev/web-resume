@@ -1,7 +1,7 @@
-import { AvatarLabel } from '../../../../../../components/avatar-label';
-import { Theme, Typography, Tooltip } from '@material-ui/core';
-import { createStyles, withStyles, WithStyles } from '@material-ui/core/styles';
 import * as React from 'react';
+import { AvatarLabel } from '../../../../../../components/avatar-label';
+import { Theme, Tooltip, Typography } from '@material-ui/core';
+import { WithStyles, createStyles, withStyles } from '@material-ui/core/styles';
 
 import banisterPhoto from '@images/influencers/banister.jpg';
 import hotzPhoto from '@images/influencers/hotz.jpg';
@@ -14,11 +14,6 @@ import williamsPhoto from '@images/influencers/williams.jpg';
 const styles = (theme: Theme) =>
   createStyles({
     arrow: {
-      fontSize: 6,
-      height: '3em',
-      position: 'absolute',
-      width: '3em',
-
       '&::before': {
         borderStyle: 'solid',
         content: '""',
@@ -27,6 +22,11 @@ const styles = (theme: Theme) =>
         margin: 'auto',
         width: 0,
       },
+      fontSize: 6,
+      height: '3em',
+      position: 'absolute',
+
+      width: '3em',
     },
     influencersContainer: {
       alignItems: 'center',

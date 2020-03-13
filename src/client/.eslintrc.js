@@ -1,6 +1,6 @@
 module.exports = {
   parser: '@typescript-eslint/parser',
-  plugins: ['prettier'],
+  plugins: ['prettier', 'sort-keys-fix', 'sort-imports-es6-autofix'],
   extends: [
     'react-app',
     'plugin:@typescript-eslint/recommended', // Uses the recommended rules
@@ -18,6 +18,17 @@ module.exports = {
   rules: {
     // !important rules
     'no-unused-vars': 'off',
+    'react/jsx-no-target-blank': 'off',
+    'sort-imports-es6-autofix/sort-imports-es6': [
+      'warn',
+      {
+        ignoreCase: false,
+        ignoreMemberSort: false,
+        memberSyntaxSortOrder: ['none', 'all', 'multiple', 'single'],
+      },
+    ],
+    'sort-keys-fix/sort-keys-fix': 'warn',
+    'sort-vars': 'warn',
     '@typescript-eslint/no-unused-vars': [
       'error',
       {
@@ -28,7 +39,6 @@ module.exports = {
     '@typescript-eslint/interface-name-prefix': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
-    'react/jsx-no-target-blank': 'off',
   },
   settings: {
     react: {

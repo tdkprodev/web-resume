@@ -1,10 +1,10 @@
 import {
-  createStyles,
   Divider,
   Theme,
   Typography,
-  withStyles,
   WithStyles,
+  createStyles,
+  withStyles,
 } from '@material-ui/core';
 
 import * as React from 'react';

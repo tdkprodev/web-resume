@@ -1,8 +1,8 @@
-import { Avatar, Grid, Grow, Link, Tooltip } from '@material-ui/core';
-import { GridItemsAlignment, GridJustification } from '@material-ui/core/Grid';
-import { createStyles, withStyles, WithStyles } from '@material-ui/core/styles';
 import * as React from 'react';
+import { Avatar, Grid, Grow, Link, Tooltip } from '@material-ui/core';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { GridItemsAlignment, GridJustification } from '@material-ui/core/Grid';
+import { WithStyles, createStyles, withStyles } from '@material-ui/core/styles';
 
 const styles = createStyles({
   github: {

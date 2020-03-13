@@ -1,3 +1,5 @@
+import { CollaboratorsSection } from './components/collaborators-section';
+import { DevToolsSection } from './components/dev-tools-section';
 import {
   ExpansionPanel,
   ExpansionPanelDetails,
@@ -6,23 +8,16 @@ import {
   // Tooltip,
   Typography,
 } from '@material-ui/core';
-import { createStyles, withStyles, WithStyles } from '@material-ui/core/styles';
-import { CollaboratorsSection } from './components/collaborators-section';
-import { DevToolsSection } from './components/dev-tools-section';
 import { InfluencersSection } from './components/influencers-section';
+import { WithStyles, createStyles, withStyles } from '@material-ui/core/styles';
 // import { PassionSection } from './components/passion-section';
 import * as React from 'react';
-import { FaChevronDown } from 'react-icons/fa';
 import { ChangeEvent } from 'react';
+import { FaChevronDown } from 'react-icons/fa';
 
 const styles = (theme: Theme) =>
   createStyles({
     arrow: {
-      fontSize: 6,
-      height: '3em',
-      position: 'absolute',
-      width: '3em',
-
       '&::before': {
         borderStyle: 'solid',
         content: '""',
@@ -31,17 +26,16 @@ const styles = (theme: Theme) =>
         margin: 'auto',
         width: 0,
       },
+      fontSize: 6,
+      height: '3em',
+      position: 'absolute',
+
+      width: '3em',
     },
     border: {
       border: 'solid pink 3px',
     },
     buildTools: {
-      alignItems: 'center',
-      display: 'flex',
-      justifyContent: 'center',
-      margin: '0 5rem',
-      marginBottom: '5rem',
-
       '@media (max-width: 1200px)': {
         margin: '0 3rem',
         marginBottom: '5rem',
@@ -49,6 +43,12 @@ const styles = (theme: Theme) =>
       '@media (max-width: 600px)': {
         justifyContent: 'space-around',
       },
+      alignItems: 'center',
+      display: 'flex',
+      justifyContent: 'center',
+
+      margin: '0 5rem',
+      marginBottom: '5rem',
     },
     devTools: {
       alignItems: 'center',

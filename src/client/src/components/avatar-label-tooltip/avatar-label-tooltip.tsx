@@ -1,6 +1,6 @@
-import { Tooltip } from '@material-ui/core';
-import { AvatarLabel } from '../../components/avatar-label';
 import * as React from 'react';
+import { AvatarLabel } from '../../components/avatar-label';
+import { Tooltip } from '@material-ui/core';
 
 interface IProps {
   alt: string;
