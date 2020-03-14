@@ -1,4 +1,4 @@
-export interface ICollaborator {
+export interface GitHubUser {
   avatar_url: string;
   bio: string;
   blog: string;

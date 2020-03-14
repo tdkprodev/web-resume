@@ -82,7 +82,7 @@ interface IState {
   expand: boolean;
 }
 
-class CollaboratorCard extends React.Component<IProps, IState> {
+class GitHubUserCard extends React.Component<IProps, IState> {
   public state = {
     expand: false,
   };
@@ -193,4 +193,4 @@ class CollaboratorCard extends React.Component<IProps, IState> {
   }
 }
 
-export default withStyles(styles)(CollaboratorCard);
+export default withStyles(styles)(GitHubUserCard);

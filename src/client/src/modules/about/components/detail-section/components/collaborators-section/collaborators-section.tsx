@@ -1,9 +1,12 @@
 import * as React from 'react';
-import { CollaboratorCard } from '../../../../../../modules/about/components/detail-section/components/collaborators-section/components/collaborator-card';
-import { ICollaborator } from '../../../../../../../../shared/interface/collaborator';
+import { GitHubUserCard } from '../../../../../../modules/about/components/detail-section/components/collaborators-section/components/github-user-card';
+import { GitHubUser } from '../../../../../../../../shared/interface/github-user';
+import { api } from '../../../../../../utils/api';
 import { Nullable } from '../../../../../../../../shared/interface';
 import { Typography } from '@material-ui/core';
 import { WithStyles, createStyles, withStyles } from '@material-ui/core/styles';
+import { UserFaceOff } from '../../components/user-face-off';
+
 const collaboratorsGithub = [
   'tomxkay',
   'mdawsondev',
@@ -46,7 +49,7 @@ const styles = () =>
 type IProps = WithStyles<typeof styles>;
 
 interface IState {
-  collaborators: Array<Nullable<ICollaborator>>;
+  collaborators: Nullable<GitHubUser>[];
   expanded: string;
 }
 
@@ -60,26 +63,32 @@ class CollaboratorsSection extends React.Component<IProps, IState> {
     this.fetchCollaborators();
   }
 
-  public fetchCollaborators = async () => {
-    const results = [];
-    for (const developer of collaboratorsGithub) {
-      const url = `https://api.github.com/users/${developer}`;
-      const result = fetch(url).then(res => res.json());
-      results.push(result);
-    }
+  // public fetchGitHubUsers = async (userNames: string[]) => {
+  //   return await Promise.all(
+  //     userNames.map(userName => {
+  //       const url = `https://api.github.com/users/${userName}`;
+  //       return fetch(url).then(res => res.json());
+  //     }),
+  //   ).catch(err => {
+  //     console.error('Error fetching github users');
+  //   });
+  // };
 
-    let collaborators: Array<Nullable<ICollaborator>> = [];
+  public fetchCollaborators = async () => {
+    let collaborators: Nullable<GitHubUser>[] = [];
+
     try {
-      collaborators = await Promise.all(results);
+      collaborators = (await api.fetchGitHubUsers(
+        collaboratorsGithub,
+      )) as Nullable<GitHubUser>[];
     } catch (error) {
-      // tslint:disable-next-line:no-console
       console.error('Error in fetching collaborators from GitHub API.', error);
     } finally {
       this.setState(() => ({
         collaborators: collaborators || [],
       }));
     }
-    // tslint:disable-next-line:no-console
+
     console.log('collaborators ----', collaborators);
   };
 
@@ -87,7 +96,7 @@ class CollaboratorsSection extends React.Component<IProps, IState> {
     const { collaborators } = this.state;
 
     return collaborators.length
-      ? collaborators.map((collaborator: ICollaborator, index) => {
+      ? collaborators.map((collaborator: GitHubUser, index) => {
           const {
             avatar_url: avatarUrl,
             bio,
@@ -104,7 +113,7 @@ class CollaboratorsSection extends React.Component<IProps, IState> {
           } = collaborator;
 
           return (
-            <CollaboratorCard
+            <GitHubUserCard
               key={index}
               avatarUrl={avatarUrl}
               bio={bio}
@@ -137,6 +146,7 @@ class CollaboratorsSection extends React.Component<IProps, IState> {
         >
           Collaborators
         </Typography>
+        <UserFaceOff />
         <div className={classes.collaboratorsContainer}>
           {this.renderCollaborators()}
         </div>

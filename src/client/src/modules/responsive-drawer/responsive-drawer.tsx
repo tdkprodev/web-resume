@@ -111,7 +111,7 @@ export function ResponsiveDrawer(props: React.PropsWithChildren<{}>) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap>
-            Responsive drawer
+            Thomas Kay
           </Typography>
         </Toolbar>
       </AppBar>
