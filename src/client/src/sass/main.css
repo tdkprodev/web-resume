@@ -581,7 +581,8 @@ body {
 
 .about .profile-wrapper {
   display: grid;
-  grid-gap: 7rem; }
+  grid-gap: 7rem;
+  grid-template-columns: minmax(0, 1fr); }
 
 .about .profile {
   position: relative;
