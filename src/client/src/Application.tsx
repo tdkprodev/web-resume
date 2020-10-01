@@ -7,6 +7,7 @@ import {
   responsiveFontSizes,
   withStyles,
 } from '@material-ui/core/styles';
+import './sass/main.css';
 
 const theme = createMuiTheme({
   overrides: {

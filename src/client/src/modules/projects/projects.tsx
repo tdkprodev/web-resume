@@ -5,6 +5,7 @@ import { Paper, Typography } from '@material-ui/core';
 import { Preview } from './components/preview';
 import { SwipeableTextMobileStepper } from '../../components/stepper/stepper';
 import { previews } from './assets/previews';
+import { test } from 'ramda';
 
 interface IState {
   filterText: string;

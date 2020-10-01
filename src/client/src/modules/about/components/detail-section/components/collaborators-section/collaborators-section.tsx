@@ -7,6 +7,9 @@ import { Typography } from '@material-ui/core';
 import { WithStyles, createStyles, withStyles } from '@material-ui/core/styles';
 import { UserFaceOff } from '../../components/user-face-off';
 
+const teststr = 'teststr';
+const teststr2 = 'teststr2';
+
 const collaboratorsGithub = [
   'tomxkay',
   'mdawsondev',
