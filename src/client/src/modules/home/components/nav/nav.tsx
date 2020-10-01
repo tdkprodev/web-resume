@@ -1,4 +1,5 @@
 import * as React from 'react';
+import $ from 'jquery';
 
 class Nav extends React.Component {
   state = {
@@ -10,6 +11,7 @@ class Nav extends React.Component {
   }
 
   public componentDidMount() {
+    console.info('inside cdm nav');
     const nav = document.querySelector('#main-nav') as HTMLElement;
     if (!nav) return;
 
@@ -79,6 +81,27 @@ class Nav extends React.Component {
 
       this.setState({ lockTimer });
     };
+
+    $('.nav__link').click(function() {
+      const anchor = this.dataset.anchor;
+      $('html,body').animate(
+        {
+          scrollTop: $(`#${anchor}`).offset()!.top,
+        },
+        'slow',
+        'swing',
+        () => {
+          if (anchor === 'projects') {
+            const compositionPhotos = document.querySelectorAll(
+              '.composition__photo',
+            );
+            Array.prototype.slice
+              .call(compositionPhotos)
+              .forEach((photo: HTMLElement) => photo.classList.add('show'));
+          }
+        },
+      );
+    });
 
     window.addEventListener('scroll', fixNav);
     window.addEventListener('scroll', linkHighlight);

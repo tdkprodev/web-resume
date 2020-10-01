@@ -9,13 +9,13 @@ import { ResponsiveDrawer } from '../responsive-drawer';
 const Portfolio = () => {
   return (
     <div className="portfolio">
-      <ResponsiveDrawer>
-        <Home />
-        <About />
-        <Projects />
-        <Contact />
-        <Footer />
-      </ResponsiveDrawer>
+      {/* <ResponsiveDrawer> */}
+      <Home />
+      <About />
+      <Projects />
+      <Contact />
+      <Footer />
+      {/* </ResponsiveDrawer> */}
     </div>
   );
 };

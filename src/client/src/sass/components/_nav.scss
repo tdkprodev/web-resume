@@ -1,0 +1,103 @@
+.nav {
+  background: darken($color-dom, 5%);
+  opacity: .9;
+  width: 100%;
+
+  position: relative;
+
+  border-bottom: .1rem solid $color-dom;
+  z-index: 1;
+
+  top: 0;
+  box-shadow: $shadow-card;
+
+  &:hover {
+    opacity: .9;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: center;
+
+    max-width: 114rem;
+    margin: 0 auto;
+
+    text-align: center;
+  }
+
+  &__link {
+    flex: 1;
+
+    
+    color: $color-white;
+    font-size: $font-l;
+    text-transform: uppercase;
+    list-style: none;
+    padding: .25rem 0;
+
+    transition: background .3s, font-size .1s, color .1s ease-in;
+
+    &:hover {
+      // background: $color-dom;
+      cursor: pointer;
+
+      color: $color-accent2;
+
+      // this media query fixes the issue with link highlighting on 'hover' for devices with no
+      // access to the hover feature.
+      @media only screen and (hover: none) {
+        color: $color-white;
+      }
+    }
+  }
+
+  .active { // for highlighting links at appropriate positions
+    color: $color-accent2;
+  }
+}
+
+
+
+
+
+// use JS to add this class to the body tag at scroll breakpoint.
+// and remove it when the condition no longer hold true.
+.fixed-nav { // represented as a class of the body tag for accessibility.
+  .nav { // the main nav bar
+    position: fixed;
+    box-shadow: 0 5px rgba(0,0,0,0.1);
+    z-index: 99999;
+  }
+}
+
+
+.logo {
+  max-width: 0;
+  overflow: hidden;
+  background: $color-dom;
+  opacity: .7 !important;
+  color: $color-white;
+  
+  font-weight: 600;
+  font-size: $font-xl;
+  opacity: 1;
+  transition: all .5s;
+}
+
+.fixed-nav .logo {
+  max-width: 50rem;
+  padding: 0 3rem;
+  letter-spacing: .3rem;
+  color: $color-white;
+
+  clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
+
+
+  @include respond(phone) {
+    width: 0;
+    padding: 0;
+    letter-spacing: 0;
+    
+  }
+
+}

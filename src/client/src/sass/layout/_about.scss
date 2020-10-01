@@ -1,0 +1,178 @@
+.about {
+  // height: 1000px;
+
+  .profile-wrapper {
+    display: grid;
+    grid-gap: 7rem;
+  }
+
+  .profile {
+    position: relative;
+    display: grid;
+    grid-template-columns: 30% 1fr;
+    grid-gap: 7rem;
+    align-items: center;
+    transition: all 0.5s ease;
+
+    @include respond(tab-land) {
+      grid-gap: 4.5rem;
+    }
+
+    @include respond(tab-port) {
+      grid-template-columns: none;
+
+      grid-gap: 3rem;
+    }
+
+    @include respond(phone) {
+      grid-gap: 2.5rem;
+    }
+
+    &__description {
+      animation: moveInTop 0.5s;
+      // display: grid;
+      display: flex;
+      flex-direction: column;
+      grid-template-columns: 1fr;
+      box-shadow: $shadow-card;
+      // grid-gap: 5rem;
+      padding: 5rem 1rem;
+
+      &:hover {
+        box-shadow: $shadow-card-darker;
+      }
+
+      @include respond(tab-port) {
+        grid-template-columns: minmax(max-content, 1fr) 1fr;
+        align-items: center;
+      }
+
+      @include respond(phone) {
+        grid-template-columns: none;
+        justify-items: center;
+      }
+    }
+
+    &__text {
+      font-size: $font-m;
+      color: $color-black;
+
+      @include respond(tab-port) {
+        width: 70%;
+      }
+
+      @include respond(phone) {
+        text-align: center;
+        width: 55%;
+      }
+    }
+
+    &__photo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      position: relative;
+      height: 20rem;
+      width: 20rem;
+
+      background: lighten($color-accent2, 15%);
+      transition: background 1s ease-out;
+
+      &:hover {
+        background: $color-accent2;
+      }
+
+      margin: 0 auto;
+      margin-bottom: 3rem;
+      box-shadow: $shadow-card;
+
+      .image {
+        height: 100%;
+        // position: absolute;
+      }
+    }
+  }
+
+  .more-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 2rem;
+
+    @include respond(tab-port) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include respond(phone) {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+.tech {
+  box-shadow: $shadow-card;
+  padding: 5rem 1rem;
+
+  &:hover {
+    box-shadow: $shadow-card-darker;
+  }
+}
+
+/// Mixin to place items on a circle
+/// @author Hugo Giraudel
+/// @author Ana Tudor
+/// @param {Integer} $item-count - Number of items on the circle
+/// @param {Length} $circle-size - Large circle size
+/// @param {Length} $item-size - Single item size
+@mixin on-circle($item-count, $circle-size, $item-size) {
+  position: relative;
+  width: $circle-size;
+  height: $circle-size;
+  border-radius: 50%;
+  padding: 0;
+  list-style: none;
+
+  & > * {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -($item-size / 2);
+    width: $item-size;
+    height: $item-size;
+
+    $angle: (360 / $item-count);
+    $rot: 0;
+
+    @for $i from 1 through $item-count {
+      &:nth-of-type(#{$i}) {
+        transform: rotate($rot * 1deg)
+          translate($circle-size / 2)
+          rotate($rot * -1deg);
+      }
+
+      $rot: $rot + $angle;
+    }
+  }
+}
+
+.circle-container {
+  @include on-circle($item-count: 8, $circle-size: 20em, $item-size: 6em);
+  // margin: 5em auto 0;
+  border: solid 5px tomato;
+
+  position: absolute;
+
+  // & > * {
+  //   display: block;
+  //   max-width: 100%;
+  //   border-radius: 50%;
+  //   filter: grayscale(100%);
+  //   border: solid 5px tomato;
+  //   transition: 0.15s;
+
+  //   &:hover {
+  //     filter: grayscale(0);
+  //   }
+  // }
+}
