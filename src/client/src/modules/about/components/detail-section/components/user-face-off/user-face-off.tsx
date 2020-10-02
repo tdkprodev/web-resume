@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme: Theme) =>
     root: {
       '& .MuiTextField-root': {
         margin: theme.spacing(1),
-        width: 200,
+        width: 400,
       },
     },
     container: {
@@ -86,7 +86,7 @@ export const UserFaceOff = () => {
 
     if (!otherUser) {
       console.info('gonna render otheruser');
-      api.fetchGitHubUsers(['mdawsondev']).then(res => {
+      api.fetchGitHubUsers(['geohot']).then(res => {
         const users = res;
         setOtherUser(users[0]);
       });
@@ -116,7 +116,7 @@ export const UserFaceOff = () => {
       <div className={classes.search}>
         <TextField
           id="outlined-search"
-          label="search field"
+          label="Search Github User"
           type="search"
           variant="outlined"
           value={filterText}

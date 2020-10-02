@@ -5,13 +5,24 @@ import { Paper, Typography } from '@material-ui/core';
 import { Preview } from './components/preview';
 import { SwipeableTextMobileStepper } from '../../components/stepper/stepper';
 import { previews } from './assets/previews';
-import { test } from 'ramda';
+import { WithStyles, createStyles, withStyles } from '@material-ui/core/styles';
 
 interface IState {
   filterText: string;
 }
 
-class Projects extends React.Component<{}, IState> {
+const styles = createStyles({
+  featuringContainer: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+});
+
+interface IProps extends WithStyles<typeof styles> {}
+
+class Projects extends React.Component<IProps, IState> {
   public state = {
     filterText: '',
   };
@@ -128,33 +139,39 @@ class Projects extends React.Component<{}, IState> {
 
   public render() {
     const projectPreviews = this.renderPreviews();
+    const { classes } = this.props;
     return (
       <div>
-        <Paper>
-          <SwipeableTextMobileStepper />
-        </Paper>
-        <Paper>
-          <section className="projects" id="projects">
-            <div className="container">
-              <h1 className="heading-secondary">Recent Work</h1>
-              <div className="projects__filter">
-                <MaterialTextField
-                  label="Search projects"
-                  placeholder="Search projects"
-                  variant="outlined"
-                  onChange={this.handleChange}
-                />
-              </div>
-              <div className="projects__cards">
-                {projectPreviews.length ? projectPreviews : null}
-              </div>
-              {!projectPreviews.length ? this.renderEmptyPreviews() : null}
+        {/* <Paper> */}
+        <section className="projects" id="projects">
+          <div className="container">
+            <h1 className="heading-secondary">Recent Work</h1>
+
+            {/* <Paper> */}
+            <div className={classes.featuringContainer}>
+              <Typography variant="h3">Featuring</Typography>
+              <SwipeableTextMobileStepper />
             </div>
-          </section>
-        </Paper>
+            {/* </Paper> */}
+
+            <div className="projects__filter">
+              <MaterialTextField
+                label="Search projects"
+                placeholder="Search projects"
+                variant="outlined"
+                onChange={this.handleChange}
+              />
+            </div>
+            <div className="projects__cards">
+              {projectPreviews.length ? projectPreviews : null}
+            </div>
+            {!projectPreviews.length ? this.renderEmptyPreviews() : null}
+          </div>
+        </section>
+        {/* </Paper> */}
       </div>
     );
   }
 }
 
-export default Projects;
+export default withStyles(styles)(Projects);

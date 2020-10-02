@@ -195,8 +195,8 @@ class ProfileCard extends React.Component<IProps, IState> {
         <Divider variant="middle" />
         <SocialLinks />
         <Typography className="profile__text animateFromBottom">
-          {`I'm a developer from Charlotte, North Carlolina. I'm passionate about
-          the web technologies that connects us all.`}
+          {`I'm a maker of things with text. I author text commands into \
+						practical features and layer them with intuitive user interfaces.`}
         </Typography>
       </div>
     );

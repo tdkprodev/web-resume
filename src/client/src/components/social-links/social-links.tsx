@@ -1,5 +1,12 @@
 import * as React from 'react';
-import { Avatar, Grid, Grow, Link, Tooltip } from '@material-ui/core';
+import {
+  Avatar,
+  Grid,
+  Grow,
+  Link,
+  Tooltip,
+  Typography,
+} from '@material-ui/core';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { GridItemsAlignment, GridJustification } from '@material-ui/core/Grid';
 import { WithStyles, createStyles, withStyles } from '@material-ui/core/styles';
@@ -24,8 +31,8 @@ interface IProps extends WithStyles<typeof styles> {
 
 const SocialLinks = (props: IProps) => {
   const { classes, alignItems = 'center', justify = 'center' } = props;
-  const gitHubLink = 'https://www.github.com/tdkprodev';
-  const linkedInLink = 'https://www.linkedin.com/in/thomasdkay/';
+  const gitHubLink = 'https://www.github.com/tomxkay';
+  const linkedInLink = 'https://www.linkedin.com/in/tomxkay/';
 
   return (
     <Grid container={true} justify={justify} alignItems={alignItems}>

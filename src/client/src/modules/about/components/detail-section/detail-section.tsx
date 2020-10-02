@@ -111,10 +111,10 @@ class DetailSection extends React.Component<IProps> {
         onChange={this.handleChange('detail-panel')}
       >
         <ExpansionPanelSummary expandIcon={<FaChevronDown />}>
-          <Typography variant="h4">More About Me</Typography>
+          <Typography variant="h4">The Rest of the Iceburg</Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails classes={{ root: classes.root }}>
-          <DevToolsSection />
+          {/* <DevToolsSection /> */}
           {/* <PassionSection /> */}
           <InfluencersSection />
           <CollaboratorsSection />
