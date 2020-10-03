@@ -717,7 +717,7 @@ body {
   height: 100vh;
   opacity: 1;
   background-color: transparent;
-  background: url(../images/hero.PNG);
+  background: url(../images/hero.png);
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
