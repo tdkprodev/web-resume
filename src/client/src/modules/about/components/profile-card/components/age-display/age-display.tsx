@@ -1,5 +1,5 @@
-import { getAge } from "@utils/getAge";
-import * as React from "react";
+import * as React from 'react';
+import { getAge } from '../../../../../../utils/getAge';
 
 interface IState {
   ageInterval: number;
@@ -8,20 +8,20 @@ interface IState {
 
 class AgeDisplay extends React.Component<{}, IState> {
   public state = {
-    age: "",
-    ageInterval: 0
+    age: '',
+    ageInterval: 0,
   };
 
-  public componentWillMount() {
-    const dob = new Date("Jan 01, 1993 00:00:00");
+  public UNSAFE_componentWillMount() {
+    const dob = new Date('Jan 01, 1993 00:00:00');
     // Initial
     this.setState(() => ({
-      age: getAge(dob)
+      age: getAge(dob),
     }));
 
     const ageInterval = window.setInterval(() => {
       this.setState(() => ({
-        age: getAge(dob)
+        age: getAge(dob),
       }));
     }, 1000);
 

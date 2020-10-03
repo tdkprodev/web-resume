@@ -1,31 +1,31 @@
-import { TextField } from "@material-ui/core";
+import * as React from 'react';
+import { TextField } from '@material-ui/core';
 import {
-  createStyles,
   Theme,
+  WithStyles,
+  createStyles,
   withStyles,
-  WithStyles
-} from "@material-ui/core/styles";
-import * as React from "react";
+} from '@material-ui/core/styles';
 
 const styles = (theme: Theme) =>
   createStyles({
     container: {
-      display: "flex",
-      flexWrap: "wrap"
+      display: 'flex',
+      flexWrap: 'wrap',
     },
     dense: {
-      marginTop: 16
+      marginTop: 16,
     },
     fullWidth: {
-      width: "100%"
+      width: '100%',
     },
     menu: {
-      width: 200
+      width: 200,
     },
     textField: {
-      marginLeft: theme.spacing.unit,
-      marginRight: theme.spacing.unit
-    }
+      marginLeft: theme.spacing(1),
+      marginRight: theme.spacing(1),
+    },
   });
 
 interface IProps extends WithStyles<typeof styles> {
@@ -45,8 +45,8 @@ class MaterialTextField extends React.Component<IProps> {
     const {
       classes,
       label,
-      placeholder = "",
-      variant = "outlined"
+      placeholder = '',
+      variant = 'outlined',
     } = this.props;
 
     return (

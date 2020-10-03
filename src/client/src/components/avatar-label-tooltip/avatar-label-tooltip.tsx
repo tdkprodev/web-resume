@@ -1,12 +1,12 @@
-import { ArrowTooltip } from "@components/arrow-tooltip";
-import { AvatarLabel } from "@components/avatar-label";
-import * as React from "react";
+import * as React from 'react';
+import { AvatarLabel } from '../../components/avatar-label';
+import { Tooltip } from '@material-ui/core';
 
 interface IProps {
   alt: string;
   src: string;
   label: string;
-  title: any;
+  title: string;
   interactive: boolean;
   placement: any;
 }
@@ -17,18 +17,14 @@ class AvatarLabelTooltip extends React.Component<IProps> {
       alt,
       src,
       label,
-      title = "placeholder",
+      title = 'placeholder',
       interactive = false,
-      placement = "top"
+      placement = 'top',
     } = this.props;
     return (
-      <ArrowTooltip
-        title={title}
-        interactive={interactive}
-        placement={placement}
-      >
+      <Tooltip title={title} interactive={interactive} placement={placement}>
         <AvatarLabel alt={alt} src={src} label={label} />
-      </ArrowTooltip>
+      </Tooltip>
     );
   }
 }

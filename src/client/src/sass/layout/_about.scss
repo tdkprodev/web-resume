@@ -4,6 +4,7 @@
   .profile-wrapper {
     display: grid;
     grid-gap: 7rem;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .profile {

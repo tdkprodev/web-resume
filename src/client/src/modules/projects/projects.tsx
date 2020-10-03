@@ -1,17 +1,30 @@
-import { MaterialTextField } from "@components/material-text-field";
-import { IPreview } from "@interface/preview";
-import { Typography } from "@material-ui/core";
-import { previews } from "@modules/projects/assets/previews";
-import { Preview } from "@modules/projects/components/preview";
-import * as React from "react";
+import * as React from 'react';
+import { IPreview } from '../../../../shared/interface/preview';
+import { MaterialTextField } from '../../components/material-text-field';
+import { Paper, Typography } from '@material-ui/core';
+import { Preview } from './components/preview';
+import { SwipeableTextMobileStepper } from '../../components/stepper/stepper';
+import { previews } from './assets/previews';
+import { WithStyles, createStyles, withStyles } from '@material-ui/core/styles';
 
 interface IState {
   filterText: string;
 }
 
-class Projects extends React.Component<{}, IState> {
+const styles = createStyles({
+  featuringContainer: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+});
+
+interface IProps extends WithStyles<typeof styles> {}
+
+class Projects extends React.Component<IProps, IState> {
   public state = {
-    filterText: ""
+    filterText: '',
   };
 
   public componentDidMount() {
@@ -37,9 +50,9 @@ class Projects extends React.Component<{}, IState> {
       };
     }
 
-    const sliderCompositions = document.querySelectorAll(".slide-in");
+    const sliderCompositions = document.querySelectorAll('.slide-in');
 
-    function checkSlide(e: Event) {
+    function checkSlide() {
       Array.prototype.slice
         .call(sliderCompositions)
         .forEach((sliderComposition: any) => {
@@ -52,15 +65,15 @@ class Projects extends React.Component<{}, IState> {
           const isNotScrollPast = window.scrollY > compositionBottom;
 
           if (isHalfShown && isNotScrollPast) {
-            sliderComposition.classList.add("show");
+            sliderComposition.classList.add('show');
           } else {
-            sliderComposition.classList.remove("show");
+            sliderComposition.classList.remove('show');
           }
         });
     }
 
-    window.addEventListener("scroll", debounce(checkSlide));
-    window.addEventListener("load", debounce(checkSlide));
+    window.addEventListener('scroll', debounce(checkSlide));
+    window.addEventListener('load', debounce(checkSlide));
   }
 
   public renderEmptyPreviews = () => (
@@ -78,7 +91,7 @@ class Projects extends React.Component<{}, IState> {
         preview.title
           .toLowerCase()
           .trim()
-          .includes(filterText)
+          .includes(filterText),
       );
     }
 
@@ -99,51 +112,66 @@ class Projects extends React.Component<{}, IState> {
 
   public handleChange = (
     event: React.ChangeEvent<HTMLInputElement>,
-    value: string
+    value: string,
   ) => {
+    event.preventDefault();
+
     this.setState(
       () => ({
-        filterText: value
+        filterText: value,
       }),
       () => {
         const compositionPhotos = document.querySelectorAll(
-          ".composition__photo"
+          '.composition__photo',
         );
 
         Array.prototype.slice
           .call(compositionPhotos)
           .forEach((photo: HTMLElement) => {
-            photo.classList.remove("show");
-            photo.classList.remove("slide-in");
-            photo.classList.add("show");
-            photo.classList.add("slide-in");
+            photo.classList.remove('show');
+            photo.classList.remove('slide-in');
+            photo.classList.add('show');
+            photo.classList.add('slide-in');
           });
-      }
+      },
     );
   };
 
   public render() {
     const projectPreviews = this.renderPreviews();
+    const { classes } = this.props;
     return (
-      <section className="projects" id="projects">
-        <div className="container">
-          <h1 className="heading-secondary">Recent Work</h1>
-          <div className="projects__filter">
-            <MaterialTextField
-              label="Search projects"
-              placeholder="Search projects"
-              variant="outlined"
-              onChange={this.handleChange}
-            />
+      <div>
+        {/* <Paper> */}
+        <section className="projects" id="projects">
+          <div className="container">
+            <h1 className="heading-secondary">Recent Work</h1>
+
+            {/* <Paper> */}
+            <div className={classes.featuringContainer}>
+              <Typography variant="h3">Featuring</Typography>
+              <SwipeableTextMobileStepper />
+            </div>
+            {/* </Paper> */}
+
+            <div className="projects__filter">
+              <MaterialTextField
+                label="Search projects"
+                placeholder="Search projects"
+                variant="outlined"
+                onChange={this.handleChange}
+              />
+            </div>
+            <div className="projects__cards">
+              {projectPreviews.length ? projectPreviews : null}
+            </div>
+            {!projectPreviews.length ? this.renderEmptyPreviews() : null}
           </div>
-          <div className="projects__cards">
-            {projectPreviews.length ? projectPreviews : null}
-          </div>
-          {!projectPreviews.length ? this.renderEmptyPreviews() : null}
-        </div>
-      </section>
+        </section>
+        {/* </Paper> */}
+      </div>
     );
   }
 }
 
-export default Projects;
+export default withStyles(styles)(Projects);

@@ -1,51 +1,50 @@
-import { ArrowTooltip } from "@components/arrow-tooltip";
-import { AvatarLabel } from "@components/avatar-label";
-import { Theme, Typography } from "@material-ui/core";
-import { createStyles, withStyles, WithStyles } from "@material-ui/core/styles";
-import * as React from "react";
+import * as React from 'react';
+import { AvatarLabel } from '../../../../../../components/avatar-label';
+import { Theme, Tooltip, Typography } from '@material-ui/core';
+import { WithStyles, createStyles, withStyles } from '@material-ui/core/styles';
 
-import banisterPhoto from "@images/influencers/banister.jpg";
-import hotzPhoto from "@images/influencers/hotz.jpg";
-import jobPhoto from "@images/influencers/job.jpg";
-import kipchogePhoto from "@images/influencers/kipchoge.jpg";
-import maPhoto from "@images/influencers/ma.jpg";
-import penaPhoto from "@images/influencers/pena.jpg";
-import williamsPhoto from "@images/influencers/williams.jpg";
+import banisterPhoto from '@images/influencers/banister.jpg';
+import hotzPhoto from '@images/influencers/hotz.jpg';
+import jobPhoto from '@images/influencers/job.jpg';
+import kipchogePhoto from '@images/influencers/kipchoge.jpg';
+import maPhoto from '@images/influencers/ma.jpg';
+import penaPhoto from '@images/influencers/pena.jpg';
+import williamsPhoto from '@images/influencers/williams.jpg';
 
 const styles = (theme: Theme) =>
   createStyles({
     arrow: {
-      fontSize: 6,
-      height: "3em",
-      position: "absolute",
-      width: "3em",
-
-      "&::before": {
-        borderStyle: "solid",
+      '&::before': {
+        borderStyle: 'solid',
         content: '""',
-        display: "block",
+        display: 'block',
         height: 0,
-        margin: "auto",
-        width: 0
-      }
+        margin: 'auto',
+        width: 0,
+      },
+      fontSize: 6,
+      height: '3em',
+      position: 'absolute',
+
+      width: '3em',
     },
     influencersContainer: {
-      alignItems: "center",
-      display: "flex",
-      flexWrap: "wrap",
-      justifyContent: "center"
+      alignItems: 'center',
+      display: 'flex',
+      flexWrap: 'wrap',
+      justifyContent: 'center',
     },
     subHeading: {
       fontWeight: 600,
-      margin: 10
-    }
+      margin: 10,
+    },
   });
 
-interface IProps extends WithStyles<typeof styles> {}
+type IProps = WithStyles<typeof styles>;
 
 class PassionSection extends React.Component<IProps> {
   public state = {
-    expanded: "detail-panel"
+    expanded: 'detail-panel',
   };
 
   public render() {
@@ -62,71 +61,43 @@ class PassionSection extends React.Component<IProps> {
           What I Like
         </Typography>
         <div className={classes.influencersContainer}>
-          <ArrowTooltip
-            title={"placeholder"}
-            interactive={true}
-            placement="top"
-          >
+          <Tooltip title={'placeholder'} interactive={true} placement="top">
             <AvatarLabel
               alt="Roger Banister"
               src={banisterPhoto}
               label="Roger Banister"
             />
-          </ArrowTooltip>
-          <ArrowTooltip
-            title={"placeholder"}
-            interactive={true}
-            placement="top"
-          >
+          </Tooltip>
+          <Tooltip title={'placeholder'} interactive={true} placement="top">
             <AvatarLabel
               alt="George Hotz"
               src={hotzPhoto}
               label="George Hotz"
             />
-          </ArrowTooltip>
-          <ArrowTooltip
-            title={"placeholder"}
-            interactive={true}
-            placement="top"
-          >
+          </Tooltip>
+          <Tooltip title={'placeholder'} interactive={true} placement="top">
             <AvatarLabel alt="Steve Job" src={jobPhoto} label="Steve Job" />
-          </ArrowTooltip>
-          <ArrowTooltip
-            title={"placeholder"}
-            interactive={true}
-            placement="top"
-          >
+          </Tooltip>
+          <Tooltip title={'placeholder'} interactive={true} placement="top">
             <AvatarLabel
               alt="Eliude Kipchoge"
               src={kipchogePhoto}
               label="Eliude Kipchoge"
             />
-          </ArrowTooltip>
-          <ArrowTooltip
-            title={"placeholder"}
-            interactive={true}
-            placement="top"
-          >
+          </Tooltip>
+          <Tooltip title={'placeholder'} interactive={true} placement="top">
             <AvatarLabel alt="Jack Ma" src={maPhoto} label="Jack Ma" />
-          </ArrowTooltip>
-          <ArrowTooltip
-            title={"placeholder"}
-            interactive={true}
-            placement="top"
-          >
+          </Tooltip>
+          <Tooltip title={'placeholder'} interactive={true} placement="top">
             <AvatarLabel alt="Dan Pena" src={penaPhoto} label="Dan Pena" />
-          </ArrowTooltip>
-          <ArrowTooltip
-            title={"placeholder"}
-            interactive={true}
-            placement="top"
-          >
+          </Tooltip>
+          <Tooltip title={'placeholder'} interactive={true} placement="top">
             <AvatarLabel
               alt="Art Williams"
               src={williamsPhoto}
               label="Art Williams"
             />
-          </ArrowTooltip>
+          </Tooltip>
         </div>
       </React.Fragment>
     );

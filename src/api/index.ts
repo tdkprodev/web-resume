@@ -1,12 +1,12 @@
-import { Endpoint, ParamsType, TokenMap } from "./endpoint";
+import { Endpoint, ParamsType, TokenMap } from './endpoint';
 
-import { Request, RequestHandler, Response, Router } from "express";
+import { Request, RequestHandler, Response, Router } from 'express';
 
-import { Logger } from "@shared/logger";
+import { Logger } from '@shared/logger';
 
 /** Instantiate Logger and initialize it with log.info to avoid errors if nothing calls the logger */
-const log = new Logger("api/index");
-log.info("Logger initialized");
+const log = new Logger('api/index');
+log.info('Logger initialized');
 
 export type ISuccessResponse<T> = { success: true } & T;
 export type IFailureResponse = { code: string; success: false };
@@ -55,17 +55,17 @@ export function handleEndpoint<TBody, TResult, TTokens extends TokenMap>(
   endpoint: Endpoint<TBody, TResult, TTokens>,
   callback: (
     body: TBody,
-    request: Request & { params?: ParamsType<TTokens> }
+    request: Request & { params?: ParamsType<TTokens> },
   ) => Promise<IApiResponse<TResult>>,
-  middleware?: RequestHandler[]
+  middleware?: RequestHandler[],
 ) {
   /** Get metadata passed in from endpoint */
   const { method, path, permissions } = endpoint;
   const url = `${path}${endpoint.tokenString}`;
 
   /** Log the request method and url */
-  log.info("Installing method", `[${method.toUpperCase()}] ${url}`);
-  log.info("Permissions: ", permissions);
+  log.info('Installing method', `[${method.toUpperCase()}] ${url}`);
+  log.info('Permissions: ', permissions);
 
   /** Declare the path to listen for and the request handler`
    *
@@ -85,10 +85,10 @@ export function handleEndpoint<TBody, TResult, TTokens extends TokenMap>(
     async (request: Request, response: Response) => {
       try {
         const body: TBody = request.body;
-        const [scope, ...stubs] = path.split("/", 2);
+        const [scope, ...stubs] = path.split('/', 2);
 
         /** Logs the paths and method */
-        log.info(`${scope}.${stubs.join("/")} [${method.toUpperCase()}]`);
+        log.info(`${scope}.${stubs.join('/')} [${method.toUpperCase()}]`);
 
         /** PERMISSIONS CHECKING GOES HERE */
 
@@ -101,9 +101,9 @@ export function handleEndpoint<TBody, TResult, TTokens extends TokenMap>(
         log.error(error);
         response.send({
           success: false,
-          code: `${error}`
+          code: `${error}`,
         });
       }
-    }
+    },
   ); // end express request routing
 }

@@ -17,35 +17,35 @@
  *
  */
 
-import { stringify } from "querystring";
-import { values } from "ramda";
-import { IApiResponse } from "./index"; // import the IApiResponse interface
+import { stringify } from 'querystring';
+import { values } from 'ramda';
+import { IApiResponse } from './index'; // import the IApiResponse interface
 
 /** Get token from localStorage or return an empty string */
 export function getCurrentToken() {
-  if (typeof localStorage === "undefined") {
-    return "";
+  if (typeof localStorage === 'undefined') {
+    return '';
   }
-  return localStorage.getItem("token") || "";
+  return localStorage.getItem('token') || '';
 }
 
 export interface ICallbackOptions {
   body?: any;
-  options?: { [key in "param" | "query"]?: { [key: string]: any } };
+  options?: { [key in 'param' | 'query']?: { [key: string]: any } };
   result?: any;
 }
 
-export type MethodType = "post" | "get" | "put" | "delete";
+export type MethodType = 'post' | 'get' | 'put' | 'delete';
 export type TokenMap = { [key: string]: any };
 export type ParamsType<T> = { [key in keyof T]: any };
 
 export type EndpointConstructorKeys =
-  | "method"
-  | "formData"
-  | "path"
-  | "permissions"
-  | "query"
-  | "tokens";
+  | 'method'
+  | 'formData'
+  | 'path'
+  | 'permissions'
+  | 'query'
+  | 'tokens';
 
 /**
  * Endpoint class that takes an options object, make a request and return a response.
@@ -71,18 +71,18 @@ export class Endpoint<TBody, TResponse, TTokens extends TokenMap> {
    * i.e
    * app.get('/users/:id', (req, res) => {});
    */
-  get tokenString() {
-    if (!this.tokens) return "";
+  public get tokenString() {
+    if (!this.tokens) return '';
     const tokens = Object.entries(this.tokens).reduce(
       (result, [key, value]) => `:${key}`,
-      {}
+      {},
     );
     return `/${tokens}`;
   }
 
   /** constructor */
   constructor(
-    options: Pick<Endpoint<TBody, TResponse, TTokens>, EndpointConstructorKeys>
+    options: Pick<Endpoint<TBody, TResponse, TTokens>, EndpointConstructorKeys>,
   ) {
     this.method = options.method;
     this.path = options.path;
@@ -108,26 +108,26 @@ export class Endpoint<TBody, TResponse, TTokens extends TokenMap> {
    */
   public async apiCall(
     options?: {} | null,
-    body?: TBody
+    body?: TBody,
   ): Promise<IApiResponse<TResponse>> {
     let requestBody;
-    const token = getCurrentToken ? getCurrentToken() : "";
+    const token = getCurrentToken ? getCurrentToken() : '';
     if (this.formData) {
       requestBody = body;
-    } else if (this.method !== "get") {
-      requestBody = typeof body === "string" ? body : JSON.stringify(body);
+    } else if (this.method !== 'get') {
+      requestBody = typeof body === 'string' ? body : JSON.stringify(body);
     }
 
     /** Build parameters and queryString from options passed in if applicable */
-    let parameters = "";
-    let queryString = "";
+    let parameters = '';
+    let queryString = '';
 
     if (options) {
-      if ("params" in options) {
-        parameters = `/${values((options as any).params || {}).join("/")}`;
+      if ('params' in options) {
+        parameters = `/${values((options as any).params || {}).join('/')}`;
       }
 
-      if ("query" in options) {
+      if ('query' in options) {
         queryString = `?${stringify((options as any).query)}`;
       }
     }
@@ -139,15 +139,15 @@ export class Endpoint<TBody, TResponse, TTokens extends TokenMap> {
      * The token is used to set to the Authorization setting in Request.headers.
      */
     const headerConfig: { [key: string]: string } = {
-      Accept: "application/json",
-      Authorization: `${token}`
+      Accept: 'application/json',
+      Authorization: `${token}`,
     };
 
     /**
      * If a formData was passed in, set the Content-Type setting to 'application/json' in Request.headers
      */
     if (!this.formData) {
-      headerConfig["Content-Type"] = "application/json";
+      headerConfig['Content-Type'] = 'application/json';
     }
 
     /**
@@ -158,8 +158,8 @@ export class Endpoint<TBody, TResponse, TTokens extends TokenMap> {
       {
         body: requestBody as any,
         headers: new Headers(headerConfig),
-        method: this.method
-      }
+        method: this.method,
+      },
     );
 
     /** Return the response as a json */
@@ -173,5 +173,5 @@ export class Endpoint<TBody, TResponse, TTokens extends TokenMap> {
  * () => (options) => new Endpoint(options)
  */
 export const createEndpoint = <TBody, TResponse>() => <TTokens>(
-  options: Pick<Endpoint<TBody, TResponse, TTokens>, EndpointConstructorKeys>
+  options: Pick<Endpoint<TBody, TResponse, TTokens>, EndpointConstructorKeys>,
 ) => new Endpoint<TBody, TResponse, TTokens>(options);

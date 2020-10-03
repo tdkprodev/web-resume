@@ -1,5 +1,5 @@
-import { ArrowTooltip } from "@components/arrow-tooltip";
-import * as React from "react";
+import * as React from 'react';
+import { Tooltip } from '@material-ui/core';
 
 interface IProp {
   title: string;
@@ -16,9 +16,9 @@ class Preview extends React.Component<IProp> {
       title,
       src,
       alt,
-      dataTip = "View in new tab",
+      dataTip = 'View in new tab',
       href,
-      description
+      description,
     } = this.props;
 
     return (
@@ -27,11 +27,16 @@ class Preview extends React.Component<IProp> {
         <img className="composition__photo slide-in" src={src} alt={alt} />
 
         <div className="overlay">
-          <ArrowTooltip title={dataTip} placement="top">
-            <a className="btn btn--white" href={href} target="_blank">
+          <Tooltip title={dataTip} placement="top">
+            <a
+              className="btn btn--white"
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               view
             </a>
-          </ArrowTooltip>
+          </Tooltip>
           <h3 className="heading-small">{title}</h3>
           <p className="overlay__description">{description}</p>
         </div>

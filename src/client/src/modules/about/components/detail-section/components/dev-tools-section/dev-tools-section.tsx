@@ -1,102 +1,102 @@
-import { ArrowTooltip } from "@components/arrow-tooltip";
-import { AvatarLabel } from "@components/avatar-label";
-import nodeLogo from "@images/icons/node.png";
-import reactLogo from "@images/icons/react.png";
-import tsLogo from "@images/icons/ts.png";
-import typeormLogo from "@images/icons/typeorm.png";
-import vimLogo from "@images/icons/vim.png";
-import vscodeLogo from "@images/icons/vscode.png";
-import { Theme, Typography } from "@material-ui/core";
-import { createStyles, withStyles, WithStyles } from "@material-ui/core/styles";
+import * as React from 'react';
+import { AvatarLabel } from '../../../../../../components/avatar-label';
 import {
   NodeHoverDetail,
   ReactHoverDetail,
   TypeOrmHoverDetail,
   TypeScriptHoverDetail,
   VimHoverDetail,
-  VsCodeHoverDetail
-} from "@modules/about/components/detail-section/components/hover-details";
-import * as React from "react";
+  VsCodeHoverDetail,
+} from '../../../../../../modules/about/components/detail-section/components/hover-details';
+import { Theme, Typography } from '@material-ui/core';
+import { Tooltip } from '@material-ui/core';
+import { WithStyles, createStyles, withStyles } from '@material-ui/core/styles';
+import nodeLogo from '../../../../../../images/icons/node.png';
+import reactLogo from '../../../../../../images/icons/react.png';
+import tsLogo from '../../../../../../images/icons/ts.png';
+import typeormLogo from '../../../../../../images/icons/typeorm.png';
+import vimLogo from '../../../../../../images/icons/vim.png';
+import vscodeLogo from '../../../../../../images/icons/vscode.png';
 
 const styles = (theme: Theme) =>
   createStyles({
     arrow: {
-      fontSize: 6,
-      height: "3em",
-      position: "absolute",
-      width: "3em",
-
-      "&::before": {
-        borderStyle: "solid",
+      '&::before': {
+        borderStyle: 'solid',
         content: '""',
-        display: "block",
+        display: 'block',
         height: 0,
-        margin: "auto",
-        width: 0
-      }
+        margin: 'auto',
+        width: 0,
+      },
+      fontSize: 6,
+      height: '3em',
+      position: 'absolute',
+
+      width: '3em',
     },
     border: {
-      border: "solid pink 3px"
+      border: 'solid pink 3px',
     },
     buildTools: {
-      alignItems: "center",
-      display: "flex",
-      justifyContent: "center",
-      margin: "0 5rem",
-      // marginBottom: "5rem",
-
-      "@media (max-width: 1200px)": {
-        margin: "0 3rem"
+      '@media (max-width: 1200px)': {
+        margin: '0 3rem',
         // marginBottom: "5rem"
       },
-      "@media (max-width: 600px)": {
-        justifyContent: "space-around"
-      }
+      '@media (max-width: 600px)': {
+        justifyContent: 'space-around',
+      },
+      alignItems: 'center',
+      display: 'flex',
+      // marginBottom: "5rem",
+
+      justifyContent: 'center',
+      margin: '0 5rem',
     },
     devTools: {
-      alignItems: "center",
-      display: "flex",
-      flexWrap: "wrap",
-      justifyContent: "space-around",
-      marginBottom: "5rem",
-      width: "100%"
+      alignItems: 'center',
+      display: 'flex',
+      flexWrap: 'wrap',
+      justifyContent: 'space-around',
+      marginBottom: '5rem',
+      width: '100%',
     },
     devToolsContainer: {
-      alignItems: "center",
-      display: "flex",
-      justifyContent: "center"
+      alignItems: 'center',
+      display: 'flex',
+      justifyContent: 'center',
     },
     heading: {
-      flexBasis: "33.33%",
-      flexShrink: 0
+      flexBasis: '33.33%',
+      flexShrink: 0,
     },
     influencersContainer: {
-      display: "flex"
+      display: 'flex',
     },
     paper: {
-      padding: "3rem 0"
+      padding: '3rem 0',
     },
     root: {
-      display: "block",
-      padding: "0 5rem",
-      width: "100%"
+      display: 'block',
+      padding: '0 5rem',
+      width: '100%',
     },
     subHeading: {
       fontWeight: 600,
-      margin: 10
+      margin: 10,
     },
     toolsContainer: {
-      "@media (max-width: 600px)": {
-        width: "100%"
-      }
-    }
+      '@media (max-width: 600px)': {
+        width: '100%',
+      },
+    },
   });
 
-interface IProps extends WithStyles<typeof styles> {}
+type IProps = WithStyles<typeof styles>;
 
 class DevToolsSection extends React.Component<IProps> {
   public state = {
-    expanded: "detail-panel"
+    expanded: 'detail-panel',
   };
 
   public render() {
@@ -124,20 +124,20 @@ class DevToolsSection extends React.Component<IProps> {
                 Editor
               </Typography>
               <div className={classes.buildTools}>
-                <ArrowTooltip
+                <Tooltip
                   title={<VsCodeHoverDetail classes={classes} />}
                   interactive={true}
                   placement="top"
                 >
                   <AvatarLabel alt="VsCode" src={vscodeLogo} label="VsCode" />
-                </ArrowTooltip>
-                <ArrowTooltip
+                </Tooltip>
+                <Tooltip
                   title={<VimHoverDetail classes={classes} />}
                   interactive={true}
                   placement="top"
                 >
                   <AvatarLabel alt="Vim" src={vimLogo} label="Vim" />
-                </ArrowTooltip>
+                </Tooltip>
               </div>
             </div>
             <div className={classes.toolsContainer}>
@@ -150,7 +150,7 @@ class DevToolsSection extends React.Component<IProps> {
                 Client
               </Typography>
               <div className={classes.buildTools}>
-                <ArrowTooltip
+                <Tooltip
                   title={<TypeScriptHoverDetail classes={classes} />}
                   interactive={true}
                   placement="top"
@@ -160,14 +160,14 @@ class DevToolsSection extends React.Component<IProps> {
                     src={tsLogo}
                     label="TypeScript"
                   />
-                </ArrowTooltip>
-                <ArrowTooltip
+                </Tooltip>
+                <Tooltip
                   title={<ReactHoverDetail classes={classes} />}
                   interactive={true}
                   placement="top"
                 >
                   <AvatarLabel alt="React" src={reactLogo} label="React" />
-                </ArrowTooltip>
+                </Tooltip>
               </div>
             </div>
             <div className={classes.toolsContainer}>
@@ -180,14 +180,14 @@ class DevToolsSection extends React.Component<IProps> {
                 Server
               </Typography>
               <div className={classes.buildTools}>
-                <ArrowTooltip
+                <Tooltip
                   title={<NodeHoverDetail classes={classes} />}
                   interactive={true}
                   placement="top"
                 >
                   <AvatarLabel alt="Node" src={nodeLogo} label="Node" />
-                </ArrowTooltip>
-                <ArrowTooltip
+                </Tooltip>
+                <Tooltip
                   title={<TypeOrmHoverDetail classes={classes} />}
                   interactive={true}
                   placement="top"
@@ -197,7 +197,7 @@ class DevToolsSection extends React.Component<IProps> {
                     src={typeormLogo}
                     label="TypeORM"
                   />
-                </ArrowTooltip>
+                </Tooltip>
               </div>
             </div>
           </div>

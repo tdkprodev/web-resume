@@ -1,51 +1,52 @@
-import { ArrowTooltip } from "@components/arrow-tooltip";
-import { AvatarLabel } from "@components/avatar-label";
-import banisterPhoto from "@images/influencers/banister.jpg";
-import hotzPhoto from "@images/influencers/hotz.jpg";
-import jobPhoto from "@images/influencers/job.jpg";
-import kipchogePhoto from "@images/influencers/kipchoge.jpg";
-import maPhoto from "@images/influencers/ma.jpg";
-import penaPhoto from "@images/influencers/pena.jpg";
-import williamsPhoto from "@images/influencers/williams.jpg";
-import { Theme, Typography } from "@material-ui/core";
-import { createStyles, withStyles, WithStyles } from "@material-ui/core/styles";
-import * as React from "react";
+// import { Tooltip } from '../../../../../../components/arrow-tooltip';
+import * as React from 'react';
+import { AvatarLabel } from '../../../../../../components/avatar-label';
+import { Theme, Typography } from '@material-ui/core';
+import { Tooltip } from '@material-ui/core';
+import { WithStyles, createStyles, withStyles } from '@material-ui/core/styles';
+import torvaldsPhoto from '../../../../../../images/influencers/torvalds2.jpeg';
+import hotzPhoto from '../../../../../../images/influencers/hotz.jpg';
+import jobPhoto from '../../../../../../images/influencers/job.jpg';
+import kipchogePhoto from '../../../../../../images/influencers/kipchoge3.jpg';
+import teslaPhoto from '../../../../../../images/influencers/tesla.jpeg';
+import penaPhoto from '../../../../../../images/influencers/pena.jpg';
+import williamsPhoto from '../../../../../../images/influencers/williams.jpg';
 
 const styles = (theme: Theme) =>
   createStyles({
     arrow: {
-      fontSize: 6,
-      height: "3em",
-      position: "absolute",
-      width: "3em",
-
-      "&::before": {
-        borderStyle: "solid",
+      '&::before': {
+        borderStyle: 'solid',
         content: '""',
-        display: "block",
+        display: 'block',
         height: 0,
-        margin: "auto",
-        width: 0
-      }
+        margin: 'auto',
+        width: 0,
+      },
+      fontSize: 6,
+      height: '3em',
+      position: 'absolute',
+
+      width: '3em',
     },
     influencersContainer: {
-      alignItems: "center",
-      display: "flex",
-      flexWrap: "wrap",
-      justifyContent: "center",
-      marginBottom: "5rem"
+      alignItems: 'center',
+      display: 'flex',
+      flexWrap: 'wrap',
+      justifyContent: 'center',
+      marginBottom: '5rem',
     },
     subHeading: {
       fontWeight: 600,
-      margin: 10
-    }
+      margin: 10,
+    },
   });
 
-interface IProps extends WithStyles<typeof styles> {}
+type IProps = WithStyles<typeof styles>;
 
 class InfluencersSection extends React.Component<IProps> {
   public state = {
-    expanded: "detail-panel"
+    expanded: 'detail-panel',
   };
 
   public render() {
@@ -62,22 +63,22 @@ class InfluencersSection extends React.Component<IProps> {
           Influencers
         </Typography>
         <div className={classes.influencersContainer}>
-          <ArrowTooltip
+          <Tooltip
             title={
-              "The man who can drive himself further once the effort gets painful is the man who will win."
+              'The man who can drive himself further once the effort gets painful is the man who will win.'
             }
             interactive={true}
             placement="top"
           >
             <AvatarLabel
-              alt="Roger Banister"
-              src={banisterPhoto}
-              label="Roger Banister"
+              alt="Linus Torvalds"
+              src={torvaldsPhoto}
+              label="Linus Torvalds"
               large={true}
               circle={true}
             />
-          </ArrowTooltip>
-          <ArrowTooltip
+          </Tooltip>
+          <Tooltip
             title={
               "I don't hack because of some ideology. I hack because I'm bored."
             }
@@ -91,9 +92,9 @@ class InfluencersSection extends React.Component<IProps> {
               large={true}
               circle={true}
             />
-          </ArrowTooltip>
-          <ArrowTooltip
-            title={"Think different."}
+          </Tooltip>
+          <Tooltip
+            title={'Think different.'}
             interactive={true}
             placement="top"
           >
@@ -104,8 +105,8 @@ class InfluencersSection extends React.Component<IProps> {
               large={true}
               circle={true}
             />
-          </ArrowTooltip>
-          <ArrowTooltip
+          </Tooltip>
+          <Tooltip
             title={
               "Don't be the fastest runner in the world. Be the fastest runner in history."
             }
@@ -119,21 +120,21 @@ class InfluencersSection extends React.Component<IProps> {
               large={true}
               circle={true}
             />
-          </ArrowTooltip>
-          <ArrowTooltip
-            title={"Don’t hire the most qualified, hire the craziest."}
+          </Tooltip>
+          <Tooltip
+            title={'Don’t hire the most qualified, hire the craziest.'}
             interactive={true}
             placement="top"
           >
             <AvatarLabel
-              alt="Jack Ma"
-              src={maPhoto}
-              label="Jack Ma"
+              alt="Nicola Tesla"
+              src={teslaPhoto}
+              label="Nicola tesla"
               large={true}
               circle={true}
             />
-          </ArrowTooltip>
-          <ArrowTooltip title={"Do it!"} interactive={true} placement="top">
+          </Tooltip>
+          <Tooltip title={'Do it!'} interactive={true} placement="top">
             <AvatarLabel
               alt="Art Williams"
               src={williamsPhoto}
@@ -141,9 +142,9 @@ class InfluencersSection extends React.Component<IProps> {
               large={true}
               circle={true}
             />
-          </ArrowTooltip>
-          <ArrowTooltip
-            title={"Just fucking do it!"}
+          </Tooltip>
+          <Tooltip
+            title={'Just fucking do it!'}
             interactive={true}
             placement="top"
           >
@@ -154,7 +155,7 @@ class InfluencersSection extends React.Component<IProps> {
               large={true}
               circle={true}
             />
-          </ArrowTooltip>
+          </Tooltip>
         </div>
       </React.Fragment>
     );

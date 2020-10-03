@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "baseUrl": "../../",
+    "paths": {
+      "@client/*": ["src/client2/*"],
+      "@src/*": ["src/client2/src/*"],
+      "@images/*": ["src/client2/src/images/*"],
+      "@modules/*": ["src/client2/src/modules/*"],
+      "@components/*": ["src/client2/src/components/*"],
+      "@utils/*": ["src/client2/src/utils/*"],
+      "@server/*": ["src/server/*"],
+      "@shared/*": ["src/shared/*"],
+      "@connection/*": ["src/shared/connection/*"],
+      "@interface/*": ["src/shared/interface/*"]
+    }
+  }
+}
