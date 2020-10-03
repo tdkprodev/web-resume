@@ -530,8 +530,14 @@ body {
     max-width: 70%;
     background: #00d8ff; }
   .tech .bar--node:after {
-    max-width: 35%;
+    max-width: 60%;
     background: #44883e; }
+  .tech .bar--php:after {
+    max-width: 40%;
+    background: #787CB5; }
+  .tech .bar--typescript:after {
+    max-width: 80%;
+    background: #007acc; }
 
 .tech .bar::before {
   content: "";
@@ -711,7 +717,7 @@ body {
   height: 100vh;
   opacity: 1;
   background-color: transparent;
-  background: url(../images/hero.gif);
+  background: url(../images/hero.PNG);
   background-position: center;
   background-size: cover;
   background-attachment: fixed;

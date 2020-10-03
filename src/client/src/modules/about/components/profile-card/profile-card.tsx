@@ -190,7 +190,7 @@ class ProfileCard extends React.Component<IProps, IState> {
         </Typography>
         <Typography align="center" variant="overline">
           <FaMapMarkerAlt />
-          Charlotte, NC
+          Taylors, SC
         </Typography>
         <Divider variant="middle" />
         <SocialLinks />

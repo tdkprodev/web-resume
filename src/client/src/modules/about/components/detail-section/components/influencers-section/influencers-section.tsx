@@ -4,11 +4,11 @@ import { AvatarLabel } from '../../../../../../components/avatar-label';
 import { Theme, Typography } from '@material-ui/core';
 import { Tooltip } from '@material-ui/core';
 import { WithStyles, createStyles, withStyles } from '@material-ui/core/styles';
-import banisterPhoto from '../../../../../../images/influencers/banister.jpg';
+import torvaldsPhoto from '../../../../../../images/influencers/torvalds2.jpeg';
 import hotzPhoto from '../../../../../../images/influencers/hotz.jpg';
 import jobPhoto from '../../../../../../images/influencers/job.jpg';
-import kipchogePhoto from '../../../../../../images/influencers/kipchoge.jpg';
-import maPhoto from '../../../../../../images/influencers/ma.jpg';
+import kipchogePhoto from '../../../../../../images/influencers/kipchoge3.jpg';
+import teslaPhoto from '../../../../../../images/influencers/tesla.jpeg';
 import penaPhoto from '../../../../../../images/influencers/pena.jpg';
 import williamsPhoto from '../../../../../../images/influencers/williams.jpg';
 
@@ -71,9 +71,9 @@ class InfluencersSection extends React.Component<IProps> {
             placement="top"
           >
             <AvatarLabel
-              alt="Roger Banister"
-              src={banisterPhoto}
-              label="Roger Banister"
+              alt="Linus Torvalds"
+              src={torvaldsPhoto}
+              label="Linus Torvalds"
               large={true}
               circle={true}
             />
@@ -127,9 +127,9 @@ class InfluencersSection extends React.Component<IProps> {
             placement="top"
           >
             <AvatarLabel
-              alt="Jack Ma"
-              src={maPhoto}
-              label="Jack Ma"
+              alt="Nicola Tesla"
+              src={teslaPhoto}
+              label="Nicola tesla"
               large={true}
               circle={true}
             />

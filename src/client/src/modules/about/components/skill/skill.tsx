@@ -1,5 +1,12 @@
 import * as React from 'react';
-import { FaCss3, FaHtml5, FaJs, FaNodeJs, FaReact } from 'react-icons/fa';
+import {
+  FaCss3,
+  FaHtml5,
+  FaJs,
+  FaNodeJs,
+  FaReact,
+  FaPhp,
+} from 'react-icons/fa';
 
 class SkillCard extends React.Component<{}> {
   public handleMouseOver = (event: React.MouseEvent) => {
@@ -26,11 +33,17 @@ class SkillCard extends React.Component<{}> {
           <div className="bar bar--js">
             <FaJs /> JavaScript
           </div>
+          <div className="bar bar--typescript">
+            <FaJs /> TypeScript
+          </div>
           <div className="bar bar--react">
             <FaReact /> React
           </div>
           <div className="bar bar--node">
             <FaNodeJs /> Node
+          </div>
+          <div className="bar bar--php">
+            <FaPhp /> PHP
           </div>
         </div>
       </div>

@@ -34,8 +34,18 @@
     }
 
     &--node:after {
-      max-width: 35%;
+      max-width: 60%;
       background: $color-node;
+    }
+
+    &--php:after {
+      max-width: 40%;
+      background: $color-php;
+    }
+
+    &--typescript:after {
+      max-width: 80%;
+      background: $color-typescript;
     }
   }
   .bar::before {
