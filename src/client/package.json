@@ -18,7 +18,18 @@
     "react-icons": "^3.9.0",
     "react-scripts": "3.4.1",
     "react-swipeable-views": "^0.13.9",
-    "react-swipeable-views-utils": "^0.13.9"
+    "react-swipeable-views-utils": "^0.13.9",
+    "@types/classnames": "^2.2.10",
+    "@types/jest": "^25.1.4",
+    "@types/jquery": "^3.5.1",
+    "@types/node": "^13.9.1",
+    "@types/react": "^16.9.23",
+    "@types/react-dom": "^16.9.5",
+    "@types/react-swipeable-views": "^0.13.0",
+    "@types/react-swipeable-views-utils": "^0.13.2",
+    "eslint-plugin-sort-imports-es6-autofix": "^0.5.0",
+    "eslint-plugin-sort-keys-fix": "^1.1.0",
+    "typescript": "^3.8.3"
   },
   "scripts": {
     "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
@@ -45,17 +56,5 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {
-    "@types/classnames": "^2.2.10",
-    "@types/jest": "^25.1.4",
-    "@types/jquery": "^3.5.1",
-    "@types/node": "^13.9.1",
-    "@types/react": "^16.9.23",
-    "@types/react-dom": "^16.9.5",
-    "@types/react-swipeable-views": "^0.13.0",
-    "@types/react-swipeable-views-utils": "^0.13.2",
-    "eslint-plugin-sort-imports-es6-autofix": "^0.5.0",
-    "eslint-plugin-sort-keys-fix": "^1.1.0",
-    "typescript": "^3.8.3"
-  }
+  "devDependencies": {}
 }
