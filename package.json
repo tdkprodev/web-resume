@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "concurrently \"yarn server\" \"yarn client\"",
-    "start": "concurrently \"ts-node src/server/index.ts\" \"cd src/client && yarn start\"",
+    "start": "ts-node src/server/index.ts",
     "server": "nodemon",
     "client": "ts-node script/start-script.ts",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=true yarn install && cd src/client && yarn install && yarn build",
