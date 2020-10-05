@@ -7,14 +7,9 @@ import { Typography } from '@material-ui/core';
 import { WithStyles, createStyles, withStyles } from '@material-ui/core/styles';
 import { UserFaceOff } from '../../components/user-face-off';
 
-const collaboratorsGithub = [
-  'geohot',
-  'tpope',
-  'substack',
-  'gaearon',
-  'torvalds',
-  'tj',
-];
+const collaboratorsGithub = ['tomxkay'];
+
+const legendsGithub = ['geohot', 'tpope', 'substack', 'gaearon', 'torvalds'];
 
 const styles = () =>
   createStyles({
@@ -50,29 +45,21 @@ type IProps = WithStyles<typeof styles>;
 
 interface IState {
   collaborators: Nullable<GitHubUser>[];
+  legends: Nullable<GitHubUser>[];
   expanded: string;
 }
 
 class CollaboratorsSection extends React.Component<IProps, IState> {
   public state = {
     collaborators: [],
+    legends: [],
     expanded: 'detail-panel',
   };
 
   public async componentDidMount() {
     this.fetchCollaborators();
+    this.fetchLegends();
   }
-
-  // public fetchGitHubUsers = async (userNames: string[]) => {
-  //   return await Promise.all(
-  //     userNames.map(userName => {
-  //       const url = `https://api.github.com/users/${userName}`;
-  //       return fetch(url).then(res => res.json());
-  //     }),
-  //   ).catch(err => {
-  //     console.error('Error fetching github users');
-  //   });
-  // };
 
   public fetchCollaborators = async () => {
     let collaborators: Nullable<GitHubUser>[] = [];
@@ -88,12 +75,26 @@ class CollaboratorsSection extends React.Component<IProps, IState> {
         collaborators: collaborators || [],
       }));
     }
-
-    console.log('collaborators ----', collaborators);
   };
 
-  public renderCollaborators = () => {
-    const { collaborators } = this.state;
+  public fetchLegends = async () => {
+    let collaborators: Nullable<GitHubUser>[] = [];
+
+    try {
+      collaborators = (await api.fetchGitHubUsers(legendsGithub)) as Nullable<
+        GitHubUser
+      >[];
+    } catch (error) {
+      console.error('Error in fetching collaborators from GitHub API.', error);
+    } finally {
+      this.setState(() => ({
+        legends: collaborators || [],
+      }));
+    }
+  };
+
+  public renderCollaborators = (collaborators: GitHubUser[]) => {
+    /* const { collaborators } = this.state; */
 
     return collaborators.length
       ? collaborators.map((collaborator: GitHubUser, index) => {
@@ -144,11 +145,30 @@ class CollaboratorsSection extends React.Component<IProps, IState> {
           variant="h4"
           align="center"
         >
-          Collaborators
+          Github Versus
         </Typography>
         <UserFaceOff />
+        <Typography
+          className={classes.subHeading}
+          gutterBottom={true}
+          variant="h4"
+          align="center"
+        >
+          Collaborators
+        </Typography>
         <div className={classes.collaboratorsContainer}>
-          {this.renderCollaborators()}
+          {this.renderCollaborators(this.state.collaborators)}
+        </div>
+        <Typography
+          className={classes.subHeading}
+          gutterBottom={true}
+          variant="h4"
+          align="center"
+        >
+          Tech Legends
+        </Typography>
+        <div className={classes.collaboratorsContainer}>
+          {this.renderCollaborators(this.state.legends)}
         </div>
       </React.Fragment>
     );

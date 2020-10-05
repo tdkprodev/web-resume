@@ -7,7 +7,6 @@ const app = express();
 const port = process.env.PORT || 3001;
 
 //Static file declaration
-console.log('dir is ---', path.resolve(__dirname, '../client/build'));
 app.use(express.static(path.resolve(__dirname, '../client/build')));
 
 //production mode
