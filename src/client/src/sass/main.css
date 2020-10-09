@@ -728,20 +728,21 @@ body {
   @media only screen and (max-width: 37.5em) {
     .hero {
       background-position: -145%;
-      background: url(../images/hero-mobile.png); } }
+      background-size: cover;
+      background: url(../images/hero-pad.png); } }
   @media only screen and (max-width: 35.625em) {
     .hero {
-      background-position: -110%; } }
+      background-position: -110%;
+      background-size: cover; } }
   @media only screen and (max-width: 28.125em) {
     .hero {
       background-position: -105%;
-      background: url(../images/hero-pad.png); } }
+      background-size: cover;
+      background: url(../images/hero-mobile.png); } }
   @media only screen and (max-width: 26em) {
     .hero {
-      background-position: -60%; } }
-  @media only screen and (max-width: 25em) {
-    .hero {
-      background-position: center; } }
+      background-size: cover;
+      background-position: -77%; } }
   .hero__logo {
     position: absolute;
     top: 0;

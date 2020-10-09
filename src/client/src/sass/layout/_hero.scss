@@ -10,26 +10,26 @@
   background-attachment: fixed;
   transition: background-position 1s ease;
 
-  @include respond(phone) {
+  @include respond(phone) { // 37.5em || 600px
     background-position: -145%;
-    background: url(../images/hero-mobile.png);
+    background-size: cover;
+    background: url(../images/hero-pad.png);
   }
 
   @media only screen and (max-width: 35.625em) {
     background-position: -110%;
+    background-size: cover;
   }
 
   @media only screen and (max-width: 28.125em) {
     background-position: -105%;
-    background: url(../images/hero-pad.png);
+    background-size: cover;
+    background: url(../images/hero-mobile.png);
   }
 
   @media only screen and (max-width: 26em) {
-    background-position: -60%;
-  }
-
-  @include respond(phone-s) {
-    background-position: center;
+    background-size: cover;
+    background-position: -77%;
   }
 
   display: grid;
