@@ -51,7 +51,10 @@ const useStyles = makeStyles((theme: Theme) =>
         width: '350px',
       },
       '@media (max-width: 800px)': {
-        width: '400px',
+        width: '330px',
+      },
+      '@media (max-width: 600px)': {
+        width: '300px',
       },
     },
     user: {
@@ -59,12 +62,20 @@ const useStyles = makeStyles((theme: Theme) =>
       justifyContent: 'center',
       alignItems: 'center',
       gridArea: 'user',
+
+      '@media (max-width: 800px)': {
+        display: 'none',
+      },
     },
     opponent: {
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
       gridArea: 'opponent',
+
+      '@media (max-width: 800px)': {
+        display: 'none',
+      },
     },
     graph: {
       display: 'flex',
