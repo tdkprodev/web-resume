@@ -9,7 +9,14 @@ import { UserFaceOff } from '../../components/user-face-off';
 
 const collaboratorsGithub = ['tomxkay'];
 
-const legendsGithub = ['geohot', 'tpope', 'substack', 'gaearon', 'torvalds'];
+const legendsGithub = [
+  'geohot',
+  /* 'tpope', */
+  /* 'substack', */
+  /* 'gaearon', */
+  /* 'torvalds', */
+  /* 'junegunn', */
+];
 
 const styles = () =>
   createStyles({
@@ -94,10 +101,8 @@ class CollaboratorsSection extends React.Component<IProps, IState> {
   };
 
   public renderCollaborators = (collaborators: GitHubUser[]) => {
-    /* const { collaborators } = this.state; */
-
     return collaborators.length
-      ? collaborators.map((collaborator: GitHubUser, index) => {
+      ? collaborators.map((collaborator: GitHubUser) => {
           const {
             avatar_url: avatarUrl,
             bio,
@@ -115,7 +120,7 @@ class CollaboratorsSection extends React.Component<IProps, IState> {
 
           return (
             <GitHubUserCard
-              key={index}
+              key={login}
               avatarUrl={avatarUrl}
               bio={bio}
               blog={blog}

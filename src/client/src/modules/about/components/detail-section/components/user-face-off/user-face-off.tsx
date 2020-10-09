@@ -18,6 +18,21 @@ const useStyles = makeStyles((theme: Theme) =>
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
+
+      '@media (max-width: 1080px)': {
+        display: 'grid',
+        justifyContent: 'center',
+        alignItems: 'center',
+        gridTemplateAreas: `
+            "graph ."
+            "user opponent"`,
+      },
+      '@media (max-width: 800px)': {
+        gridTemplateAreas: `
+            "graph"
+            "user"
+            "opponent"`,
+      },
     },
     search: {
       display: 'flex',
@@ -27,6 +42,35 @@ const useStyles = makeStyles((theme: Theme) =>
     stats: {
       height: '500px',
       width: '500px',
+
+      '@media (max-width: 1350px)': {
+        width: '400px',
+      },
+
+      '@media (max-width: 1200px)': {
+        width: '350px',
+      },
+      '@media (max-width: 800px)': {
+        width: '400px',
+      },
+    },
+    user: {
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      gridArea: 'user',
+    },
+    opponent: {
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      gridArea: 'opponent',
+    },
+    graph: {
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      gridArea: 'graph',
     },
   }),
 );
@@ -46,8 +90,6 @@ const renderUserCard = (user: GitHubUser) => {
     public_gists: publicGists,
     public_repos: publicRepos,
   } = user;
-
-  console.info('user in render user card is', user);
 
   return (
     <GitHubUserCard
@@ -77,21 +119,17 @@ export const UserFaceOff = () => {
 
   useEffect(() => {
     if (!mainUser) {
-      console.info('gonna render mainuser');
       api.fetchGitHubUsers(['tomxkay']).then(res => {
         const users = res;
         setMainUser(users[0]);
       });
     }
 
-    if (!otherUser) {
-      console.info('gonna render otheruser');
-      api.fetchGitHubUsers(['geohot']).then(res => {
-        const users = res;
-        setOtherUser(users[0]);
-      });
-    }
-  });
+    api.fetchGitHubUsers([filterText]).then(res => {
+      const users = res;
+      setOtherUser(users[0]);
+    });
+  }, [filterText]);
 
   const handleFilterTextChange = (
     event: React.ChangeEvent<HTMLInputElement>,
@@ -104,11 +142,9 @@ export const UserFaceOff = () => {
       return null;
     }
 
-    return (
-      <div className={classes.stats}>
-        <FaceOffResponsiveBar data={[]} />
-      </div>
-    );
+    const users: GitHubUser[] = [mainUser, otherUser];
+
+    return <FaceOffResponsiveBar data={users} />;
   };
 
   return (
@@ -124,9 +160,15 @@ export const UserFaceOff = () => {
         />
       </div>
       <div className={classes.container}>
-        {mainUser ? <div>{renderUserCard(mainUser)}</div> : null}
-        {renderUsersStats()}
-        {otherUser ? <div>{renderUserCard(otherUser)}</div> : null}
+        <div className={classes.user}>
+          {mainUser ? <div>{renderUserCard(mainUser)}</div> : null}
+        </div>
+        <div className={`${classes.graph} ${classes.stats}`}>
+          {renderUsersStats()}
+        </div>
+        <div className={classes.opponent}>
+          {otherUser ? <div>{renderUserCard(otherUser)}</div> : null}
+        </div>
       </div>
     </div>
   );

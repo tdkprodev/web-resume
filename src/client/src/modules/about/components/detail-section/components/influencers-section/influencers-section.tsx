@@ -10,7 +10,7 @@ import jobPhoto from '../../../../../../images/influencers/job.jpg';
 import kipchogePhoto from '../../../../../../images/influencers/kipchoge3.jpg';
 import teslaPhoto from '../../../../../../images/influencers/tesla.jpeg';
 import penaPhoto from '../../../../../../images/influencers/pena.jpg';
-import williamsPhoto from '../../../../../../images/influencers/williams.jpg';
+import gogginsPhoto from '../../../../../../images/influencers/goggins.jpg';
 
 const styles = (theme: Theme) =>
   createStyles({
@@ -136,9 +136,9 @@ class InfluencersSection extends React.Component<IProps> {
           </Tooltip>
           <Tooltip title={'Do it!'} interactive={true} placement="top">
             <AvatarLabel
-              alt="Art Williams"
-              src={williamsPhoto}
-              label="Art Williams"
+              alt="David Goggins"
+              src={gogginsPhoto}
+              label="David Goggins"
               large={true}
               circle={true}
             />

@@ -39,8 +39,12 @@ const styles = (theme: Theme) =>
     },
     card: {
       margin: '1rem',
-      minHeight: 350,
+      minHeight: 385,
       width: 300,
+
+      '@media (max-width: 800px)': {
+        width: 400,
+      },
     },
     defaultContent: {
       display: 'flex',
@@ -120,8 +124,8 @@ class GitHubUserCard extends React.Component<IProps, IState> {
                   <MoreVertIcon />
                 </IconButton>
               }
-              title={login || '<Alias>'}
-              subheader={company || '<Company>'}
+              title={login || ''}
+              subheader={company || ''}
             />
             <Tooltip
               title={bio && bio.trim() ? bio : '...'}
