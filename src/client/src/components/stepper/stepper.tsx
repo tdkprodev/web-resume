@@ -5,33 +5,51 @@ import { autoPlay } from 'react-swipeable-views-utils';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import SwipeableViews from 'react-swipeable-views';
 
+import thumbnailBlogsome from '../../images/thumbnails/blogsome.png';
+import thumbnailChat from '../../images/thumbnails/chat.png';
+import thumbnailExpensify from '../../images/thumbnails/expensify.png';
+import thumbnailNatours from '../../images/thumbnails/natours.png';
+import thumbnailNexter from '../../images/thumbnails/nexter.png';
+import thumbnailTrillo from '../../images/thumbnails/trillo.png';
+import thumbnailYouTube from '../../images/thumbnails/yt.png';
+
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 const tutorialSteps = [
   {
-    imgPath:
-      'https://images.unsplash.com/photo-1537944434965-cf4679d1a598?auto=format&fit=crop&w=400&h=250&q=60',
-    label: 'San Francisco – Oakland Bay Bridge, United States',
+    imgPath: thumbnailBlogsome,
+    label: 'Write some blog',
+    href: 'https://blogsome.herokuapp.com',
   },
   {
-    imgPath:
-      'https://images.unsplash.com/photo-1538032746644-0212e812a9e7?auto=format&fit=crop&w=400&h=250&q=60',
-    label: 'Bird',
+    imgPath: thumbnailChat,
+    label: 'Up for a chat?',
+    href: 'https://tdkchatapp.herokuapp.com',
   },
   {
-    imgPath:
-      'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=400&h=250&q=80',
-    label: 'Bali, Indonesia',
+    imgPath: thumbnailExpensify,
+    label: 'Manage your spending',
+    href: 'https://expensifyapp0101.herokuapp.com',
   },
   {
-    imgPath:
-      'https://images.unsplash.com/photo-1518732714860-b62714ce0c59?auto=format&fit=crop&w=400&h=250&q=60',
-    label: 'NeONBRAND Digital Marketing, Las Vegas, United States',
+    imgPath: thumbnailNatours,
+    label: 'Nature awaits',
+    href: 'https://tdknatours.herokuapp.com',
   },
   {
-    imgPath:
-      'https://images.unsplash.com/photo-1512341689857-198e7e2f3ca8?auto=format&fit=crop&w=400&h=250&q=60',
-    label: 'Goč, Serbia',
+    imgPath: thumbnailNexter,
+    label: 'Your dream home',
+    href: 'https://tdknexter.herokuapp.com',
+  },
+  {
+    imgPath: thumbnailTrillo,
+    label: '',
+    href: 'https://tdktrillo.herokuapp.com',
+  },
+  {
+    imgPath: thumbnailYouTube,
+    label: "I'm a mock but that's okay",
+    href: 'https://tdkyoutubeapp.herokuapp.com',
   },
 ];
 
@@ -88,11 +106,13 @@ export function SwipeableTextMobileStepper() {
         {tutorialSteps.map((step, index) => (
           <div key={step.label}>
             {Math.abs(activeStep - index) <= 2 ? (
-              <img
-                className={classes.img}
-                src={step.imgPath}
-                alt={step.label}
-              />
+              <a href={step.href} target="_blank" rel="noopener noreferrer">
+                <img
+                  className={classes.img}
+                  src={step.imgPath}
+                  alt={step.label}
+                />
+              </a>
             ) : null}
           </div>
         ))}

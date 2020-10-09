@@ -11,11 +11,11 @@ const collaboratorsGithub = ['tomxkay'];
 
 const legendsGithub = [
   'geohot',
-  /* 'tpope', */
-  /* 'substack', */
-  /* 'gaearon', */
-  /* 'torvalds', */
-  /* 'junegunn', */
+  'tpope',
+  'substack',
+  'gaearon',
+  'torvalds',
+  'junegunn',
 ];
 
 const styles = () =>
