@@ -65,7 +65,7 @@ class InfluencersSection extends React.Component<IProps> {
         <div className={classes.influencersContainer}>
           <Tooltip
             title={
-              'The man who can drive himself further once the effort gets painful is the man who will win.'
+              'Intelligence is the ability to avoid doing work, yet getting the work done.'
             }
             interactive={true}
             placement="top"
@@ -99,9 +99,9 @@ class InfluencersSection extends React.Component<IProps> {
             placement="top"
           >
             <AvatarLabel
-              alt="Steve Job"
+              alt="Steve Jobs"
               src={jobPhoto}
-              label="Steve Job"
+              label="Steve Jobs"
               large={true}
               circle={true}
             />
@@ -122,19 +122,25 @@ class InfluencersSection extends React.Component<IProps> {
             />
           </Tooltip>
           <Tooltip
-            title={'Don’t hire the most qualified, hire the craziest.'}
+            title={
+              'Life is and will ever remain an equation incapable of solution, but it contains certain known factors.'
+            }
             interactive={true}
             placement="top"
           >
             <AvatarLabel
               alt="Nicola Tesla"
               src={teslaPhoto}
-              label="Nicola tesla"
+              label="Nicola Tesla"
               large={true}
               circle={true}
             />
           </Tooltip>
-          <Tooltip title={'Do it!'} interactive={true} placement="top">
+          <Tooltip
+            title={'If you choose to do something, attack it.'}
+            interactive={true}
+            placement="top"
+          >
             <AvatarLabel
               alt="David Goggins"
               src={gogginsPhoto}
