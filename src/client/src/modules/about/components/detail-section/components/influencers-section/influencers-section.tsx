@@ -11,6 +11,7 @@ import kipchogePhoto from '../../../../../../images/influencers/kipchoge3.jpg';
 import teslaPhoto from '../../../../../../images/influencers/tesla.jpeg';
 import penaPhoto from '../../../../../../images/influencers/pena.jpg';
 import gogginsPhoto from '../../../../../../images/influencers/goggins.jpg';
+import kobePhoto from '../../../../../../images/influencers/kobe.jpg';
 
 const styles = (theme: Theme) =>
   createStyles({
@@ -70,13 +71,15 @@ class InfluencersSection extends React.Component<IProps> {
             interactive={true}
             placement="top"
           >
-            <AvatarLabel
-              alt="Linus Torvalds"
-              src={torvaldsPhoto}
-              label="Linus Torvalds"
-              large={true}
-              circle={true}
-            />
+            <div>
+              <AvatarLabel
+                alt="Linus Torvalds"
+                src={torvaldsPhoto}
+                label="Linus Torvalds"
+                large={true}
+                circle={true}
+              />
+            </div>
           </Tooltip>
           <Tooltip
             title={
@@ -85,26 +88,30 @@ class InfluencersSection extends React.Component<IProps> {
             interactive={true}
             placement="top"
           >
-            <AvatarLabel
-              alt="George Hotz"
-              src={hotzPhoto}
-              label="George Hotz"
-              large={true}
-              circle={true}
-            />
+            <div>
+              <AvatarLabel
+                alt="George Hotz"
+                src={hotzPhoto}
+                label="George Hotz"
+                large={true}
+                circle={true}
+              />
+            </div>
           </Tooltip>
           <Tooltip
             title={'Think different.'}
             interactive={true}
             placement="top"
           >
-            <AvatarLabel
-              alt="Steve Jobs"
-              src={jobPhoto}
-              label="Steve Jobs"
-              large={true}
-              circle={true}
-            />
+            <div>
+              <AvatarLabel
+                alt="Steve Jobs"
+                src={jobPhoto}
+                label="Steve Jobs"
+                large={true}
+                circle={true}
+              />
+            </div>
           </Tooltip>
           <Tooltip
             title={
@@ -113,13 +120,32 @@ class InfluencersSection extends React.Component<IProps> {
             interactive={true}
             placement="top"
           >
-            <AvatarLabel
-              alt="Eliude Kipchoge"
-              src={kipchogePhoto}
-              label="Eliude Kipchoge"
-              large={true}
-              circle={true}
-            />
+            <div>
+              <AvatarLabel
+                alt="Eliude Kipchoge"
+                src={kipchogePhoto}
+                label="Eliude Kipchoge"
+                large={true}
+                circle={true}
+              />
+            </div>
+          </Tooltip>
+          <Tooltip
+            title={
+              'Great things come from hard work and perseverance. No excuses.'
+            }
+            interactive={true}
+            placement="top"
+          >
+            <div>
+              <AvatarLabel
+                alt="Kobe Bryant"
+                src={kobePhoto}
+                label="Kobe Bryant"
+                large={true}
+                circle={true}
+              />
+            </div>
           </Tooltip>
           <Tooltip
             title={
@@ -128,39 +154,45 @@ class InfluencersSection extends React.Component<IProps> {
             interactive={true}
             placement="top"
           >
-            <AvatarLabel
-              alt="Nicola Tesla"
-              src={teslaPhoto}
-              label="Nicola Tesla"
-              large={true}
-              circle={true}
-            />
+            <div>
+              <AvatarLabel
+                alt="Nicola Tesla"
+                src={teslaPhoto}
+                label="Nicola Tesla"
+                large={true}
+                circle={true}
+              />
+            </div>
           </Tooltip>
           <Tooltip
             title={'If you choose to do something, attack it.'}
             interactive={true}
             placement="top"
           >
-            <AvatarLabel
-              alt="David Goggins"
-              src={gogginsPhoto}
-              label="David Goggins"
-              large={true}
-              circle={true}
-            />
+            <div>
+              <AvatarLabel
+                alt="David Goggins"
+                src={gogginsPhoto}
+                label="David Goggins"
+                large={true}
+                circle={true}
+              />
+            </div>
           </Tooltip>
           <Tooltip
             title={'Just fucking do it!'}
             interactive={true}
             placement="top"
           >
-            <AvatarLabel
-              alt="Dan Pena"
-              src={penaPhoto}
-              label="Dan Pena"
-              large={true}
-              circle={true}
-            />
+            <div>
+              <AvatarLabel
+                alt="Dan Pena"
+                src={penaPhoto}
+                label="Dan Pena"
+                large={true}
+                circle={true}
+              />
+            </div>
           </Tooltip>
         </div>
       </React.Fragment>

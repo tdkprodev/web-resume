@@ -626,7 +626,8 @@ body {
         justify-items: center; } }
   .about .profile__text {
     font-size: 1.7rem;
-    color: #2e303e; }
+    color: #2e303e;
+    padding: 0 1.5rem; }
     @media only screen and (max-width: 56.25em) {
       .about .profile__text {
         width: 70%; } }
